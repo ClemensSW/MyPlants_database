@@ -163,8 +163,15 @@ function pickPreferredGerman(usage, germanNames) {
   const pref = germanNames.find((v) => v.preferred);
   if (pref) return pref.name;
 
-  // 3) erster Eintrag
-  return germanNames[0]?.name || null;
+  // 3) Kürzester Name (statt erster Eintrag)
+  if (germanNames.length > 0) {
+    const shortest = germanNames.reduce((shortest, current) =>
+      current.name.length < shortest.name.length ? current : shortest
+    );
+    return shortest.name;
+  }
+
+  return null;
 }
 
 /**

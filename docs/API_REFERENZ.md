@@ -285,12 +285,27 @@ const germanNames = results
     const lang = v.language?.toLowerCase();
     return lang === 'de' || lang === 'deu' || lang === 'ger';
   });
+
+// Auswahl des bevorzugten Namens:
+// 1. preferred: true
+// 2. Kürzester deutscher Name
+const preferred = germanNames.find(v => v.preferred);
+const selectedName = preferred
+  ? preferred.vernacularName
+  : germanNames.reduce((shortest, current) =>
+      current.vernacularName.length < shortest.vernacularName.length
+        ? current : shortest
+    ).vernacularName;
 ```
 
 **Sprach-Codes für Deutsch:**
 - `de` (ISO 639-1, häufigster Code)
 - `deu` (ISO 639-2/T)
 - `ger` (ISO 639-2/B, veraltet)
+
+**Name-Auswahl:**
+- Bevorzugt: Namen mit `preferred: true` Flag
+- Fallback: Kürzester deutscher Name (weniger Worte = gebräuchlicher)
 
 ---
 

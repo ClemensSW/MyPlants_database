@@ -190,7 +190,7 @@ germanNames = uniqBy(germanNames, x => x.name.trim().toLowerCase());
 **Priorität:**
 1. `vernacularName` aus API-Call 1 (wenn vorhanden)
 2. Eintrag mit `preferred: true` aus API-Call 2
-3. Erster Eintrag aus API-Call 2
+3. Kürzester deutscher Name aus API-Call 2
 4. `null` (kein deutscher Name verfügbar)
 
 ```javascript
@@ -200,7 +200,15 @@ function pickPreferredGerman(usage, germanNames) {
   const pref = germanNames.find(v => v.preferred);
   if (pref) return pref.name;
 
-  return germanNames[0]?.name || null;
+  // Kürzester Name wählen
+  if (germanNames.length > 0) {
+    const shortest = germanNames.reduce((shortest, current) =>
+      current.name.length < shortest.name.length ? current : shortest
+    );
+    return shortest.name;
+  }
+
+  return null;
 }
 ```
 

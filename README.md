@@ -115,7 +115,7 @@ graph TD
 2. **Phase 2: Species anreichern**
    - Ruft für jeden `taxonKey` taxonomische Daten von GBIF ab
    - Normalisiert Synonyme → akzeptierte Namen
-   - Sammelt deutsche Trivialnamen
+   - Sammelt deutsche Trivialnamen (preferred oder kürzester Name)
    - Output: Alle Species mit vollständigen Metadaten
 
 3. **Phase 3: Filtern & Bereinigen**
