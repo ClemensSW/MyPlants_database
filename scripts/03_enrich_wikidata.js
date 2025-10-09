@@ -14,7 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
-const { queryWikidataGermanNames } = require('./utils/wikidata-helpers');
+const { queryWikidataGermanNamesBatch } = require('./utils/wikidata-helpers');
 const { pickPreferredGerman } = require('./utils/gbif-helpers');
 
 // Konfiguration
@@ -22,7 +22,8 @@ const CONFIG = {
   INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_raw.ndjson'),
   OUTPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_enriched.ndjson'),
   FAILED_LOG: path.join(__dirname, '../data/intermediate/wikidata_failed.txt'),
-  DELAY_MS: 500, // Delay zwischen Wikidata Requests (Rate Limit)
+  BATCH_SIZE: 50, // Anzahl Species pro Batch-Query
+  BATCH_DELAY_MS: 1000, // Delay zwischen Batches (1 Sekunde)
 };
 
 /**
@@ -90,9 +91,12 @@ async function main() {
     return;
   }
 
-  // 3) Wikidata Queries für Species ohne Namen
+  // 3) Wikidata Batch-Queries für Species ohne Namen
+  const totalBatches = Math.ceil(speciesWithoutGerman.length / CONFIG.BATCH_SIZE);
   console.log(`Wikidata-Abfragen für ${speciesWithoutGerman.length} Species...`);
-  console.log(`(Delay: ${CONFIG.DELAY_MS}ms zwischen Requests)`);
+  console.log(`Batch-Größe: ${CONFIG.BATCH_SIZE} Species/Batch`);
+  console.log(`Anzahl Batches: ${totalBatches}`);
+  console.log(`Delay: ${CONFIG.BATCH_DELAY_MS}ms zwischen Batches`);
   console.log();
 
   const output = fs.createWriteStream(CONFIG.OUTPUT_FILE, { flags: 'w' });
@@ -100,49 +104,60 @@ async function main() {
 
   let enriched = 0;
   let failed = 0;
-  let processed = 0;
+  let batchNumber = 0;
 
-  // Verarbeite Species OHNE deutsche Namen
-  for (const species of speciesWithoutGerman) {
-    processed++;
+  // Verarbeite in Batches
+  for (let i = 0; i < speciesWithoutGerman.length; i += CONFIG.BATCH_SIZE) {
+    const batch = speciesWithoutGerman.slice(i, i + CONFIG.BATCH_SIZE);
+    batchNumber++;
 
     // Fortschritt
     if (process.stdout.isTTY) {
-      const percent = ((processed / speciesWithoutGerman.length) * 100).toFixed(1);
+      const percent = ((batchNumber / totalBatches) * 100).toFixed(1);
       process.stdout.write(
-        `\rVerarbeitet: ${processed}/${speciesWithoutGerman.length} (${percent}%) | ` +
+        `\rBatch ${batchNumber}/${totalBatches} (${percent}%) | ` +
         `Ergänzt: ${enriched} | Keine Treffer: ${failed}`
       );
     }
 
     try {
-      // Wikidata Query (canonicalName ohne Namensgeber für bessere Treffer)
-      const wikidataNames = await queryWikidataGermanNames(species.canonicalName || species.scientificName);
+      // Batch-Query: Alle canonicalNames auf einmal
+      const canonicalNames = batch.map(s => s.canonicalName || s.scientificName);
+      const results = await queryWikidataGermanNamesBatch(canonicalNames);
 
-      if (wikidataNames.length > 0) {
-        // Deutsche Namen gefunden!
-        species.germanNames = wikidataNames;
+      // Ergebnisse zuordnen
+      for (const species of batch) {
+        const searchName = species.canonicalName || species.scientificName;
+        const wikidataNames = results[searchName] || [];
 
-        // Aktualisiere auch germanName (bevorzugter Name)
-        species.germanName = pickPreferredGerman({}, wikidataNames);
+        if (wikidataNames.length > 0) {
+          // Deutsche Namen gefunden!
+          species.germanNames = wikidataNames;
+          species.germanName = pickPreferredGerman({}, wikidataNames);
+          enriched++;
+        } else {
+          // Keine Namen gefunden
+          failed++;
+          failedLog.write(`${species.taxonKey}\t${species.scientificName}\n`);
+        }
 
-        enriched++;
-      } else {
-        // Keine Namen gefunden
-        failed++;
-        failedLog.write(`${species.taxonKey}\t${species.scientificName}\n`);
+        // Schreibe Species (mit oder ohne Ergänzung)
+        output.write(JSON.stringify(species) + '\n');
       }
 
-      // Delay zwischen Requests (Wikidata Rate Limit)
-      await sleep(CONFIG.DELAY_MS);
+      // Delay zwischen Batches
+      if (i + CONFIG.BATCH_SIZE < speciesWithoutGerman.length) {
+        await sleep(CONFIG.BATCH_DELAY_MS);
+      }
     } catch (err) {
-      // Bei Fehler: Species ohne Änderung übernehmen
-      failed++;
-      failedLog.write(`${species.taxonKey}\t${species.scientificName}\t${err.message}\n`);
+      // Bei Batch-Fehler: Alle Species des Batches als fehlgeschlagen markieren
+      console.error(`\n❌ Batch ${batchNumber} Fehler: ${err.message}`);
+      for (const species of batch) {
+        failed++;
+        failedLog.write(`${species.taxonKey}\t${species.scientificName}\t${err.message}\n`);
+        output.write(JSON.stringify(species) + '\n');
+      }
     }
-
-    // Schreibe Species (mit oder ohne Ergänzung)
-    output.write(JSON.stringify(species) + '\n');
   }
 
   // 4) Schreibe Species MIT deutschen Namen (unverändert)
