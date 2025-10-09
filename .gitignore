@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment
+.env
+.env.local
+
+# Intermediate data files
+data/intermediate/*
+!data/intermediate/.gitkeep
+
+# Large data files (zu groß für Git)
+data/output/*.ndjson
+data/output/*.json
+
+# Logs
+*.log
+failed_keys.txt
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+temp/

@@ -1,0 +1,36 @@
+{
+  "name": "my-plants-database",
+  "version": "1.0.0",
+  "description": "Datenbeschaffung und -aufbereitung für die My-Plants Lern-App",
+  "main": "index.js",
+  "scripts": {
+    "fetch-keys": "node scripts/01_fetch_taxonkeys.js",
+    "enrich-species": "node scripts/02_enrich_species.js",
+    "filter-species": "node scripts/03_filter_species.js",
+    "collect-multimedia": "node scripts/04_collect_multimedia.js",
+    "build-all": "npm run fetch-keys && npm run enrich-species && npm run filter-species && npm run collect-multimedia",
+    "build-species": "npm run fetch-keys && npm run enrich-species && npm run filter-species",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gbif",
+    "plants",
+    "taxonomy",
+    "database",
+    "my-plants"
+  ],
+  "author": "My-Plants Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/my-plants-database.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "p-limit": "^7.1.1"
+  },
+  "devDependencies": {}
+}
