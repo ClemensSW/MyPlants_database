@@ -52,17 +52,33 @@ async function main() {
     filterHasGermanNames
   );
 
-  // Transform-Funktion: Felder entfernen
-  const transform = (obj) =>
-    removeFields(obj, ['acceptedKey', 'originalKey', 'germanName', 'source']);
+  // Transform-Funktion: Vereinfachen + Felder entfernen
+  const transform = (obj) => {
+    // Extrahiere bevorzugten deutschen Namen aus germanNames Array
+    let germanName = null;
+    if (Array.isArray(obj.germanNames) && obj.germanNames.length > 0) {
+      // Bevorzugte Reihenfolge: preferred:true, dann erster Eintrag
+      const preferred = obj.germanNames.find(g => g.preferred);
+      germanName = preferred ? preferred.name : obj.germanNames[0].name;
+    }
+
+    // Einfache Struktur: nur 4 Felder
+    return {
+      taxonKey: obj.taxonKey,
+      scientificName: obj.scientificName,
+      canonicalName: obj.canonicalName,
+      germanName: germanName
+    };
+  };
 
   console.log('Filter anwenden:');
   console.log('  - rank === "SPECIES"');
   console.log('  - status === "ACCEPTED"');
   console.log('  - germanNames nicht leer');
   console.log();
-  console.log('Felder entfernen:');
-  console.log('  - acceptedKey, originalKey, germanName, source');
+  console.log('Vereinfachen auf 4 Felder:');
+  console.log('  - taxonKey, scientificName, canonicalName, germanName');
+  console.log('  - germanName: bevorzugter Name aus germanNames Array');
   console.log();
 
   // Filtern und transformieren

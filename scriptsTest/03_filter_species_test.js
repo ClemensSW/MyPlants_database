@@ -45,8 +45,19 @@ async function main() {
     filterHasGermanNames
   );
 
-  const transform = (obj) =>
-    removeFields(obj, ['acceptedKey', 'originalKey', 'germanName', 'source']);
+  const transform = (obj) => {
+    let germanName = null;
+    if (Array.isArray(obj.germanNames) && obj.germanNames.length > 0) {
+      const preferred = obj.germanNames.find(g => g.preferred);
+      germanName = preferred ? preferred.name : obj.germanNames[0].name;
+    }
+    return {
+      taxonKey: obj.taxonKey,
+      scientificName: obj.scientificName,
+      canonicalName: obj.canonicalName,
+      germanName: germanName
+    };
+  };
 
   console.log('Filter anwenden:');
   console.log('  - rank === "SPECIES"');

@@ -17,22 +17,25 @@ const { getAllTaxonKeysFromDataset } = require('../scripts/utils/gbif-helpers');
 const CONFIG = {
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
   OUTPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_taxonKeys_test.json'),
-  LIMIT: 50, // Nur 50 Keys für Test
+  LIMIT: 500, // 500 Keys holen (davon sind ~50-100 Species)
 };
 
 async function main() {
   console.log('='.repeat(60));
-  console.log('TEST-VERSION: Phase 1 - TaxonKeys sammeln (nur 50)');
+  console.log('TEST-VERSION: Phase 1 - TaxonKeys sammeln');
   console.log('='.repeat(60));
   console.log(`Dataset: ${CONFIG.DATASET_KEY}`);
-  console.log(`Limit:   ${CONFIG.LIMIT}`);
+  console.log(`Limit:   ${CONFIG.LIMIT} taxonKeys`);
   console.log(`Output:  ${CONFIG.OUTPUT_FILE}`);
   console.log();
+  console.log('Hinweis: Die ersten taxonKeys enthalten viele höhere Ränge');
+  console.log('         (KINGDOM, CLASS, etc.). Nach Phase 3 bleiben ca. 50-100 Species.');
+  console.log();
 
-  console.log('Sammle erste 50 taxonKeys via GBIF Faceting...');
+  console.log('Sammle erste 500 taxonKeys via GBIF Faceting...');
   const allKeys = await getAllTaxonKeysFromDataset(CONFIG.DATASET_KEY);
 
-  // Nur erste 50 Keys
+  // Erste 500 Keys (enthält Mix aus allen Rängen)
   const keys = allKeys.slice(0, CONFIG.LIMIT);
 
   console.log();
