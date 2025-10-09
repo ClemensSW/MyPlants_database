@@ -10,7 +10,12 @@
     "collect-multimedia": "node scripts/04_collect_multimedia.js",
     "build-all": "npm run fetch-keys && npm run enrich-species && npm run filter-species && npm run collect-multimedia",
     "build-species": "npm run fetch-keys && npm run enrich-species && npm run filter-species",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:fetch": "node scriptsTest/01_fetch_taxonkeys_test.js",
+    "test:enrich": "node scriptsTest/02_enrich_species_test.js",
+    "test:filter": "node scriptsTest/03_filter_species_test.js",
+    "test:multimedia": "node scriptsTest/04_collect_multimedia_test.js",
+    "test:all": "npm run test:fetch && npm run test:enrich && npm run test:filter && npm run test:multimedia",
+    "test": "npm run test:all"
   },
   "keywords": [
     "gbif",

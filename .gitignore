@@ -14,6 +14,10 @@ data/intermediate/*
 data/output/*.ndjson
 data/output/*.json
 
+# Test data files
+data/intermediate/*_test.*
+data/output/*_test.*
+
 # Logs
 *.log
 failed_keys.txt
