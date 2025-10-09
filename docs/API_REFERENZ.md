@@ -1,16 +1,28 @@
-# GBIF API Referenz für My-Plants
+# API Referenz für My-Plants
 
-Dieses Dokument enthält alle relevanten GBIF API Endpoints, Parameter, Best Practices und Troubleshooting-Tipps für die My-Plants Datenbeschaffung.
+Dieses Dokument enthält alle relevanten API Endpoints (GBIF & Wikidata), Parameter, Best Practices und Troubleshooting-Tipps für die My-Plants Datenbeschaffung.
 
 ## 🌐 Basis-Informationen
 
-**GBIF API Base URL:** `https://api.gbif.org/v1`
+### GBIF API
+
+**Base URL:** `https://api.gbif.org/v1`
 
 **Dokumentation:** [techdocs.gbif.org](https://techdocs.gbif.org/en/openapi/)
 
 **Rate Limits:** Keine festen Limits, aber bei sehr hoher Last: HTTP 429
 
 **Authentication:** Nicht erforderlich für Read-Operations
+
+### Wikidata SPARQL API ⭐ NEU
+
+**Base URL:** `https://query.wikidata.org/sparql`
+
+**Dokumentation:** [wikidata.org/wiki/Wikidata:SPARQL_query_service](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service)
+
+**Rate Limits:** Keine festen Limits, User-Agent empfohlen
+
+**Authentication:** Nicht erforderlich
 
 ---
 
@@ -515,14 +527,139 @@ done
 
 ---
 
+## 🔍 Wikidata SPARQL API
+
+**Verwendung:** Phase 2.5 – Deutsche Namen ergänzen
+
+### Endpoint
+
+```
+GET https://query.wikidata.org/sparql
+```
+
+### Query-Parameter
+
+| Parameter | Typ | Beschreibung | Pflicht |
+|-----------|-----|--------------|---------|
+| `query` | String | SPARQL Query | Ja |
+| `format` | String | Response-Format (`json`, `xml`, `csv`) | Nein (default: HTML) |
+
+### Beispiel: Deutsche Namen für Scientific Name
+
+**Query:**
+```sparql
+SELECT DISTINCT ?germanName WHERE {
+  ?item wdt:P225 "Azolla caroliniana" .
+  ?item wdt:P1843 ?germanName .
+  FILTER(LANG(?germanName) = "de")
+}
+LIMIT 10
+```
+
+**HTTP Request:**
+```bash
+curl -X GET "https://query.wikidata.org/sparql" \
+  --data-urlencode "query=SELECT DISTINCT ?germanName WHERE { ?item wdt:P225 \"Azolla caroliniana\" . ?item wdt:P1843 ?germanName . FILTER(LANG(?germanName) = \"de\") } LIMIT 10" \
+  -H "Accept: application/sparql-results+json" \
+  -H "User-Agent: My-Plants-Database/1.0"
+```
+
+**Response:**
+```json
+{
+  "head": {
+    "vars": ["germanName"]
+  },
+  "results": {
+    "bindings": [
+      {
+        "germanName": {
+          "xml:lang": "de",
+          "type": "literal",
+          "value": "Großer Algenfarn"
+        }
+      },
+      {
+        "germanName": {
+          "xml:lang": "de",
+          "type": "literal",
+          "value": "Feenmoos"
+        }
+      }
+    ]
+  }
+}
+```
+
+### Wichtige Wikidata Properties
+
+| Property | Name | Beschreibung | Beispiel |
+|----------|------|--------------|----------|
+| `P225` | taxon name | Wissenschaftlicher Name | "Azolla caroliniana" |
+| `P1843` | taxon common name | Trivialname (multilingual) | "Großer Algenfarn"@de |
+| `P105` | taxon rank | Taxonomischer Rang | "species" |
+| `P171` | parent taxon | Übergeordnetes Taxon | Azolla (genus) |
+
+### Best Practices
+
+**User-Agent setzen:**
+```javascript
+headers: {
+  'User-Agent': 'My-Plants-Database/1.0 (https://github.com/yourusername/my-plants-database)'
+}
+```
+
+**Timeout erhöhen:**
+- SPARQL Queries können länger dauern als REST APIs
+- Empfohlen: 20-30 Sekunden Timeout
+
+**Rate Limiting:**
+- Delay zwischen Requests: min. 500ms
+- Keine parallelen Requests
+- User-Agent für bessere Rate Limits
+
+**Error Handling:**
+```javascript
+try {
+  const data = await querySparql(query);
+  return parseResults(data);
+} catch (err) {
+  if (err.response?.status === 429) {
+    // Rate limit → Retry mit Backoff
+  } else if (err.response?.status === 500) {
+    // Server Error → evtl. Query zu komplex
+  } else {
+    // Andere Fehler → Species ohne Namen übernehmen
+  }
+}
+```
+
+### SPARQL Query Service UI
+
+**Interaktives Testing:**
+[https://query.wikidata.org/](https://query.wikidata.org/)
+
+**Nützlich für:**
+- Query-Entwicklung
+- Response-Format prüfen
+- Performance testen
+
+---
+
 ## 📚 Weitere Ressourcen
 
 ### Offizielle Dokumentation
 
+**GBIF:**
 - **OpenAPI Spec:** [techdocs.gbif.org/en/openapi](https://techdocs.gbif.org/en/openapi/)
 - **Developer Guide:** [techdocs.gbif.org/en/data-use](https://techdocs.gbif.org/en/data-use)
 - **Occurrence API:** [techdocs.gbif.org/en/openapi/v1/occurrence](https://techdocs.gbif.org/en/openapi/v1/occurrence)
 - **Species API:** [techdocs.gbif.org/en/openapi/v1/species](https://techdocs.gbif.org/en/openapi/v1/species)
+
+**Wikidata:**
+- **SPARQL Tutorial:** [wikidata.org/wiki/Wikidata:SPARQL_tutorial](https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial)
+- **Query Examples:** [wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples)
+- **WikiProject Taxonomy:** [wikidata.org/wiki/Wikidata:WikiProject_Taxonomy](https://www.wikidata.org/wiki/Wikidata:WikiProject_Taxonomy)
 
 ### Community-Ressourcen
 

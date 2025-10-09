@@ -23,7 +23,7 @@ Erstellung von zwei MongoDB-kompatiblen NDJSON-Dateien:
 **Zusätzliche Datenquellen:**
 - GBIF Species API (taxonomische Namen)
 - GBIF Backbone Taxonomy (Synonym-Normalisierung)
-- Wikidata API (ergänzende deutsche Namen, optional)
+- **Wikidata SPARQL API** (ergänzende deutsche Namen) ⭐ NEU
 
 ## 🔄 Workflow-Phasen
 
@@ -257,9 +257,141 @@ function pickPreferredGerman(usage, germanNames) {
 
 ---
 
-### Phase 3: Filtern und Bereinigen
+### Phase 2.5: Wikidata-Ergänzung ⭐ NEU
 
-**Script:** `scripts/03_filter_species.js`
+**Script:** `scripts/03_enrich_wikidata.js`
+
+**Ziel:** Fehlende deutsche Namen aus Wikidata SPARQL API ergänzen
+
+Diese Phase wurde hinzugefügt, um die Anzahl der Species mit deutschen Namen zu maximieren. Viele Species haben in GBIF keine deutschen Trivialnamen, aber in Wikidata sind sie oft vorhanden.
+
+#### 2.5.1 Wikidata SPARQL Query
+
+**API-Endpunkt:**
+```
+GET https://query.wikidata.org/sparql
+```
+
+**SPARQL Query für deutschen Namen:**
+```sparql
+SELECT DISTINCT ?germanName WHERE {
+  ?item wdt:P225 "Azolla caroliniana" .
+  ?item wdt:P1843 ?germanName .
+  FILTER(LANG(?germanName) = "de")
+}
+LIMIT 10
+```
+
+**Properties:**
+- **P225** = taxon name (scientific name)
+- **P1843** = taxon common name (vernacular name)
+- **FILTER(LANG(?germanName) = "de")** = nur deutsche Namen
+
+**Beispiel-Response:**
+```json
+{
+  "results": {
+    "bindings": [
+      {
+        "germanName": {
+          "xml:lang": "de",
+          "type": "literal",
+          "value": "Großer Algenfarn"
+        }
+      },
+      {
+        "germanName": {
+          "xml:lang": "de",
+          "type": "literal",
+          "value": "Feenmoos"
+        }
+      }
+    ]
+  }
+}
+```
+
+#### 2.5.2 Prozess
+
+**Input:** `data/intermediate/plantnet_species_raw.ndjson`
+
+**Verarbeitung:**
+1. Lade alle Species aus Phase 2
+2. Filtere Species **OHNE** deutsche Namen (`germanNames.length === 0`)
+3. Für jede Species ohne Namen:
+   - SPARQL Query mit `scientificName`
+   - Parse Response → extrahiere deutsche Namen
+   - Ergänze `germanNames` Array mit Wikidata-Namen
+   - Aktualisiere `germanName` (bevorzugter Name)
+4. Schreibe alle Species (ergänzt + unverändert)
+
+**Rate Limiting:**
+- Delay: 500ms zwischen Requests
+- Retry mit Exponential Backoff bei Fehlern
+- User-Agent: `My-Plants-Database/1.0`
+
+**Wikidata-Namen Format:**
+```javascript
+{
+  name: "Großer Algenfarn",
+  preferred: false,  // Wikidata hat kein preferred Flag
+  source: "Wikidata"
+}
+```
+
+#### 2.5.3 Output
+
+**Datei:** `data/intermediate/plantnet_species_enriched.ndjson`
+
+**Beispiel (ergänzt):**
+```json
+{
+  "taxonKey": 2650105,
+  "scientificName": "Azolla caroliniana Willd.",
+  "canonicalName": "Azolla caroliniana",
+  "rank": "SPECIES",
+  "status": "ACCEPTED",
+  "germanName": "Großer Algenfarn",
+  "germanNames": [
+    {
+      "name": "Großer Algenfarn",
+      "preferred": false,
+      "source": "Wikidata"
+    },
+    {
+      "name": "Feenmoos",
+      "preferred": false,
+      "source": "Wikidata"
+    }
+  ]
+}
+```
+
+**Statistik (typisch):**
+- Input: ~18.000 Species (davon ~12.000 ohne deutsche Namen)
+- Ergänzt aus Wikidata: ~2.000-4.000 Species
+- Verbleibend ohne Namen: ~8.000-10.000 Species
+
+**Dauer:** ~2-4 Stunden (abhängig von Anzahl fehlender Namen)
+
+**Fehlerbehandlung:**
+- Fehlgeschlagene Queries werden in `data/intermediate/wikidata_failed.txt` protokolliert
+- Bei Fehler: Species wird ohne Ergänzung übernommen
+- Keine kritischen Fehler → Pipeline bricht nicht ab
+
+**Überspringen:**
+Diese Phase kann übersprungen werden, wenn:
+- Wikidata nicht verfügbar ist
+- Zeit gespart werden soll
+- GBIF-Namen ausreichend sind
+
+→ Verwende dann `plantnet_species_raw.ndjson` als Input für Phase 4
+
+---
+
+### Phase 4: Filtern und Bereinigen
+
+**Script:** `scripts/04_filter_species.js`
 
 **Ziel:** Rohdaten filtern und für MongoDB vorbereiten
 
@@ -297,7 +429,9 @@ Folgende Felder werden **nicht** für die App benötigt:
 - `germanName` (redundant, da `germanNames[]` vorhanden)
 - `source` (Audit-Info, nicht für App nötig)
 
-**Finale Struktur (Phase 3 Output):**
+**Input:** `data/intermediate/plantnet_species_enriched.ndjson`
+
+**Finale Struktur (Phase 4 Output):**
 ```json
 {
   "taxonKey": 2650105,
@@ -324,13 +458,13 @@ Folgende Felder werden **nicht** für die App benötigt:
 
 ---
 
-### Phase 4: Multimedia sammeln
+### Phase 5: Multimedia sammeln
 
-**Script:** `scripts/04_collect_multimedia.js`
+**Script:** `scripts/05_collect_multimedia.js`
 
 **Ziel:** Bilder mit Organ-Tags für alle Species sammeln
 
-#### 4.1 Occurrence Search mit Bildern
+#### 5.1 Occurrence Search mit Bildern
 
 **API-Call:**
 ```
@@ -363,7 +497,7 @@ while (true) {
 }
 ```
 
-#### 4.2 Bild-Extraktion aus Occurrence
+#### 5.2 Bild-Extraktion aus Occurrence
 
 **Zwei Quellen für Bilder:**
 
@@ -396,7 +530,7 @@ while (true) {
 }
 ```
 
-#### 4.3 Organ-Tag-Extraktion
+#### 5.3 Organ-Tag-Extraktion
 
 **Priorität:**
 1. **Audubon Core `ac:subjectPart`** (explizite Organ-Zuordnung)
@@ -434,7 +568,7 @@ function extractOrganTag(media, url) {
 }
 ```
 
-#### 4.4 URL-Proxying
+#### 5.4 URL-Proxying
 
 **Problem:** Direkte PlantNet-URLs können langsam sein oder keine Größen-Anpassung bieten.
 
@@ -468,7 +602,7 @@ https://images.weserv.nl/?url=...&w=800&q=75&output=webp
 https://images.weserv.nl/?url=...&w=1920&q=90
 ```
 
-#### 4.5 Deduplizierung
+#### 5.5 Deduplizierung
 
 **Problem:** Manche Bilder tauchen in mehreren Occurrences auf.
 
@@ -486,7 +620,7 @@ for (const img of images) {
 }
 ```
 
-#### 4.6 Multimedia-Dokument-Struktur
+#### 5.6 Multimedia-Dokument-Struktur
 
 ```json
 {
@@ -570,7 +704,7 @@ await Promise.all(tasks);
 
 **Empfohlene Werte:**
 - Phase 2 (Species): Concurrency=10
-- Phase 4 (Multimedia): Concurrency=6 (mehr Daten pro Request)
+- Phase 5 (Multimedia): Concurrency=6 (mehr Daten pro Request)
 
 ### Progress-Anzeige
 
@@ -609,7 +743,7 @@ progress();
 - Typisch: <1% failed taxonKeys
 - Ursachen: HTTP 404 (taxonKey existiert nicht mehr), Timeouts
 
-**Phase 4 (Multimedia):**
+**Phase 5 (Multimedia):**
 - Typisch: <0.1% Fehler pro Art
 - Ursachen: API-Timeouts bei sehr häufigen Arten (>100k Occurrences)
 

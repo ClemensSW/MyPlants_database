@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Phase 4: Multimedia-Daten sammeln
+ * Phase 5: Multimedia-Daten sammeln
  *
  * Sammelt Bild-URLs mit Organ-Tags für alle Species aus der GBIF Occurrence API.
  * Extrahiert Tags aus Audubon Core (ac:subjectPart) oder URL-Parametern.
@@ -9,7 +9,7 @@
  * Input:  data/output/species.ndjson
  * Output: data/output/multimedia.ndjson
  *
- * Usage: node scripts/04_collect_multimedia.js
+ * Usage: node scripts/05_collect_multimedia.js
  */
 
 const fs = require('fs');
@@ -197,7 +197,7 @@ async function collectImagesForTaxon(taxonKey, canonicalName) {
  */
 async function main() {
   console.log('='.repeat(60));
-  console.log('Phase 4: Multimedia-Daten sammeln');
+  console.log('Phase 5: Multimedia-Daten sammeln');
   console.log('='.repeat(60));
   console.log(`Input:  ${CONFIG.INPUT_FILE}`);
   console.log(`Output: ${CONFIG.OUTPUT_FILE}`);
@@ -294,7 +294,7 @@ async function main() {
     console.log();
     console.log(`✓ Gespeichert: ${CONFIG.OUTPUT_FILE}`);
     console.log();
-    console.log('Phase 4 abgeschlossen!');
+    console.log('Phase 5 abgeschlossen!');
   });
 }
 

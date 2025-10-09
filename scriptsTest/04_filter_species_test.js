@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * TEST-VERSION: Phase 3 - Species-Daten filtern
+ * TEST-VERSION: Phase 4 - Species-Daten filtern
  *
  * Filtert die Test-Daten nach den gleichen Kriterien wie das Original.
  *
- * Input:  data/intermediate/plantnet_species_raw_test.ndjson
+ * Input:  data/intermediate/plantnet_species_enriched_test.ndjson
  * Output: data/output/species_test.ndjson
  *
- * Usage: node scriptsTest/03_filter_species_test.js
+ * Usage: node scriptsTest/04_filter_species_test.js
  */
 
 const fs = require('fs');
@@ -23,13 +23,13 @@ const {
 } = require('../scripts/utils/filter-helpers');
 
 const CONFIG = {
-  INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_raw_test.ndjson'),
+  INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_enriched_test.ndjson'),
   OUTPUT_FILE: path.join(__dirname, '../data/output/species_test.ndjson'),
 };
 
 async function main() {
   console.log('='.repeat(60));
-  console.log('TEST-VERSION: Phase 3 - Species-Daten filtern');
+  console.log('TEST-VERSION: Phase 4 - Species-Daten filtern');
   console.log('='.repeat(60));
   console.log(`Input:  ${CONFIG.INPUT_FILE}`);
   console.log(`Output: ${CONFIG.OUTPUT_FILE}`);
@@ -78,7 +78,7 @@ async function main() {
   console.log();
   console.log(`✓ Gespeichert: ${CONFIG.OUTPUT_FILE}`);
   console.log();
-  console.log('TEST Phase 3 abgeschlossen!');
+  console.log('TEST Phase 4 abgeschlossen!');
 }
 
 if (require.main === module) {

@@ -45,13 +45,16 @@ npm install
 # Phase 1: TaxonKeys sammeln
 npm run fetch-keys
 
-# Phase 2: Species-Daten anreichern
+# Phase 2: Species-Daten anreichern (GBIF)
 npm run enrich-species
 
-# Phase 3: Filtern und bereinigen
+# Phase 2.5: Wikidata-Ergänzung (NEU)
+npm run enrich-wikidata
+
+# Phase 4: Filtern und bereinigen
 npm run filter-species
 
-# Phase 4: Multimedia sammeln
+# Phase 5: Multimedia sammeln
 npm run collect-multimedia
 
 # ODER: Alle Phasen nacheinander
@@ -59,12 +62,13 @@ npm run build-all
 ```
 
 ### Dauer-Schätzung
-- **Phase 1:** ~5-10 Minuten (je nach API-Geschwindigkeit)
+- **Phase 1:** ~3-5 Minuten (je nach API-Geschwindigkeit)
 - **Phase 2:** ~4-6 Stunden (für ~18k taxonKeys bei Concurrency=10)
-- **Phase 3:** ~1 Minute (Filterung)
-- **Phase 4:** ~8-12 Stunden (für ~18k Species mit Bildern)
+- **Phase 2.5:** ~2-4 Stunden (Wikidata-Ergänzung, nur für Species ohne deutsche Namen)
+- **Phase 4:** ~10-30 Sekunden (Filterung)
+- **Phase 5:** ~6-12 Stunden (für ~18k Species mit Bildern)
 
-> **Tipp:** Phase 2 und 4 können unterbrochen und fortgesetzt werden (siehe [docs/PROZESS.md](docs/PROZESS.md))
+> **Tipp:** Phase 2, 2.5 und 5 können unterbrochen und fortgesetzt werden (siehe [docs/PROZESS.md](docs/PROZESS.md))
 
 ## 📂 Verzeichnisstruktur
 
@@ -74,22 +78,31 @@ my-plants_database/
 ├── docs/
 │   ├── PROZESS.md                      # Detaillierte Prozessdokumentation
 │   ├── DATENSTRUKTUR.md               # Schema & MongoDB-Integration
-│   └── API_REFERENZ.md                # GBIF API Details
+│   └── API_REFERENZ.md                # GBIF & Wikidata API Details
 ├── scripts/
 │   ├── 01_fetch_taxonkeys.js          # Phase 1
-│   ├── 02_enrich_species.js           # Phase 2
-│   ├── 03_filter_species.js           # Phase 3
-│   ├── 04_collect_multimedia.js       # Phase 4
+│   ├── 02_enrich_species.js           # Phase 2 (GBIF)
+│   ├── 03_enrich_wikidata.js          # Phase 2.5 (Wikidata) ⭐ NEU
+│   ├── 04_filter_species.js           # Phase 4
+│   ├── 05_collect_multimedia.js       # Phase 5
 │   └── utils/
 │       ├── gbif-helpers.js            # GBIF API Funktionen
+│       ├── wikidata-helpers.js        # Wikidata SPARQL Funktionen ⭐ NEU
 │       └── filter-helpers.js          # Filter-Utilities
+├── scriptsTest/                       # Test-Versionen (nur 50 Plants)
+│   ├── 01_fetch_taxonkeys_test.js
+│   ├── 02_enrich_species_test.js
+│   ├── 03_enrich_wikidata_test.js    ⭐ NEU
+│   ├── 04_filter_species_test.js
+│   └── 05_collect_multimedia_test.js
 ├── data/
 │   ├── output/                        # Finale Daten
 │   │   ├── species.ndjson
 │   │   └── multimedia.ndjson
 │   └── intermediate/                  # Zwischenschritte
 │       ├── plantnet_taxonKeys.json
-│       └── plantnet_species_raw.ndjson
+│       ├── plantnet_species_raw.ndjson
+│       └── plantnet_species_enriched.ndjson ⭐ NEU
 └── package.json
 ```
 
@@ -99,8 +112,9 @@ my-plants_database/
 graph TD
     A[GBIF PlantNet Dataset] -->|Phase 1| B[plantnet_taxonKeys.json]
     B -->|Phase 2| C[plantnet_species_raw.ndjson]
-    C -->|Phase 3| D[species.ndjson]
-    D -->|Phase 4| E[multimedia.ndjson]
+    C -->|Phase 2.5| C2[plantnet_species_enriched.ndjson]
+    C2 -->|Phase 4| D[species.ndjson]
+    D -->|Phase 5| E[multimedia.ndjson]
 
     D -->|MongoDB Import| F[MongoDB Collection: species]
     E -->|MongoDB Import| G[MongoDB Collection: multimedia]
@@ -111,24 +125,34 @@ graph TD
 1. **Phase 1: TaxonKeys sammeln**
    - Sammelt alle eindeutigen `taxonKey` aus dem PlantNet-Dataset via GBIF Faceting
    - Output: ~18k taxonKeys
+   - Dauer: ~3-5 Min
 
-2. **Phase 2: Species anreichern**
+2. **Phase 2: Species anreichern (GBIF)**
    - Ruft für jeden `taxonKey` taxonomische Daten von GBIF ab
    - Normalisiert Synonyme → akzeptierte Namen
    - Sammelt deutsche Trivialnamen (preferred oder kürzester Name)
    - Output: Alle Species mit vollständigen Metadaten
+   - Dauer: ~4-6 Std
 
-3. **Phase 3: Filtern & Bereinigen**
+3. **Phase 2.5: Wikidata-Ergänzung** ⭐ NEU
+   - Ergänzt fehlende deutsche Namen aus Wikidata SPARQL API
+   - Nur für Species OHNE deutsche Namen aus GBIF
+   - Output: Angereicherte Species mit mehr deutschen Namen
+   - Dauer: ~2-4 Std (abhängig von Anzahl fehlender Namen)
+
+4. **Phase 4: Filtern & Bereinigen**
    - Nur `rank: "SPECIES"` + `status: "ACCEPTED"`
    - Nur mit deutschen Namen
-   - Entfernt temporäre Felder
+   - Vereinfacht auf 4 Felder (taxonKey, scientificName, canonicalName, germanName)
    - Output: Bereinigte `species.ndjson`
+   - Dauer: ~10-30 Sek
 
-4. **Phase 4: Multimedia sammeln**
+5. **Phase 5: Multimedia sammeln**
    - Sammelt Bilder für jede Species aus GBIF Occurrences
    - Extrahiert Organ-Tags (leaf, flower, etc.)
    - Proxied URLs durch Weserv
    - Output: `multimedia.ndjson`
+   - Dauer: ~6-12 Std
 
 ## 📊 MongoDB Import
 

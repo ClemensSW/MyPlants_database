@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * TEST-VERSION: Phase 4 - Multimedia-Daten sammeln (limitiert)
+ * TEST-VERSION: Phase 5 - Multimedia-Daten sammeln (limitiert)
  *
  * Sammelt nur die ersten 10 Bilder pro Species für schnelles Testen.
  *
  * Input:  data/output/species_test.ndjson
  * Output: data/output/multimedia_test.ndjson
  *
- * Usage: node scriptsTest/04_collect_multimedia_test.js
+ * Usage: node scriptsTest/05_collect_multimedia_test.js
  */
 
 const fs = require('fs');
@@ -112,7 +112,7 @@ async function collectImagesForTaxon(taxonKey, canonicalName) {
 
 async function main() {
   console.log('='.repeat(60));
-  console.log('TEST-VERSION: Phase 4 - Multimedia sammeln (max 10 Bilder/Art)');
+  console.log('TEST-VERSION: Phase 5 - Multimedia sammeln (max 10 Bilder/Art)');
   console.log('='.repeat(60));
   console.log(`Input:  ${CONFIG.INPUT_FILE}`);
   console.log(`Output: ${CONFIG.OUTPUT_FILE}`);
@@ -210,7 +210,7 @@ async function main() {
     console.log();
     console.log(`✓ Gespeichert: ${CONFIG.OUTPUT_FILE}`);
     console.log();
-    console.log('TEST Phase 4 abgeschlossen!');
+    console.log('TEST Phase 5 abgeschlossen!');
   });
 }
 

@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /**
- * Phase 3: Species-Daten filtern und bereinigen
+ * Phase 4: Species-Daten filtern und bereinigen
  *
  * Filtert die angereicherten Species-Daten nach folgenden Kriterien:
  * - Nur rank === "SPECIES"
  * - Nur status === "ACCEPTED"
  * - Nur mit deutschen Namen (germanNames nicht leer)
- * - Entfernt unnötige Felder (acceptedKey, originalKey, germanName, source)
+ * - Vereinfacht auf 4 Felder: taxonKey, scientificName, canonicalName, germanName
  *
- * Input:  data/intermediate/plantnet_species_raw.ndjson
+ * Input:  data/intermediate/plantnet_species_enriched.ndjson
  * Output: data/output/species.ndjson
  *
- * Usage: node scripts/03_filter_species.js
+ * Usage: node scripts/04_filter_species.js
  */
 
 const fs = require('fs');
@@ -28,13 +28,13 @@ const {
 
 // Konfiguration
 const CONFIG = {
-  INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_raw.ndjson'),
+  INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_enriched.ndjson'),
   OUTPUT_FILE: path.join(__dirname, '../data/output/species.ndjson'),
 };
 
 async function main() {
   console.log('='.repeat(60));
-  console.log('Phase 3: Species-Daten filtern');
+  console.log('Phase 4: Species-Daten filtern');
   console.log('='.repeat(60));
   console.log(`Input:  ${CONFIG.INPUT_FILE}`);
   console.log(`Output: ${CONFIG.OUTPUT_FILE}`);
@@ -95,7 +95,7 @@ async function main() {
   console.log();
   console.log(`✓ Gespeichert: ${CONFIG.OUTPUT_FILE}`);
   console.log();
-  console.log('Phase 3 abgeschlossen!');
+  console.log('Phase 4 abgeschlossen!');
 }
 
 // Script ausführen
