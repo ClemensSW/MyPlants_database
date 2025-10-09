@@ -119,9 +119,6 @@ async function main() {
   console.log(`Limit:  ${CONFIG.MAX_IMAGES_PER_SPECIES} Bilder pro Art`);
   console.log();
 
-  // p-limit dynamisch importieren (ESM)
-  const { default: pLimit } = await import('p-limit');
-
   const rl = readline.createInterface({
     input: fs.createReadStream(CONFIG.INPUT_FILE, 'utf8'),
     crlfDelay: Infinity,
@@ -134,46 +131,44 @@ async function main() {
   let done = 0;
   let totalImages = 0;
 
-  const limit = pLimit(CONFIG.CONCURRENCY);
+  // p-limit wird nicht verwendet - manuelle Concurrency-Steuerung via kick()
 
-  function kick() {
+  async function kick() {
     if (active >= CONFIG.CONCURRENCY || queue.length === 0) return;
     const job = queue.shift();
     active++;
 
-    limit(async () => {
-      try {
-        const images = await collectImagesForTaxon(job.taxonKey, job.canonicalName);
+    try {
+      const images = await collectImagesForTaxon(job.taxonKey, job.canonicalName);
 
-        for (const img of images) {
-          const record = {
-            taxonKey: job.taxonKey,
-            species: job.scientificName,
-            organ: img.tag,
-            occurrenceId: img.occurrenceKey,
-            url: img.url,
-            license: img.license,
-            wilsonScore: null,
-          };
-          out.write(JSON.stringify(record) + '\n');
-          totalImages++;
-        }
-      } catch (e) {
-        console.error(`\n❌ Fehler bei taxonKey ${job.taxonKey}: ${e.message}`);
-      } finally {
-        active--;
-        done++;
-
-        if (process.stdout.isTTY) {
-          const percent = ((done / seen) * 100).toFixed(1);
-          process.stdout.write(
-            `\rVerarbeitet: ${done}/${seen} (${percent}%) | Bilder: ${totalImages}`
-          );
-        }
-
-        kick();
+      for (const img of images) {
+        const record = {
+          taxonKey: job.taxonKey,
+          species: job.scientificName,
+          organ: img.tag,
+          occurrenceId: img.occurrenceKey,
+          url: img.url,
+          license: img.license,
+          wilsonScore: null,
+        };
+        out.write(JSON.stringify(record) + '\n');
+        totalImages++;
       }
-    })();
+    } catch (e) {
+      console.error(`\n❌ Fehler bei taxonKey ${job.taxonKey}: ${e.message}`);
+    } finally {
+      active--;
+      done++;
+
+      if (process.stdout.isTTY) {
+        const percent = ((done / seen) * 100).toFixed(1);
+        process.stdout.write(
+          `\rVerarbeitet: ${done}/${seen} (${percent}%) | Bilder: ${totalImages}`
+        );
+      }
+
+      kick();
+    }
   }
 
   rl.on('line', (line) => {

@@ -65,11 +65,12 @@ async function querySparqlWithRetry(sparqlQuery, tries = DEFAULT_RETRIES, timeou
 /**
  * Sucht deutsche Namen für einen wissenschaftlichen Namen in Wikidata
  *
- * @param {string} scientificName - Wissenschaftlicher Name (z.B. "Azolla caroliniana")
+ * @param {string} scientificName - Wissenschaftlicher Name, vorzugsweise canonicalName ohne Namensgeber (z.B. "Azolla caroliniana" statt "Azolla caroliniana Willd.")
  * @returns {Promise<Array>} Array von deutschen Namen [{name, preferred, source}]
  */
 async function queryWikidataGermanNames(scientificName) {
   // SPARQL Query: Suche nach P225 (taxon name) → P1843 (common name, lang=de)
+  // WICHTIG: canonicalName (ohne Autorennamen) liefert bessere Treffer, da Wikidata P225 oft ohne Autorennamen speichert
   const sparql = `
     SELECT DISTINCT ?germanName WHERE {
       ?item wdt:P225 "${scientificName}" .

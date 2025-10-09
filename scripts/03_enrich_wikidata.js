@@ -116,8 +116,8 @@ async function main() {
     }
 
     try {
-      // Wikidata Query
-      const wikidataNames = await queryWikidataGermanNames(species.scientificName);
+      // Wikidata Query (canonicalName ohne Namensgeber für bessere Treffer)
+      const wikidataNames = await queryWikidataGermanNames(species.canonicalName || species.scientificName);
 
       if (wikidataNames.length > 0) {
         // Deutsche Namen gefunden!

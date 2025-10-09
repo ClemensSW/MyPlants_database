@@ -104,11 +104,11 @@ async function main() {
   for (const species of speciesWithoutGerman) {
     processed++;
 
-    console.log(`[${processed}/${speciesWithoutGerman.length}] ${species.scientificName}...`);
+    console.log(`[${processed}/${speciesWithoutGerman.length}] ${species.canonicalName || species.scientificName}...`);
 
     try {
-      // Wikidata Query
-      const wikidataNames = await queryWikidataGermanNames(species.scientificName);
+      // Wikidata Query (canonicalName ohne Namensgeber für bessere Treffer)
+      const wikidataNames = await queryWikidataGermanNames(species.canonicalName || species.scientificName);
 
       if (wikidataNames.length > 0) {
         console.log(`  ✓ Gefunden: ${wikidataNames.map(n => n.name).join(', ')}`);
