@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
+const crypto = require('crypto');
 const { searchOccurrences, sleep } = require('../scripts/utils/gbif-helpers');
 
 const CONFIG = {
@@ -22,11 +23,12 @@ const CONFIG = {
   CONCURRENCY: 3, // Niedriger für Test
   PAGE_SIZE: 50,
   MAX_IMAGES_PER_SPECIES: 10, // Limit für Test
-  PROXY_BASE: 'https://images.weserv.nl/?url=',
+  GBIF_IMAGE_BASE: 'https://api.gbif.org/v1/image/cache/occurrence',
 };
 
-function proxify(url) {
-  return CONFIG.PROXY_BASE + encodeURIComponent(url);
+function gbifImageUrl(originalUrl, occurrenceKey) {
+  const md5 = crypto.createHash('md5').update(originalUrl).digest('hex');
+  return `${CONFIG.GBIF_IMAGE_BASE}/${occurrenceKey}/media/${md5}`;
 }
 
 function readSubjectPartFromMedia(m) {
@@ -56,6 +58,7 @@ function readOrganFromUrl(identifier) {
 function extractImagesFromOccurrence(occ) {
   const out = [];
   const mediaItems = Array.isArray(occ?.media) ? occ.media : [];
+  const occurrenceKey = occ.key ?? occ.gbifID ?? null;
 
   for (const m of mediaItems) {
     const id = m?.identifier;
@@ -63,25 +66,20 @@ function extractImagesFromOccurrence(occ) {
 
     const tag = readSubjectPartFromMedia(m) || readOrganFromUrl(id);
     out.push({
-      url: proxify(id),
+      url: gbifImageUrl(id, occurrenceKey),
       tag: tag || null,
-      occurrenceKey: occ.key ?? occ.gbifID ?? null,
+      occurrenceKey,
       license: m?.license || occ?.license || null,
       rightsHolder: m?.rightsHolder || occ?.rightsHolder || null,
     });
   }
 
+  // Deduplizierung nach URL (GBIF URLs sind bereits eindeutig)
   const seen = new Set();
   return out.filter((rec) => {
-    try {
-      const u = new URL(rec.url);
-      const original = u.searchParams.get('url') || rec.url;
-      if (seen.has(original)) return false;
-      seen.add(original);
-      return true;
-    } catch {
-      return true;
-    }
+    if (seen.has(rec.url)) return false;
+    seen.add(rec.url);
+    return true;
   });
 }
 

@@ -4,7 +4,7 @@
  *
  * Sammelt Bild-URLs mit Organ-Tags für alle Species aus der GBIF Occurrence API.
  * Extrahiert Tags aus Audubon Core (ac:subjectPart) oder URL-Parametern.
- * Alle URLs werden durch den Weserv-Proxy geleitet.
+ * Alle URLs nutzen die GBIF Image API (unbegrenzter Cache).
  *
  * Input:  data/output/species.ndjson
  * Output: data/output/multimedia.ndjson
@@ -15,6 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
+const crypto = require('crypto');
 const pLimit = require('p-limit');
 const { searchOccurrences, sleep } = require('./utils/gbif-helpers');
 
@@ -25,14 +26,16 @@ const CONFIG = {
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
   CONCURRENCY: 6,
   PAGE_SIZE: 300,
-  PROXY_BASE: 'https://images.weserv.nl/?url=',
+  GBIF_IMAGE_BASE: 'https://api.gbif.org/v1/image/cache/occurrence',
 };
 
 /**
- * Proxifiziert eine URL durch Weserv
+ * Generiert GBIF Image API URL
+ * Format: https://api.gbif.org/v1/image/cache/occurrence/{occurrenceId}/media/{md5}
  */
-function proxify(url) {
-  return CONFIG.PROXY_BASE + encodeURIComponent(url);
+function gbifImageUrl(originalUrl, occurrenceKey) {
+  const md5 = crypto.createHash('md5').update(originalUrl).digest('hex');
+  return `${CONFIG.GBIF_IMAGE_BASE}/${occurrenceKey}/media/${md5}`;
 }
 
 /**
@@ -106,15 +109,16 @@ function extractImagesFromOccurrence(occ) {
   const mediaItems = Array.isArray(occ?.media) ? occ.media : [];
 
   // 1) aus media[]
+  const occurrenceKey = occ.key ?? occ.gbifID ?? null;
   for (const m of mediaItems) {
     const id = m?.identifier;
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
 
     const tag = readSubjectPartFromMedia(m) || readOrganFromUrl(id);
     out.push({
-      url: proxify(id),
+      url: gbifImageUrl(id, occurrenceKey),
       tag: tag || null,
-      occurrenceKey: occ.key ?? occ.gbifID ?? null,
+      occurrenceKey,
       license: m?.license || occ?.license || null,
       rightsHolder: m?.rightsHolder || occ?.rightsHolder || null,
     });
@@ -127,9 +131,9 @@ function extractImagesFromOccurrence(occ) {
 
     const tag = readSubjectPartFromExtRow(row) || readOrganFromUrl(id);
     out.push({
-      url: proxify(id),
+      url: gbifImageUrl(id, occurrenceKey),
       tag: tag || null,
-      occurrenceKey: occ.key ?? occ.gbifID ?? null,
+      occurrenceKey,
       license:
         row?.license ||
         row?.['http://purl.org/dc/terms/license'] ||
@@ -143,18 +147,12 @@ function extractImagesFromOccurrence(occ) {
     });
   }
 
-  // Deduplizierung nach Original-URL
+  // Deduplizierung nach URL (GBIF URLs sind bereits eindeutig)
   const seen = new Set();
   return out.filter((rec) => {
-    try {
-      const u = new URL(rec.url);
-      const original = u.searchParams.get('url') || rec.url;
-      if (seen.has(original)) return false;
-      seen.add(original);
-      return true;
-    } catch {
-      return true;
-    }
+    if (seen.has(rec.url)) return false;
+    seen.add(rec.url);
+    return true;
   });
 }
 

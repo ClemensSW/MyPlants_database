@@ -20,7 +20,7 @@ Dieses Repository bündelt und verwaltet die Pflanzendaten für die **My-Plants 
 ### multimedia.ndjson
 - **3.166.029 Bild-URLs** mit Organ-Tags
 - Felder: `taxonKey`, `species`, `organ` (leaf/flower/fruit/bark/habit/other), `occurrenceId`, `url`, `license`, `wilsonScore`
-- Alle URLs proxied durch [images.weserv.nl](https://images.weserv.nl/) für On-the-Fly-Optimierung
+- Alle URLs nutzen die [GBIF Image API](https://techdocs.gbif.org/en/openapi/images) (unbegrenzter Cache)
 
 ## 🚀 Quick Start
 
@@ -150,9 +150,61 @@ graph TD
 5. **Phase 5: Multimedia sammeln**
    - Sammelt Bilder für jede Species aus GBIF Occurrences
    - Extrahiert Organ-Tags (leaf, flower, etc.)
-   - Proxied URLs durch Weserv
+   - Nutzt GBIF Image API (unbegrenzter Cache)
    - Output: `multimedia.ndjson`
    - Dauer: ~6-12 Std
+
+## 🖼️ Bild-URLs in der App verwenden
+
+Die `multimedia.ndjson` enthält Basis-URLs der GBIF Image API **ohne Größenangabe**.
+Das ermöglicht dynamische Bildgrößen je nach Anwendungsfall.
+
+### URL-Format
+
+**Basis-URL (in Datenbank):**
+```
+https://api.gbif.org/v1/image/cache/occurrence/{occurrenceId}/media/{md5}
+```
+
+**Mit Größe (in App generieren):**
+```
+https://api.gbif.org/v1/image/cache/{width}x/occurrence/{occurrenceId}/media/{md5}
+```
+
+### Beispiel-Code (JavaScript/TypeScript)
+
+```javascript
+// Basis-URL aus Datenbank
+const baseUrl = record.url;
+
+// Helper-Funktion für Größenanpassung
+function getImageUrl(baseUrl, width) {
+  if (!width) return baseUrl;
+  return baseUrl.replace('/occurrence/', `/${width}x/occurrence/`);
+}
+
+// Verwendung
+const thumbnail = getImageUrl(baseUrl, 200);   // 200px für Listen
+const detail = getImageUrl(baseUrl, 600);      // 600px für Details
+const fullsize = getImageUrl(baseUrl, 1200);   // 1200px (Maximum)
+const original = baseUrl;                       // Ohne Resize
+```
+
+### Empfohlene Größen
+
+| Kontext | Breite | Beispiel |
+|---------|--------|----------|
+| Listen/Grid | `200x` | Thumbnail-Ansicht |
+| Kartenansicht | `400x` | Mittlere Vorschau |
+| Detailseite | `600x` oder `800x` | Gute Qualität |
+| Vollbild/Zoom | `1200x` | Maximum (API-Limit) |
+
+### Hinweise
+
+- **Lazy Loading:** Bilder erst laden wenn sichtbar (`loading="lazy"`)
+- **Caching:** GBIF cached Bilder **unbegrenzt** – einmal geladen = dauerhaft verfügbar
+- **Rate Limit:** Normale App-Nutzung ist kein Problem (verteilt über viele Nutzer)
+- **Lizenzen:** Beachte das `license`-Feld pro Bild!
 
 ## 📊 MongoDB Import
 
