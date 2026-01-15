@@ -239,12 +239,6 @@ Für Änderungen und Erweiterungen:
 - 🧰 Wiederverwendbare Utility-Module
 - 🚀 npm Scripts für einfache Ausführung
 
-## 📧 Kontakt
-
-Bei Fragen zum Repository oder den Daten:
-- **Projekt:** My-Plants Lern-App
-- **Maintainer:** [Dein Name]
-- **Issues:** [GitHub Issues Link]
 
 ---
 
