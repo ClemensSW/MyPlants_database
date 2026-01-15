@@ -17,6 +17,7 @@ const {
   getVernacularNames,
   filterGermanNames,
   pickPreferredGerman,
+  pickPreferredFamilyName,
   uniqBy,
 } = require('../scripts/utils/gbif-helpers');
 
@@ -28,6 +29,34 @@ const CONFIG = {
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
   CONCURRENCY: 5, // Niedriger für Test
 };
+
+// In-Memory Cache für Familien (vermeidet redundante API-Calls)
+const familyCache = new Map();
+
+/**
+ * Holt deutsche Familiennamen mit Cache
+ */
+async function getFamilyData(familyKey) {
+  if (!familyKey) return { germanFamilyName: null };
+
+  if (familyCache.has(familyKey)) {
+    return familyCache.get(familyKey);
+  }
+
+  let germanFamilyName = null;
+  try {
+    const familyUsage = await getSpecies(familyKey, 'de');
+    const familyVn = await getVernacularNames(familyKey);
+    const germanNames = filterGermanNames(familyVn.results || []);
+    germanFamilyName = pickPreferredFamilyName(familyUsage, germanNames);
+  } catch (err) {
+    // Fehler ignorieren
+  }
+
+  const result = { germanFamilyName };
+  familyCache.set(familyKey, result);
+  return result;
+}
 
 async function buildDocFromTaxonKey(originalKey) {
   const base = await getSpecies(originalKey, 'de');
@@ -47,6 +76,11 @@ async function buildDocFromTaxonKey(originalKey) {
 
   const germanName = pickPreferredGerman(usage, germanNames);
 
+  // Familie: Botanischer Name direkt aus GBIF, deutscher Name via Cache
+  const family = usage.family || null;
+  const familyKey = usage.familyKey || null;
+  const { germanFamilyName } = await getFamilyData(familyKey);
+
   return {
     taxonKey: usage.key,
     acceptedKey,
@@ -55,6 +89,9 @@ async function buildDocFromTaxonKey(originalKey) {
     canonicalName: usage.canonicalName || null,
     rank: usage.rank || null,
     status: usage.taxonomicStatus || base.taxonomicStatus || null,
+    family,
+    familyKey,
+    germanFamilyName,
     germanName,
     germanNames,
     source: {

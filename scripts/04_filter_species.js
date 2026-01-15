@@ -69,12 +69,15 @@ async function main() {
       }
     }
 
-    // Einfache Struktur: nur 4 Felder
+    // Erweiterte Struktur: 7 Felder
     return {
       taxonKey: obj.taxonKey,
       scientificName: obj.scientificName,
       canonicalName: obj.canonicalName,
-      germanName: germanName
+      germanName: germanName,
+      family: obj.family || null,
+      familyKey: obj.familyKey || null,
+      germanFamilyName: obj.germanFamilyName || null
     };
   };
 
@@ -83,8 +86,9 @@ async function main() {
   console.log('  - status === "ACCEPTED"');
   console.log('  - germanNames nicht leer');
   console.log();
-  console.log('Vereinfachen auf 4 Felder:');
+  console.log('Vereinfachen auf 7 Felder:');
   console.log('  - taxonKey, scientificName, canonicalName, germanName');
+  console.log('  - family, familyKey, germanFamilyName');
   console.log('  - germanName: bevorzugter Name aus germanNames Array');
   console.log();
 

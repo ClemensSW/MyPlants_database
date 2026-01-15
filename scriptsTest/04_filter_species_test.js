@@ -58,11 +58,15 @@ async function main() {
           .sort((a, b) => a.length - b.length)[0];
       }
     }
+    // Erweiterte Struktur: 7 Felder
     return {
       taxonKey: obj.taxonKey,
       scientificName: obj.scientificName,
       canonicalName: obj.canonicalName,
-      germanName: germanName
+      germanName: germanName,
+      family: obj.family || null,
+      familyKey: obj.familyKey || null,
+      germanFamilyName: obj.germanFamilyName || null
     };
   };
 

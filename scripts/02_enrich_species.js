@@ -19,6 +19,7 @@ const {
   getVernacularNames,
   filterGermanNames,
   pickPreferredGerman,
+  pickPreferredFamilyName,
   uniqBy,
 } = require('./utils/gbif-helpers');
 
@@ -30,6 +31,38 @@ const CONFIG = {
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
   CONCURRENCY: 10, // Parallele Requests
 };
+
+// In-Memory Cache für Familien (vermeidet redundante API-Calls)
+const familyCache = new Map();
+
+/**
+ * Holt deutsche Familiennamen mit Cache
+ * @param {number} familyKey - GBIF familyKey
+ * @returns {Promise<{germanFamilyName: string|null}>}
+ */
+async function getFamilyData(familyKey) {
+  if (!familyKey) return { germanFamilyName: null };
+
+  // Cache-Check
+  if (familyCache.has(familyKey)) {
+    return familyCache.get(familyKey);
+  }
+
+  // API-Aufruf für deutsche Familiennamen
+  let germanFamilyName = null;
+  try {
+    const familyUsage = await getSpecies(familyKey, 'de');
+    const familyVn = await getVernacularNames(familyKey);
+    const germanNames = filterGermanNames(familyVn.results || []);
+    germanFamilyName = pickPreferredFamilyName(familyUsage, germanNames);
+  } catch (err) {
+    // Fehler ignorieren - Familie bleibt ohne deutschen Namen
+  }
+
+  const result = { germanFamilyName };
+  familyCache.set(familyKey, result);
+  return result;
+}
 
 /**
  * Baut ein vollständiges Species-Dokument für einen taxonKey
@@ -56,6 +89,11 @@ async function buildDocFromTaxonKey(originalKey) {
 
   const germanName = pickPreferredGerman(usage, germanNames);
 
+  // 4) Familie: Botanischer Name direkt aus GBIF, deutscher Name via Cache
+  const family = usage.family || null;
+  const familyKey = usage.familyKey || null;
+  const { germanFamilyName } = await getFamilyData(familyKey);
+
   return {
     // Schlüssel
     taxonKey: usage.key, // eindeutiger Schlüssel im Backbone
@@ -67,6 +105,11 @@ async function buildDocFromTaxonKey(originalKey) {
     canonicalName: usage.canonicalName || null,
     rank: usage.rank || null,
     status: usage.taxonomicStatus || base.taxonomicStatus || null,
+
+    // Familie
+    family,
+    familyKey,
+    germanFamilyName,
 
     // Deutsch
     germanName,

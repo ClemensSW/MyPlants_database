@@ -175,6 +175,34 @@ function pickPreferredGerman(usage, germanNames) {
 }
 
 /**
+ * Wählt den bevorzugten deutschen Familiennamen aus
+ *
+ * WICHTIG: Die gefilterten deutschen Namen aus /vernacularNames haben Priorität,
+ * da GBIF bei /species?language=de oft englische Namen zurückgibt!
+ *
+ * @param {Object} familyUsage - Family-Objekt von GBIF (von /species/{familyKey}) - wird nicht mehr verwendet
+ * @param {Array} germanNames - Array von deutschen Namen (gefiltert auf de/deu/ger)
+ * @returns {string|null} Bevorzugter deutscher Familienname oder null
+ */
+function pickPreferredFamilyName(familyUsage, germanNames) {
+  // Nur die gefilterten deutschen Namen verwenden
+  // (familyUsage.vernacularName ist oft englisch, daher ignorieren)
+  if (germanNames && germanNames.length > 0) {
+    // 1) preferred:true falls vorhanden
+    const pref = germanNames.find((v) => v.preferred);
+    if (pref) return pref.name;
+
+    // 2) Kürzester Name (oft der gebräuchlichste)
+    const shortest = germanNames.reduce((shortest, current) =>
+      current.name.length < shortest.name.length ? current : shortest
+    );
+    return shortest.name;
+  }
+
+  return null;
+}
+
+/**
  * Dedupliziert ein Array nach einem Key
  *
  * @param {Array} arr - Input-Array
@@ -202,6 +230,7 @@ module.exports = {
   // Hilfsfunktionen
   filterGermanNames,
   pickPreferredGerman,
+  pickPreferredFamilyName,
   uniqBy,
   sleep,
 
