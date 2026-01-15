@@ -57,9 +57,16 @@ async function main() {
     // Extrahiere bevorzugten deutschen Namen aus germanNames Array
     let germanName = null;
     if (Array.isArray(obj.germanNames) && obj.germanNames.length > 0) {
-      // Bevorzugte Reihenfolge: preferred:true, dann erster Eintrag
+      // Bevorzugte Reihenfolge: preferred:true, sonst kürzester Name
       const preferred = obj.germanNames.find(g => g.preferred);
-      germanName = preferred ? preferred.name : obj.germanNames[0].name;
+      if (preferred) {
+        germanName = preferred.name;
+      } else {
+        // Kürzesten Namen wählen
+        germanName = obj.germanNames
+          .map(g => g.name)
+          .sort((a, b) => a.length - b.length)[0];
+      }
     }
 
     // Einfache Struktur: nur 4 Felder

@@ -49,7 +49,14 @@ async function main() {
     let germanName = null;
     if (Array.isArray(obj.germanNames) && obj.germanNames.length > 0) {
       const preferred = obj.germanNames.find(g => g.preferred);
-      germanName = preferred ? preferred.name : obj.germanNames[0].name;
+      if (preferred) {
+        germanName = preferred.name;
+      } else {
+        // Kürzesten Namen wählen
+        germanName = obj.germanNames
+          .map(g => g.name)
+          .sort((a, b) => a.length - b.length)[0];
+      }
     }
     return {
       taxonKey: obj.taxonKey,
