@@ -2,6 +2,18 @@
 
 Diese Scripts sind identisch mit den Haupt-Scripts, aber verarbeiten nur **50 Pflanzen** und **max. 10 Bilder pro Art** für schnelles Testen.
 
+## 🚀 Alle Tests auf einmal ausführen
+
+```bash
+npm test
+# oder
+npm run test:all
+```
+
+Dieser Befehl führt alle 5 Phasen nacheinander aus (~6-10 Minuten).
+
+---
+
 ## 🎯 Verwendung
 
 ```bash
