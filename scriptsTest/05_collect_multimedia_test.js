@@ -40,6 +40,31 @@ function readSubjectPartFromMedia(m) {
   return null;
 }
 
+function readSubjectPartFromExtRow(row) {
+  const candidates = [
+    'ac:subjectPart',
+    'subjectPart',
+    'http://rs.tdwg.org/ac/terms/subjectPart',
+    'http://rs.tdwg.org/ac/terms/subject',
+    'http://purl.org/dc/terms/subject',
+  ];
+  for (const k of candidates) {
+    const v = row?.[k];
+    if (typeof v === 'string' && v.trim()) return v.trim().toLowerCase();
+  }
+  return null;
+}
+
+function* iterMultimediaExt(occ) {
+  const ex =
+    occ?.extensions?.['http://rs.tdwg.org/ac/terms/Multimedia'] ||
+    occ?.extensions?.['http://rs.gbif.org/terms/1.0/Multimedia'] ||
+    occ?.extensions?.Multimedia;
+  if (Array.isArray(ex)) {
+    for (const row of ex) yield row;
+  }
+}
+
 function readOrganFromUrl(identifier) {
   try {
     const u = new URL(identifier);
@@ -60,6 +85,32 @@ function extractImagesFromOccurrence(occ) {
   const mediaItems = Array.isArray(occ?.media) ? occ.media : [];
   const occurrenceKey = occ.key ?? occ.gbifID ?? null;
 
+  // 1) ZUERST: Audubon Core Extension (enthält Organ-Tags!)
+  for (const row of iterMultimediaExt(occ)) {
+    const id = row?.identifier ||
+               row?.['http://rs.tdwg.org/ac/terms/accessURI'] ||
+               row?.['http://purl.org/dc/terms/identifier'];
+    if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
+
+    const tag = readSubjectPartFromExtRow(row) || readOrganFromUrl(id);
+    out.push({
+      url: gbifImageUrl(id, occurrenceKey),
+      tag: tag || null,
+      occurrenceKey,
+      license:
+        row?.license ||
+        row?.['http://purl.org/dc/terms/license'] ||
+        occ?.license ||
+        null,
+      rightsHolder:
+        row?.rightsHolder ||
+        row?.['http://purl.org/dc/terms/rightsHolder'] ||
+        occ?.rightsHolder ||
+        null,
+    });
+  }
+
+  // 2) DANACH: media[] als Fallback
   for (const m of mediaItems) {
     const id = m?.identifier;
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
@@ -74,7 +125,7 @@ function extractImagesFromOccurrence(occ) {
     });
   }
 
-  // Deduplizierung nach URL (GBIF URLs sind bereits eindeutig)
+  // Deduplizierung behält jetzt Extension-Einträge (mit Tags)
   const seen = new Set();
   return out.filter((rec) => {
     if (seen.has(rec.url)) return false;

@@ -107,24 +107,13 @@ function* iterMultimediaExt(occ) {
 function extractImagesFromOccurrence(occ) {
   const out = [];
   const mediaItems = Array.isArray(occ?.media) ? occ.media : [];
-
   const occurrenceKey = occ.key ?? occ.gbifID ?? null;
-  for (const m of mediaItems) {
-    const id = m?.identifier;
-    if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
 
-    const tag = readSubjectPartFromMedia(m) || readOrganFromUrl(id);
-    out.push({
-      url: gbifImageUrl(id, occurrenceKey),
-      tag: tag || null,
-      occurrenceKey,
-      license: m?.license || occ?.license || null,
-      rightsHolder: m?.rightsHolder || occ?.rightsHolder || null,
-    });
-  }
-
+  // 1) ZUERST: Audubon Core Extension (enthält Organ-Tags!)
   for (const row of iterMultimediaExt(occ)) {
-    const id = row?.identifier || row?.['http://purl.org/dc/terms/identifier'];
+    const id = row?.identifier ||
+               row?.['http://rs.tdwg.org/ac/terms/accessURI'] ||
+               row?.['http://purl.org/dc/terms/identifier'];
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
 
     const tag = readSubjectPartFromExtRow(row) || readOrganFromUrl(id);
@@ -145,6 +134,22 @@ function extractImagesFromOccurrence(occ) {
     });
   }
 
+  // 2) DANACH: media[] als Fallback
+  for (const m of mediaItems) {
+    const id = m?.identifier;
+    if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
+
+    const tag = readSubjectPartFromMedia(m) || readOrganFromUrl(id);
+    out.push({
+      url: gbifImageUrl(id, occurrenceKey),
+      tag: tag || null,
+      occurrenceKey,
+      license: m?.license || occ?.license || null,
+      rightsHolder: m?.rightsHolder || occ?.rightsHolder || null,
+    });
+  }
+
+  // Deduplizierung behält jetzt Extension-Einträge (mit Tags)
   const seen = new Set();
   return out.filter((rec) => {
     if (seen.has(rec.url)) return false;
