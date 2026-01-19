@@ -80,6 +80,22 @@ function readOrganFromUrl(identifier) {
   }
 }
 
+function getLicenseShort(licenseUrl) {
+  if (!licenseUrl) return null;
+  const url = String(licenseUrl).toLowerCase();
+
+  if (/^cc-/.test(url)) return url;
+  if (/^cc\s+by/i.test(url)) {
+    return url.replace(/\s+/g, '-').replace(/-?\d+\.\d+/, '').toLowerCase().replace(/-+$/, '');
+  }
+  if (url.includes('creativecommons.org/licenses/')) {
+    const match = url.match(/licenses\/([a-z-]+)/);
+    if (match) return `cc-${match[1]}`;
+  }
+  if (url.includes('publicdomain/zero')) return 'cc-0';
+  return licenseUrl;
+}
+
 function extractImagesFromOccurrence(occ) {
   const out = [];
   const mediaItems = Array.isArray(occ?.media) ? occ.media : [];
@@ -93,20 +109,23 @@ function extractImagesFromOccurrence(occ) {
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
 
     const tag = readSubjectPartFromExtRow(row) || readOrganFromUrl(id);
+    const creator = row?.['http://purl.org/dc/terms/creator'] ||
+                    row?.['http://purl.org/dc/elements/1.1/creator'] ||
+                    row?.creator ||
+                    row?.rightsHolder ||
+                    row?.['http://purl.org/dc/terms/rightsHolder'] ||
+                    occ?.rightsHolder ||
+                    null;
+    const license = row?.license ||
+                    row?.['http://purl.org/dc/terms/license'] ||
+                    occ?.license ||
+                    null;
     out.push({
       url: gbifImageUrl(id, occurrenceKey),
       tag: tag || null,
       occurrenceKey,
-      license:
-        row?.license ||
-        row?.['http://purl.org/dc/terms/license'] ||
-        occ?.license ||
-        null,
-      rightsHolder:
-        row?.rightsHolder ||
-        row?.['http://purl.org/dc/terms/rightsHolder'] ||
-        occ?.rightsHolder ||
-        null,
+      creator,
+      license,
     });
   }
 
@@ -116,12 +135,14 @@ function extractImagesFromOccurrence(occ) {
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
 
     const tag = readSubjectPartFromMedia(m) || readOrganFromUrl(id);
+    const creator = m?.creator || m?.rightsHolder || occ?.rightsHolder || null;
+    const license = m?.license || occ?.license || null;
     out.push({
       url: gbifImageUrl(id, occurrenceKey),
       tag: tag || null,
       occurrenceKey,
-      license: m?.license || occ?.license || null,
-      rightsHolder: m?.rightsHolder || occ?.rightsHolder || null,
+      creator,
+      license,
     });
   }
 
@@ -197,7 +218,8 @@ async function main() {
           organ: img.tag,
           occurrenceId: img.occurrenceKey,
           url: img.url,
-          license: img.license,
+          creator: img.creator || null,
+          license: getLicenseShort(img.license),
           wilsonScore: null,
         };
         out.write(JSON.stringify(record) + '\n');

@@ -105,6 +105,33 @@ function* iterMultimediaExt(occ) {
 }
 
 /**
+ * Konvertiert Lizenz-URL in Kurzformat
+ */
+function getLicenseShort(licenseUrl) {
+  if (!licenseUrl) return null;
+  const url = String(licenseUrl).toLowerCase();
+
+  // Bereits Kurzformat (cc-by-sa, cc-by, etc.)
+  if (/^cc-/.test(url)) return url;
+
+  // Text-Format "CC BY-SA 4.0" → "cc-by-sa"
+  if (/^cc\s+by/i.test(url)) {
+    return url.replace(/\s+/g, '-').replace(/-?\d+\.\d+/, '').toLowerCase().replace(/-+$/, '');
+  }
+
+  // URL-Format → extrahiere Lizenztyp
+  if (url.includes('creativecommons.org/licenses/')) {
+    const match = url.match(/licenses\/([a-z-]+)/);
+    if (match) return `cc-${match[1]}`;
+  }
+
+  // CC0/Public Domain
+  if (url.includes('publicdomain/zero')) return 'cc-0';
+
+  return licenseUrl; // Fallback: Original behalten
+}
+
+/**
  * Extrahiert alle Bilder aus einem Occurrence
  */
 function extractImagesFromOccurrence(occ) {
@@ -120,20 +147,23 @@ function extractImagesFromOccurrence(occ) {
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
 
     const tag = readSubjectPartFromExtRow(row) || readOrganFromUrl(id);
+    const creator = row?.['http://purl.org/dc/terms/creator'] ||
+                    row?.['http://purl.org/dc/elements/1.1/creator'] ||
+                    row?.creator ||
+                    row?.rightsHolder ||
+                    row?.['http://purl.org/dc/terms/rightsHolder'] ||
+                    occ?.rightsHolder ||
+                    null;
+    const license = row?.license ||
+                    row?.['http://purl.org/dc/terms/license'] ||
+                    occ?.license ||
+                    null;
     out.push({
       url: gbifImageUrl(id, occurrenceKey),
       tag: tag || null,
       occurrenceKey,
-      license:
-        row?.license ||
-        row?.['http://purl.org/dc/terms/license'] ||
-        occ?.license ||
-        null,
-      rightsHolder:
-        row?.rightsHolder ||
-        row?.['http://purl.org/dc/terms/rightsHolder'] ||
-        occ?.rightsHolder ||
-        null,
+      creator,
+      license,
     });
   }
 
@@ -143,12 +173,14 @@ function extractImagesFromOccurrence(occ) {
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
 
     const tag = readSubjectPartFromMedia(m) || readOrganFromUrl(id);
+    const creator = m?.creator || m?.rightsHolder || occ?.rightsHolder || null;
+    const license = m?.license || occ?.license || null;
     out.push({
       url: gbifImageUrl(id, occurrenceKey),
       tag: tag || null,
       occurrenceKey,
-      license: m?.license || occ?.license || null,
-      rightsHolder: m?.rightsHolder || occ?.rightsHolder || null,
+      creator,
+      license,
     });
   }
 
@@ -242,7 +274,8 @@ async function main() {
             organ: img.tag,
             occurrenceId: img.occurrenceKey,
             url: img.url,
-            license: img.license,
+            creator: img.creator || null,
+            license: getLicenseShort(img.license),
             wilsonScore: null, // Placeholder für zukünftige Bewertung
           };
           out.write(JSON.stringify(record) + '\n');
