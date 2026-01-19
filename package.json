@@ -9,6 +9,7 @@
     "enrich-wikidata": "node scripts/03_enrich_wikidata.js",
     "filter-species": "node scripts/04_filter_species.js",
     "collect-multimedia": "node scripts/05_collect_multimedia.js",
+    "retry-multimedia": "node scripts/05b_retry_multimedia.js",
     "build-all": "npm run fetch-keys && npm run enrich-species && npm run enrich-wikidata && npm run filter-species && npm run collect-multimedia",
     "build-species": "npm run fetch-keys && npm run enrich-species && npm run enrich-wikidata && npm run filter-species",
     "test:fetch": "node scriptsTest/01_fetch_taxonkeys_test.js",

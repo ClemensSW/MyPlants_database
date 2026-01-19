@@ -70,9 +70,19 @@ Die Test-Scripts haben folgende Limits:
 | Concurrency Phase 2 | 10 | **5** |
 | Batch Size Phase 3 | 50 | **50** |
 | Batch Delay Phase 3 | 1000ms | **500ms** |
-| Concurrency Phase 5 | 6 | **3** |
+| Concurrency Phase 5 | 3 | **3** |
 | Bilder pro Art | Unbegrenzt | **10** |
 | Page Size Phase 5 | 300 | **50** |
+
+## 🔄 Bei Fehlern in Phase 5
+
+Falls bei Phase 5 429-Fehler (Rate Limit) auftreten:
+
+```bash
+npm run retry-multimedia
+```
+
+Dieses Script lädt fehlgeschlagene Keys nach und funktioniert auch für Test-Daten.
 
 ## ✅ Nach dem Test
 

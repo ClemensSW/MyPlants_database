@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 /**
- * Phase 5: Multimedia-Daten sammeln
+ * Phase 5b: Fehlgeschlagene Multimedia-Keys erneut verarbeiten
  *
- * Sammelt Bild-URLs mit Organ-Tags für alle Species aus der GBIF Occurrence API.
- * Extrahiert Tags aus Audubon Core (ac:subjectPart) oder URL-Parametern.
- * Alle URLs nutzen die GBIF Image API (unbegrenzter Cache).
+ * Liest taxonKeys aus failed_multimedia_keys.txt und versucht erneut,
+ * die Bilder zu sammeln. Verwendet niedrigere Concurrency und längere Pausen.
  *
- * Input:  data/output/species.ndjson
- * Output: data/output/multimedia.ndjson
+ * Input:  data/intermediate/failed_multimedia_keys.txt
+ * Output: data/output/multimedia.ndjson (Anhängen)
  *
- * Usage: node scripts/05_collect_multimedia.js
+ * Usage: node scripts/05b_retry_multimedia.js
  */
 
 const fs = require('fs');
@@ -19,20 +18,20 @@ const crypto = require('crypto');
 const pLimit = require('p-limit');
 const { searchOccurrences, sleep } = require('./utils/gbif-helpers');
 
-// Konfiguration
+// Konfiguration - konservativer als Hauptscript
 const CONFIG = {
-  INPUT_FILE: path.join(__dirname, '../data/output/species.ndjson'),
+  INPUT_FILE: path.join(__dirname, '../data/intermediate/failed_multimedia_keys.txt'),
   OUTPUT_FILE: path.join(__dirname, '../data/output/multimedia.ndjson'),
-  FAILED_FILE: path.join(__dirname, '../data/intermediate/failed_multimedia_keys.txt'),
+  FAILED_FILE: path.join(__dirname, '../data/intermediate/failed_multimedia_keys_retry.txt'),
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
-  CONCURRENCY: 3,
+  CONCURRENCY: 2,
   PAGE_SIZE: 300,
+  DELAY_BETWEEN_REQUESTS: 500,
   GBIF_IMAGE_BASE: 'https://api.gbif.org/v1/image/cache/occurrence',
 };
 
 /**
  * Generiert GBIF Image API URL
- * Format: https://api.gbif.org/v1/image/cache/occurrence/{occurrenceId}/media/{md5}
  */
 function gbifImageUrl(originalUrl, occurrenceKey) {
   const md5 = crypto.createHash('md5').update(originalUrl).digest('hex');
@@ -78,7 +77,6 @@ function readOrganFromUrl(identifier) {
     const organ = u.searchParams.get('organ') || u.searchParams.get('organs');
     if (organ && organ.trim()) return organ.toLowerCase();
 
-    // Alternativ aus Pfad
     const p = u.pathname.toLowerCase();
     const hit = ['leaf', 'flower', 'fruit', 'bark', 'habit', 'other'].find((k) =>
       p.includes(`/${k}/`)
@@ -109,7 +107,6 @@ function extractImagesFromOccurrence(occ) {
   const out = [];
   const mediaItems = Array.isArray(occ?.media) ? occ.media : [];
 
-  // 1) aus media[]
   const occurrenceKey = occ.key ?? occ.gbifID ?? null;
   for (const m of mediaItems) {
     const id = m?.identifier;
@@ -125,7 +122,6 @@ function extractImagesFromOccurrence(occ) {
     });
   }
 
-  // 2) aus Audubon Core Extension
   for (const row of iterMultimediaExt(occ)) {
     const id = row?.identifier || row?.['http://purl.org/dc/terms/identifier'];
     if (!id || typeof id !== 'string' || !/^https?:\/\//i.test(id)) continue;
@@ -148,7 +144,6 @@ function extractImagesFromOccurrence(occ) {
     });
   }
 
-  // Deduplizierung nach URL (GBIF URLs sind bereits eindeutig)
   const seen = new Set();
   return out.filter((rec) => {
     if (seen.has(rec.url)) return false;
@@ -160,7 +155,7 @@ function extractImagesFromOccurrence(occ) {
 /**
  * Sammelt alle Bilder für einen taxonKey
  */
-async function collectImagesForTaxon(taxonKey, canonicalName) {
+async function collectImagesForTaxon(taxonKey) {
   const images = [];
   let offset = 0;
 
@@ -180,131 +175,125 @@ async function collectImagesForTaxon(taxonKey, canonicalName) {
     if (data.endOfRecords) break;
     offset += CONFIG.PAGE_SIZE;
 
-    // Warnung bei sehr vielen Occurrences
-    if (offset >= 100000) {
-      console.warn(
-        `\n⚠ taxonKey ${taxonKey}: >=100k Occurrences (API-Limit erreicht möglich)`
-      );
-    }
+    // Zusätzliche Pause zwischen Seiten
+    await sleep(CONFIG.DELAY_BETWEEN_REQUESTS);
   }
 
   return images;
 }
 
 /**
- * Schreibt Multimedia-Einträge für alle Species
+ * Hauptfunktion
  */
 async function main() {
   console.log('='.repeat(60));
-  console.log('Phase 5: Multimedia-Daten sammeln');
+  console.log('Phase 5b: Fehlgeschlagene Multimedia-Keys erneut verarbeiten');
   console.log('='.repeat(60));
-  console.log(`Input:  ${CONFIG.INPUT_FILE}`);
-  console.log(`Output: ${CONFIG.OUTPUT_FILE}`);
-  console.log();
 
-  const rl = readline.createInterface({
-    input: fs.createReadStream(CONFIG.INPUT_FILE, 'utf8'),
-    crlfDelay: Infinity,
-  });
-
-  const out = fs.createWriteStream(CONFIG.OUTPUT_FILE, { flags: 'w' });
-  const failedOut = fs.createWriteStream(CONFIG.FAILED_FILE, { flags: 'w' });
-  const queue = [];
-  let active = 0;
-  let seen = 0;
-  let done = 0;
-  let totalImages = 0;
-  let failedCount = 0;
-
-  const limit = pLimit(CONFIG.CONCURRENCY);
-
-  function kick() {
-    if (active >= CONFIG.CONCURRENCY || queue.length === 0) return;
-    const job = queue.shift();
-    active++;
-
-    limit(async () => {
-      try {
-        const images = await collectImagesForTaxon(job.taxonKey, job.canonicalName);
-
-        // Schreibe jedes Bild als separate NDJSON-Zeile
-        for (const img of images) {
-          const record = {
-            taxonKey: job.taxonKey,
-            species: job.scientificName,
-            organ: img.tag,
-            occurrenceId: img.occurrenceKey,
-            url: img.url,
-            license: img.license,
-            wilsonScore: null, // Placeholder für zukünftige Bewertung
-          };
-          out.write(JSON.stringify(record) + '\n');
-          totalImages++;
-        }
-      } catch (e) {
-        console.error(`\n❌ Fehler bei taxonKey ${job.taxonKey}: ${e.message}`);
-        failedOut.write(`${job.taxonKey}\t${job.scientificName}\t${e.message}\n`);
-        failedCount++;
-      } finally {
-        active--;
-        done++;
-
-        if (process.stdout.isTTY) {
-          const percent = ((done / seen) * 100).toFixed(1);
-          process.stdout.write(
-            `\rVerarbeitet: ${done}/${seen} (${percent}%) | Bilder: ${totalImages}`
-          );
-        }
-
-        kick();
-      }
-    });
+  // Prüfe ob Input-Datei existiert
+  if (!fs.existsSync(CONFIG.INPUT_FILE)) {
+    console.log(`\n✓ Keine fehlgeschlagenen Keys gefunden.`);
+    console.log(`  (${CONFIG.INPUT_FILE} existiert nicht)`);
+    return;
   }
 
-  // Species einlesen
-  rl.on('line', (line) => {
-    if (!line.trim()) return;
+  const content = fs.readFileSync(CONFIG.INPUT_FILE, 'utf8');
+  const lines = content.trim().split('\n').filter(l => l.trim());
 
+  if (lines.length === 0) {
+    console.log(`\n✓ Keine fehlgeschlagenen Keys zum Verarbeiten.`);
+    return;
+  }
+
+  console.log(`Input:  ${CONFIG.INPUT_FILE}`);
+  console.log(`Output: ${CONFIG.OUTPUT_FILE} (Anhängen)`);
+  console.log(`\n⚙ Keys zu verarbeiten: ${lines.length}`);
+  console.log(`⚙ Concurrency: ${CONFIG.CONCURRENCY}`);
+  console.log();
+
+  // Parse failed keys (Format: taxonKey\tscientificName\terrorMessage)
+  const jobs = lines.map(line => {
+    const [taxonKey, scientificName] = line.split('\t');
+    return { taxonKey: parseInt(taxonKey, 10), scientificName: scientificName || '' };
+  }).filter(j => !isNaN(j.taxonKey));
+
+  const out = fs.createWriteStream(CONFIG.OUTPUT_FILE, { flags: 'a' }); // Anhängen!
+  const failedOut = fs.createWriteStream(CONFIG.FAILED_FILE, { flags: 'w' });
+
+  const limit = pLimit(CONFIG.CONCURRENCY);
+  let done = 0;
+  let totalImages = 0;
+  let successCount = 0;
+  let failedCount = 0;
+
+  const tasks = jobs.map(job => limit(async () => {
     try {
-      const obj = JSON.parse(line);
-      const taxonKey = obj?.taxonKey;
-      const canonicalName = obj?.canonicalName;
-      const scientificName = obj?.scientificName;
+      // Zusätzliche Pause vor jedem Request
+      await sleep(CONFIG.DELAY_BETWEEN_REQUESTS);
 
-      if (taxonKey) {
-        queue.push({ taxonKey, canonicalName, scientificName });
-        seen++;
-        kick();
+      const images = await collectImagesForTaxon(job.taxonKey);
+
+      for (const img of images) {
+        const record = {
+          taxonKey: job.taxonKey,
+          species: job.scientificName,
+          organ: img.tag,
+          occurrenceId: img.occurrenceKey,
+          url: img.url,
+          license: img.license,
+          wilsonScore: null,
+        };
+        out.write(JSON.stringify(record) + '\n');
+        totalImages++;
       }
+
+      successCount++;
     } catch (e) {
-      // Ignoriere ungültige Zeilen
+      console.error(`\n❌ Erneut fehlgeschlagen: taxonKey ${job.taxonKey}: ${e.message}`);
+      failedOut.write(`${job.taxonKey}\t${job.scientificName}\t${e.message}\n`);
+      failedCount++;
+    } finally {
+      done++;
+      if (process.stdout.isTTY) {
+        const percent = ((done / jobs.length) * 100).toFixed(1);
+        process.stdout.write(
+          `\rVerarbeitet: ${done}/${jobs.length} (${percent}%) | Bilder: ${totalImages}`
+        );
+      }
     }
-  });
+  }));
 
-  rl.on('close', async () => {
-    // Warte bis alle Worker fertig sind
-    while (active > 0 || queue.length > 0) {
-      kick();
-      await sleep(200);
+  await Promise.all(tasks);
+
+  out.end();
+  failedOut.end();
+
+  console.log();
+  console.log();
+  console.log(`✓ Erfolgreich nachgeladen: ${successCount}/${jobs.length}`);
+  console.log(`✓ Bilder gesammelt:        ${totalImages}`);
+
+  if (failedCount > 0) {
+    console.log(`✗ Weiterhin fehlgeschlagen: ${failedCount}`);
+    console.log(`  → Gespeichert in: ${CONFIG.FAILED_FILE}`);
+
+    // Ersetze alte failed-Datei mit neuer
+    fs.renameSync(CONFIG.FAILED_FILE, CONFIG.INPUT_FILE);
+    console.log(`  → Originaldatei aktualisiert für weiteren Retry`);
+  } else {
+    // Alle erfolgreich - lösche failed files
+    fs.unlinkSync(CONFIG.INPUT_FILE);
+    if (fs.existsSync(CONFIG.FAILED_FILE)) {
+      fs.unlinkSync(CONFIG.FAILED_FILE);
     }
+    console.log(`\n✓ Alle Keys erfolgreich verarbeitet!`);
+    console.log(`  → ${CONFIG.INPUT_FILE} gelöscht`);
+  }
 
-    out.end();
-    failedOut.end();
-
-    console.log();
-    console.log();
-    console.log(`✓ Species verarbeitet: ${done}/${seen}`);
-    console.log(`✓ Bilder gesammelt:    ${totalImages}`);
-    if (failedCount > 0) {
-      console.log(`✗ Fehlgeschlagen:      ${failedCount}`);
-      console.log(`  → Gespeichert in:    ${CONFIG.FAILED_FILE}`);
-      console.log(`  → Zum Nachladen:     npm run retry-multimedia`);
-    }
-    console.log();
-    console.log(`✓ Gespeichert: ${CONFIG.OUTPUT_FILE}`);
-    console.log();
-    console.log('Phase 5 abgeschlossen!');
-  });
+  console.log();
+  console.log(`✓ Angehängt an: ${CONFIG.OUTPUT_FILE}`);
+  console.log();
+  console.log('Phase 5b abgeschlossen!');
 }
 
 // Script ausführen

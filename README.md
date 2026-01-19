@@ -57,6 +57,9 @@ npm run filter-species
 # Phase 5: Multimedia sammeln
 npm run collect-multimedia
 
+# Phase 5b: Falls bei Phase 5 Fehler auftreten (429 Rate Limit)
+npm run retry-multimedia
+
 # ODER: Alle Phasen nacheinander
 npm run build-all
 ```
@@ -85,6 +88,7 @@ my-plants_database/
 │   ├── 03_enrich_wikidata.js          # Phase 2.5 (Wikidata) ⭐ NEU
 │   ├── 04_filter_species.js           # Phase 4
 │   ├── 05_collect_multimedia.js       # Phase 5
+│   ├── 05b_retry_multimedia.js        # Phase 5b: Fehlgeschlagene Keys nachladen
 │   └── utils/
 │       ├── gbif-helpers.js            # GBIF API Funktionen
 │       ├── wikidata-helpers.js        # Wikidata SPARQL Funktionen ⭐ NEU
@@ -102,7 +106,8 @@ my-plants_database/
 │   └── intermediate/                  # Zwischenschritte
 │       ├── plantnet_taxonKeys.json
 │       ├── plantnet_species_raw.ndjson
-│       └── plantnet_species_enriched.ndjson ⭐ NEU
+│       ├── plantnet_species_enriched.ndjson
+│       └── failed_multimedia_keys.txt # Fehlgeschlagene Keys aus Phase 5
 └── package.json
 ```
 
@@ -151,8 +156,15 @@ graph TD
    - Sammelt Bilder für jede Species aus GBIF Occurrences
    - Extrahiert Organ-Tags (leaf, flower, etc.)
    - Nutzt GBIF Image API (unbegrenzter Cache)
+   - Bei Fehlern: Keys werden in `failed_multimedia_keys.txt` gespeichert
    - Output: `multimedia.ndjson`
    - Dauer: ~6-12 Std
+
+6. **Phase 5b: Retry fehlgeschlagene Keys** (optional)
+   - Lädt fehlgeschlagene Keys aus Phase 5 nach
+   - Niedrigere Concurrency und längere Pausen
+   - Hängt Bilder an `multimedia.ndjson` an
+   - Befehl: `npm run retry-multimedia`
 
 ## 🖼️ Bild-URLs in der App verwenden
 

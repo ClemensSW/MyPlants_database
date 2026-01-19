@@ -11,7 +11,7 @@ const axios = require('axios');
 const GBIF_API_BASE = 'https://api.gbif.org/v1';
 const DEFAULT_TIMEOUT = 20000;
 const DEFAULT_RETRIES = 5;
-const BASE_BACKOFF_MS = 500;
+const BASE_BACKOFF_MS = 1000;
 
 /**
  * Wartet eine bestimmte Zeit (async sleep)
