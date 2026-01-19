@@ -9,9 +9,10 @@ const axios = require('axios');
 
 // Konstanten
 const GBIF_API_BASE = 'https://api.gbif.org/v1';
-const DEFAULT_TIMEOUT = 20000;
-const DEFAULT_RETRIES = 5;
-const BASE_BACKOFF_MS = 1000;
+const DEFAULT_TIMEOUT = 30000;
+const DEFAULT_RETRIES = 10;
+const BASE_BACKOFF_MS = 2000;
+const USER_AGENT = 'my-plants-database/1.0 (https://github.com/ClemensSW/my-plants_database)';
 
 /**
  * Wartet eine bestimmte Zeit (async sleep)
@@ -33,7 +34,10 @@ function sleep(ms) {
 async function fetchWithRetry(url, tries = DEFAULT_RETRIES, timeout = DEFAULT_TIMEOUT) {
   for (let i = 0; i < tries; i++) {
     try {
-      const res = await axios.get(url, { timeout });
+      const res = await axios.get(url, {
+        timeout,
+        headers: { 'User-Agent': USER_AGENT }
+      });
       return res.data;
     } catch (err) {
       const status = err.response?.status;
@@ -43,8 +47,26 @@ async function fetchWithRetry(url, tries = DEFAULT_RETRIES, timeout = DEFAULT_TI
         i < tries - 1 &&
         (status === 429 || (status >= 500 && status <= 599) || !status)
       ) {
-        const backoff = BASE_BACKOFF_MS * Math.pow(2, i);
-        await sleep(backoff);
+        // Basis-Backoff mit exponentieller Steigerung
+        let waitTime = BASE_BACKOFF_MS * Math.pow(2, i);
+
+        // Retry-After Header respektieren (falls vorhanden)
+        const retryAfter = err.response?.headers?.['retry-after'];
+        if (retryAfter) {
+          const retryAfterMs = parseInt(retryAfter, 10) * 1000;
+          if (!isNaN(retryAfterMs)) {
+            waitTime = Math.max(waitTime, retryAfterMs);
+          }
+        }
+
+        // Jitter hinzufügen (±20%) um Thundering Herd zu vermeiden
+        waitTime = Math.round(waitTime * (0.8 + Math.random() * 0.4));
+
+        if (status === 429) {
+          console.log(`\n⏳ Rate Limit (429) bei Versuch ${i + 1}/${tries}, warte ${Math.round(waitTime / 1000)}s...`);
+        }
+
+        await sleep(waitTime);
         continue;
       }
       throw err;

@@ -18,15 +18,16 @@ const crypto = require('crypto');
 const pLimit = require('p-limit');
 const { searchOccurrences, sleep } = require('./utils/gbif-helpers');
 
-// Konfiguration - konservativer als Hauptscript
+// Konfiguration - SEHR konservativ für schwierige Keys
 const CONFIG = {
   INPUT_FILE: path.join(__dirname, '../data/intermediate/failed_multimedia_keys.txt'),
   OUTPUT_FILE: path.join(__dirname, '../data/output/multimedia.ndjson'),
   FAILED_FILE: path.join(__dirname, '../data/intermediate/failed_multimedia_keys_retry.txt'),
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
-  CONCURRENCY: 2,
+  CONCURRENCY: 1,                    // Strikt sequentiell
   PAGE_SIZE: 300,
-  DELAY_BETWEEN_REQUESTS: 500,
+  DELAY_BETWEEN_REQUESTS: 2000,      // 2 Sekunden zwischen Species
+  DELAY_BETWEEN_PAGES: 500,          // 500ms zwischen Seiten
   GBIF_IMAGE_BASE: 'https://api.gbif.org/v1/image/cache/occurrence',
 };
 
@@ -175,8 +176,8 @@ async function collectImagesForTaxon(taxonKey) {
     if (data.endOfRecords) break;
     offset += CONFIG.PAGE_SIZE;
 
-    // Zusätzliche Pause zwischen Seiten
-    await sleep(CONFIG.DELAY_BETWEEN_REQUESTS);
+    // Längere Pause zwischen Seiten für schwierige Keys
+    await sleep(CONFIG.DELAY_BETWEEN_PAGES);
   }
 
   return images;

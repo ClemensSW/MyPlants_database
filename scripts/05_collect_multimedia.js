@@ -19,14 +19,16 @@ const crypto = require('crypto');
 const pLimit = require('p-limit');
 const { searchOccurrences, sleep } = require('./utils/gbif-helpers');
 
-// Konfiguration
+// Konfiguration - optimiert für 100% Zuverlässigkeit
 const CONFIG = {
   INPUT_FILE: path.join(__dirname, '../data/output/species.ndjson'),
   OUTPUT_FILE: path.join(__dirname, '../data/output/multimedia.ndjson'),
   FAILED_FILE: path.join(__dirname, '../data/intermediate/failed_multimedia_keys.txt'),
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
-  CONCURRENCY: 3,
+  CONCURRENCY: 1,                    // Sequentiell um Rate Limits zu vermeiden
   PAGE_SIZE: 300,
+  DELAY_BETWEEN_SPECIES: 500,        // 500ms Pause zwischen Species
+  DELAY_BETWEEN_PAGES: 200,          // 200ms Pause zwischen Seiten
   GBIF_IMAGE_BASE: 'https://api.gbif.org/v1/image/cache/occurrence',
 };
 
@@ -180,6 +182,9 @@ async function collectImagesForTaxon(taxonKey, canonicalName) {
     if (data.endOfRecords) break;
     offset += CONFIG.PAGE_SIZE;
 
+    // Pause zwischen Seiten (wichtig für Species mit vielen Bildern)
+    await sleep(CONFIG.DELAY_BETWEEN_PAGES);
+
     // Warnung bei sehr vielen Occurrences
     if (offset >= 100000) {
       console.warn(
@@ -255,6 +260,9 @@ async function main() {
             `\rVerarbeitet: ${done}/${seen} (${percent}%) | Bilder: ${totalImages}`
           );
         }
+
+        // Pause zwischen Species um Rate Limits zu vermeiden
+        await sleep(CONFIG.DELAY_BETWEEN_SPECIES);
 
         kick();
       }
