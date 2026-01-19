@@ -75,8 +75,8 @@ async function main() {
       scientificName: obj.scientificName,
       canonicalName: obj.canonicalName,
       germanName: germanName,
-      family: obj.family || null,
       familyKey: obj.familyKey || null,
+      family: obj.family || null,
       germanFamilyName: obj.germanFamilyName || null
     };
   };
