@@ -200,13 +200,13 @@ async function getAllTaxonKeysFromDataset(datasetKey, facetLimit = 10000) {
  */
 function filterGermanNames(vernacularNames) {
   return (vernacularNames || [])
-    .filter((v) => v?.vernacularName)
+    .filter((v) => v?.vernacularName?.trim())
     .filter((v) => {
       const lang = (v.language || '').toLowerCase();
       return lang === 'de' || lang === 'deu' || lang === 'ger';
     })
     .map((v) => ({
-      name: v.vernacularName,
+      name: v.vernacularName.trim(),
       preferred: !!v.preferred,
       source: v.source || null,
     }));
