@@ -87,14 +87,56 @@ async function getSpecies(taxonKey, language = 'de') {
 }
 
 /**
- * Holt alle Trivialnamen (vernacular names) für ein Taxon
+ * Holt alle Trivialnamen (vernacular names) für ein Taxon mit vollständiger Pagination
+ *
+ * WICHTIG: Implementiert jetzt Pagination, da GBIF standardmäßig nur 100 Einträge zurückgibt.
+ * Bei Arten mit vielen Trivialnamen (z.B. Taraxacum officinale) werden nun ALLE Namen geladen.
  *
  * @param {number} taxonKey - GBIF taxonKey
- * @returns {Promise<Object>} Vernacular names Response
+ * @param {number} limit - Anzahl Einträge pro Seite (default: 1000)
+ * @returns {Promise<Object>} Vernacular names Response mit allen Ergebnissen
  */
-async function getVernacularNames(taxonKey) {
-  const url = `${GBIF_API_BASE}/species/${taxonKey}/vernacularNames`;
-  return fetchWithRetry(url);
+async function getVernacularNames(taxonKey, limit = 1000) {
+  const allResults = [];
+  let offset = 0;
+  let page = 0;
+
+  while (true) {
+    const url = `${GBIF_API_BASE}/species/${taxonKey}/vernacularNames?limit=${limit}&offset=${offset}`;
+    const data = await fetchWithRetry(url);
+
+    // Ergebnisse sammeln
+    const pageResults = data?.results || [];
+    allResults.push(...pageResults);
+
+    page++;
+
+    // Pagination-Status prüfen
+    if (data.endOfRecords || pageResults.length === 0) {
+      break;
+    }
+
+    // Offset für nächste Seite erhöhen
+    offset += limit;
+
+    // Rate-Limiting zwischen Requests (API-freundlich)
+    await sleep(75); // 75ms zwischen Seiten
+
+    // Warnung bei sehr vielen Namen (unwahrscheinlich, aber möglich)
+    if (offset >= 10000) {
+      console.warn(
+        `\n⚠ taxonKey ${taxonKey}: >=10k vernacular names (ungewöhnlich viele)`
+      );
+    }
+  }
+
+  // Return-Format kompatibel mit bestehendem Code halten
+  return {
+    offset: 0,
+    limit: allResults.length,
+    endOfRecords: true,
+    results: allResults,
+  };
 }
 
 /**
