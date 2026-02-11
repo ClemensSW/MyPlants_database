@@ -69,13 +69,19 @@ async function querySparqlWithRetry(sparqlQuery, tries = DEFAULT_RETRIES, timeou
  * @returns {Promise<Array>} Array von deutschen Namen [{name, preferred, source}]
  */
 async function queryWikidataGermanNames(scientificName) {
-  // SPARQL Query: Suche nach P225 (taxon name) → P1843 (common name, lang=de)
+  // SPARQL Query: Suche nach P225 (taxon name) → P1843 (common name) ODER rdfs:label (lang=de)
   // WICHTIG: canonicalName (ohne Autorennamen) liefert bessere Treffer, da Wikidata P225 oft ohne Autorennamen speichert
+  // UNION mit rdfs:label nötig, weil viele Arten den deutschen Namen nur als Item-Label haben, nicht als P1843
   const sparql = `
     SELECT DISTINCT ?germanName WHERE {
       ?item wdt:P225 "${scientificName}" .
-      ?item wdt:P1843 ?germanName .
-      FILTER(LANG(?germanName) = "de")
+      {
+        ?item wdt:P1843 ?germanName .
+        FILTER(LANG(?germanName) = "de")
+      } UNION {
+        ?item rdfs:label ?germanName .
+        FILTER(LANG(?germanName) = "de")
+      }
     }
     LIMIT 10
   `;
@@ -85,9 +91,11 @@ async function queryWikidataGermanNames(scientificName) {
     const bindings = data?.results?.bindings || [];
 
     // Extrahiere deutsche Namen
+    // Sicherheitsfilter: rdfs:label kann auch den wissenschaftlichen Namen enthalten
     const germanNames = bindings
       .map(b => b.germanName?.value)
       .filter(name => name && name.trim().length > 0)
+      .filter(name => name.trim().toLowerCase() !== scientificName.toLowerCase())
       .map(name => ({
         name: name.trim(),
         preferred: false, // Wikidata hat kein preferred Flag → immer false
@@ -124,12 +132,18 @@ async function queryWikidataGermanNamesBatch(scientificNames) {
   // VALUES Clause für Batch-Query (max 50 auf einmal)
   const namesList = scientificNames.slice(0, 50).map(n => `"${n}"`).join(' ');
 
+  // UNION mit rdfs:label, da viele Arten den deutschen Namen nur als Item-Label haben
   const sparql = `
     SELECT ?scientificName ?germanName WHERE {
       VALUES ?scientificName { ${namesList} }
       ?item wdt:P225 ?scientificName .
-      ?item wdt:P1843 ?germanName .
-      FILTER(LANG(?germanName) = "de")
+      {
+        ?item wdt:P1843 ?germanName .
+        FILTER(LANG(?germanName) = "de")
+      } UNION {
+        ?item rdfs:label ?germanName .
+        FILTER(LANG(?germanName) = "de")
+      }
     }
   `;
 
@@ -143,7 +157,8 @@ async function queryWikidataGermanNamesBatch(scientificNames) {
       const sciName = b.scientificName?.value;
       const germanName = b.germanName?.value;
 
-      if (sciName && germanName) {
+      // Sicherheitsfilter: rdfs:label kann den wissenschaftlichen Namen enthalten
+      if (sciName && germanName && germanName.trim().toLowerCase() !== sciName.toLowerCase()) {
         if (!resultMap[sciName]) {
           resultMap[sciName] = [];
         }

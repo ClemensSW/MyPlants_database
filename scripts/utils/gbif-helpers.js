@@ -220,12 +220,16 @@ function filterGermanNames(vernacularNames) {
  * @returns {string|null} Bevorzugter deutscher Name oder null
  */
 function pickPreferredGerman(usage, germanNames) {
-  // 1) Direkt vom /species?language=de
-  if (usage?.vernacularName) return usage.vernacularName;
-
-  // 2) preferred:true falls vorhanden
+  // 1) preferred:true falls vorhanden
   const pref = germanNames.find((v) => v.preferred);
   if (pref) return pref.name;
+
+  // 2) usage.vernacularName nur verwenden wenn germanNames vorhanden
+  //    (= GBIF hat tatsächlich deutsche Daten für diese Art)
+  //    Ohne diese Prüfung würden englische Fallback-Namen als "deutsch" gespeichert
+  if (usage?.vernacularName && germanNames.length > 0) {
+    return usage.vernacularName;
+  }
 
   // 3) Kürzester Name (statt erster Eintrag)
   if (germanNames.length > 0) {

@@ -1,0 +1,4667 @@
+{
+  "inPlantNet": [
+    {
+      "canonicalName": "Abies fraseri",
+      "germanName": "Fraser-Tanne",
+      "taxonKey": 2685318,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Abies lasiocarpa",
+      "germanName": "Felsengebirgs-Tanne",
+      "taxonKey": 2685313,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Abies religiosa",
+      "germanName": "Heilige Tanne",
+      "taxonKey": 2685527,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Abrus precatorius",
+      "germanName": "Paternostererbse",
+      "taxonKey": 5348711,
+      "plantnetCount": 41
+    },
+    {
+      "canonicalName": "Acacia koa",
+      "germanName": "Koa-Akazie",
+      "taxonKey": 2980514,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Acacia paradoxa",
+      "germanName": "Kängurudorn",
+      "taxonKey": 2981159,
+      "plantnetCount": 19
+    },
+    {
+      "canonicalName": "Acacia pulchella",
+      "germanName": "Echte Akazie",
+      "taxonKey": 2980170,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Acanthosicyos horridus",
+      "germanName": "Naras",
+      "taxonKey": 8327014,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Acanthus hungaricus",
+      "germanName": "Acanthus balcanicus",
+      "taxonKey": 8116963,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Acer buergerianum",
+      "germanName": "Dreispitz-Ahorn",
+      "taxonKey": 7100404,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Acer circinatum",
+      "germanName": "Weinblatt-Ahorn",
+      "taxonKey": 3189884,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Acer glabrum",
+      "germanName": "Kahler Ahorn",
+      "taxonKey": 3189864,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Acer macrophyllum",
+      "germanName": "Oregon-Ahorn",
+      "taxonKey": 3189835,
+      "plantnetCount": 43
+    },
+    {
+      "canonicalName": "Acer sempervirens",
+      "germanName": "Kreta-Ahorn",
+      "taxonKey": 3768609,
+      "plantnetCount": 34
+    },
+    {
+      "canonicalName": "Acer spicatum",
+      "germanName": "Vermont-Ahorn",
+      "taxonKey": 3189848,
+      "plantnetCount": 19
+    },
+    {
+      "canonicalName": "Achillea maritima",
+      "germanName": "Schneeweiße Strandfilzblume",
+      "taxonKey": 3120356,
+      "plantnetCount": 321
+    },
+    {
+      "canonicalName": "Achillea oxyloba",
+      "germanName": "Dolomiten-Schafgarbe",
+      "taxonKey": 3120192,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Acrocomia aculeata",
+      "germanName": "Coyolipalme",
+      "taxonKey": 7413879,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Actaea racemosa",
+      "germanName": "Traubensilberkerze",
+      "taxonKey": 6376106,
+      "plantnetCount": 46
+    },
+    {
+      "canonicalName": "Adenocarpus viscosus",
+      "germanName": "Klebriger Drüsenginster",
+      "taxonKey": 2951643,
+      "plantnetCount": 38
+    },
+    {
+      "canonicalName": "Adiantum reniforme",
+      "germanName": "Talerfarn",
+      "taxonKey": 7335649,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Aechmea fasciata",
+      "germanName": "Lanzenrosette",
+      "taxonKey": 2698346,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Aeranthes arachnites",
+      "germanName": "Aeranthes arachnitis",
+      "taxonKey": 5826523,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Aethionema grandiflorum",
+      "germanName": "Großblütiges Steintäschel",
+      "taxonKey": 3051147,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Agathis australis",
+      "germanName": "Neuseeländischer Kauri-Baum",
+      "taxonKey": 5284415,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Ajania pacifica",
+      "germanName": "Gold-und-Silber-Chrysantheme",
+      "taxonKey": 3112282,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Ajuga iva",
+      "germanName": "Mittelmeer-Günsel",
+      "taxonKey": 7307171,
+      "plantnetCount": 149
+    },
+    {
+      "canonicalName": "Alibertia edulis",
+      "germanName": "Wilde Guave",
+      "taxonKey": 5335670,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Allium insubricum",
+      "germanName": "Südalpen-Lauch",
+      "taxonKey": 2855731,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Allium pendulinum",
+      "germanName": "Hängender Lauch",
+      "taxonKey": 2856456,
+      "plantnetCount": 40
+    },
+    {
+      "canonicalName": "Allium senescens",
+      "germanName": "Berg-Lauch",
+      "taxonKey": 2855719,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Allium siculum",
+      "germanName": "Sizilianischer Honiglauch",
+      "taxonKey": 2856204,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Allocasuarina torulosa",
+      "germanName": "Allocasurina torulosa",
+      "taxonKey": 2891868,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Alnus rubra",
+      "germanName": "Rot-Erle",
+      "taxonKey": 2876176,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Alstroemeria psittacina",
+      "germanName": "Papageien-Inkalilie",
+      "taxonKey": 2753743,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Amaryllis belladonna",
+      "germanName": "Belladonnalilie",
+      "taxonKey": 5325855,
+      "plantnetCount": 33
+    },
+    {
+      "canonicalName": "Amomum subulatum",
+      "germanName": "Schwarzer Kardamom",
+      "taxonKey": 5301632,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Ampelodesmos mauritanicus",
+      "germanName": "Diss",
+      "taxonKey": 4925448,
+      "plantnetCount": 103
+    },
+    {
+      "canonicalName": "Anagyris foetida",
+      "germanName": "Stinkstrauch",
+      "taxonKey": 2946427,
+      "plantnetCount": 206
+    },
+    {
+      "canonicalName": "Ananas comosus",
+      "germanName": "Ananas",
+      "taxonKey": 5288819,
+      "plantnetCount": 46
+    },
+    {
+      "canonicalName": "Anchusella variegata",
+      "germanName": "Bunte Ochsenzunge",
+      "taxonKey": 4065781,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Andrographis paniculata",
+      "germanName": "Kalmegh",
+      "taxonKey": 3173178,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Androsace chaixii",
+      "germanName": "Chaix-Mannsschild",
+      "taxonKey": 8025424,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Anemone coronaria",
+      "germanName": "Kronen-Anemone",
+      "taxonKey": 3033261,
+      "plantnetCount": 1078
+    },
+    {
+      "canonicalName": "Anemone hortensis",
+      "germanName": "Stern-Anemone",
+      "taxonKey": 3925918,
+      "plantnetCount": 1053
+    },
+    {
+      "canonicalName": "Anemone palmata",
+      "germanName": "Westmediterrane Anemone",
+      "taxonKey": 3924291,
+      "plantnetCount": 77
+    },
+    {
+      "canonicalName": "Angelica atropurpurea",
+      "germanName": "Amerikanische Engelwurz",
+      "taxonKey": 5371822,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Anredera cordifolia",
+      "germanName": "Madeirawein",
+      "taxonKey": 3083508,
+      "plantnetCount": 171
+    },
+    {
+      "canonicalName": "Anthemis chia",
+      "germanName": "Chios-Hundskamille",
+      "taxonKey": 3122494,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Anthyllis hermanniae",
+      "germanName": "Dorniger Wundklee",
+      "taxonKey": 5352341,
+      "plantnetCount": 19
+    },
+    {
+      "canonicalName": "Aphyllanthes monspeliensis",
+      "germanName": "Binsenlilie",
+      "taxonKey": 2770868,
+      "plantnetCount": 2729
+    },
+    {
+      "canonicalName": "Apollonias barbujana",
+      "germanName": "Barbusano",
+      "taxonKey": 7304460,
+      "plantnetCount": 37
+    },
+    {
+      "canonicalName": "Aponogeton distachyos",
+      "germanName": "Zweiährige Wasserähre",
+      "taxonKey": 5328593,
+      "plantnetCount": 59
+    },
+    {
+      "canonicalName": "Apuleia leiocarpa",
+      "germanName": "Garapa",
+      "taxonKey": 5353578,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Araucaria angustifolia",
+      "germanName": "Brasilianische Araukarie",
+      "taxonKey": 2684940,
+      "plantnetCount": 46
+    },
+    {
+      "canonicalName": "Araucaria bidwillii",
+      "germanName": "Queensland-Araukarie",
+      "taxonKey": 2684918,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Araucaria heterophylla",
+      "germanName": "Zimmertanne",
+      "taxonKey": 2684969,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Arbutus andrachne",
+      "germanName": "Östlicher Erdbeerbaum",
+      "taxonKey": 4170901,
+      "plantnetCount": 113
+    },
+    {
+      "canonicalName": "Arbutus menziesii",
+      "germanName": "Amerikanischer Erdbeerbaum",
+      "taxonKey": 2882802,
+      "plantnetCount": 84
+    },
+    {
+      "canonicalName": "Arenaria balearica",
+      "germanName": "Balearische Sandkraut",
+      "taxonKey": 5587267,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Arenaria montana",
+      "germanName": "Berg-Sandkraut",
+      "taxonKey": 6363863,
+      "plantnetCount": 570
+    },
+    {
+      "canonicalName": "Argyranthemum hierrense",
+      "germanName": "Hierro-Kanarenmargerite",
+      "taxonKey": 3104518,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Argyrolobium zanonii",
+      "germanName": "Silberhülse",
+      "taxonKey": 2963689,
+      "plantnetCount": 280
+    },
+    {
+      "canonicalName": "Argyroxiphium sandwicense",
+      "germanName": "Silberschwert",
+      "taxonKey": 3118115,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Aristolochia pallida",
+      "germanName": "Aristolochia fontanesi",
+      "taxonKey": 7313694,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Aristolochia pistolochia",
+      "germanName": "Pistolochia-Osterluzei",
+      "taxonKey": 7444649,
+      "plantnetCount": 158
+    },
+    {
+      "canonicalName": "Aristolochia sempervirens",
+      "germanName": "Immergrüne Osterluzei",
+      "taxonKey": 3589175,
+      "plantnetCount": 31
+    },
+    {
+      "canonicalName": "Artemisia douglasiana",
+      "germanName": "Amerikanisches Moxakraut",
+      "taxonKey": 3121695,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Arum creticum",
+      "germanName": "Kretischer Aronstab",
+      "taxonKey": 5330495,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Arum cylindraceum",
+      "germanName": "Südöstlicher Aronstab",
+      "taxonKey": 5330639,
+      "plantnetCount": 277
+    },
+    {
+      "canonicalName": "Asparagus acutifolius",
+      "germanName": "Spitzblättriger Spargel",
+      "taxonKey": 2768995,
+      "plantnetCount": 1811
+    },
+    {
+      "canonicalName": "Asparagus densiflorus",
+      "germanName": "Zier-Spargel",
+      "taxonKey": 2768503,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Asparagus setaceus",
+      "germanName": "Feder-Spargel",
+      "taxonKey": 2768686,
+      "plantnetCount": 62
+    },
+    {
+      "canonicalName": "Asphodeline liburnica",
+      "germanName": "Liburnische Junkerlilie",
+      "taxonKey": 2777090,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Asphodelus ramosus",
+      "germanName": "Ästiger Affodill",
+      "taxonKey": 2778478,
+      "plantnetCount": 1330
+    },
+    {
+      "canonicalName": "Asplenium marinum",
+      "germanName": "Meer-Streifenfarn",
+      "taxonKey": 8377244,
+      "plantnetCount": 42
+    },
+    {
+      "canonicalName": "Asteriscus aquaticus",
+      "germanName": "Einjähriger Strandstern",
+      "taxonKey": 5393689,
+      "plantnetCount": 103
+    },
+    {
+      "canonicalName": "Astilbe rubra",
+      "germanName": "Rote Prachtspiere",
+      "taxonKey": 7339513,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Astragalus austriacus",
+      "germanName": "Österreich-Tragant",
+      "taxonKey": 5343593,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Astragalus boeticus",
+      "germanName": "Kaffeewicke",
+      "taxonKey": 5344663,
+      "plantnetCount": 50
+    },
+    {
+      "canonicalName": "Astydamia latifolia",
+      "germanName": "Nymphendolde",
+      "taxonKey": 7375132,
+      "plantnetCount": 102
+    },
+    {
+      "canonicalName": "Austrocedrus chilensis",
+      "germanName": "Chilezeder",
+      "taxonKey": 2684878,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Avicennia germinans",
+      "germanName": "Schwarze Mangrove",
+      "taxonKey": 2925400,
+      "plantnetCount": 37
+    },
+    {
+      "canonicalName": "Azorella compacta",
+      "germanName": "Yareta",
+      "taxonKey": 3631998,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Bacopa monnieri",
+      "germanName": "Kleines Fettblatt",
+      "taxonKey": 3171169,
+      "plantnetCount": 33
+    },
+    {
+      "canonicalName": "Bactris gasipaes",
+      "germanName": "Pfirsichpalme",
+      "taxonKey": 2733060,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Baptisia australis",
+      "germanName": "Indigolupine",
+      "taxonKey": 2976091,
+      "plantnetCount": 123
+    },
+    {
+      "canonicalName": "Barnardia japonica",
+      "germanName": "Ostasiatischer Blaustern",
+      "taxonKey": 5304769,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Beaucarnea recurvata",
+      "germanName": "Elefantenfuß",
+      "taxonKey": 2768035,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Bellevalia romana",
+      "germanName": "Römische Hyazinthe",
+      "taxonKey": 2771972,
+      "plantnetCount": 125
+    },
+    {
+      "canonicalName": "Bellis annua",
+      "germanName": "Einjähriges Gänseblümchen",
+      "taxonKey": 3117441,
+      "plantnetCount": 1984
+    },
+    {
+      "canonicalName": "Bellium bellidioides",
+      "germanName": "Echtes Zwerggänseblümchen",
+      "taxonKey": 7879148,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Berberis aristata",
+      "germanName": "Begrannte Berberitze",
+      "taxonKey": 3982087,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Berberis darwinii",
+      "germanName": "Darwins Berberitze",
+      "taxonKey": 3033905,
+      "plantnetCount": 51
+    },
+    {
+      "canonicalName": "Berberis empetrifolia",
+      "germanName": "Krähenbeerblättrige Berberitze",
+      "taxonKey": 7300424,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Berberis microphylla",
+      "germanName": "Buchsblättrige Berberitze",
+      "taxonKey": 7300375,
+      "plantnetCount": 26
+    },
+    {
+      "canonicalName": "Bergenia ciliata",
+      "germanName": "Kaschmir-Bergenie",
+      "taxonKey": 8330218,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Berlandiera lyrata",
+      "germanName": "Schokoladenblume",
+      "taxonKey": 3148290,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Betula pumila",
+      "germanName": "Amerikanische Strauch-Birke",
+      "taxonKey": 5331824,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Biarum tenuifolium",
+      "germanName": "Schmalblättriges Biarum",
+      "taxonKey": 2870465,
+      "plantnetCount": 16
+    },
+    {
+      "canonicalName": "Bituminaria bituminosa",
+      "germanName": "Asphaltklee",
+      "taxonKey": 2952882,
+      "plantnetCount": 2491
+    },
+    {
+      "canonicalName": "Blumenbachia insignis",
+      "germanName": "Schöngezeichnete Blumenbachie",
+      "taxonKey": 5646406,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Boehmeria nivea",
+      "germanName": "Ramie",
+      "taxonKey": 2984359,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Bomarea edulis",
+      "germanName": "Essbare Bomarie",
+      "taxonKey": 2754028,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Boscia foetida",
+      "germanName": "Stinkbusch",
+      "taxonKey": 7273475,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Bougainvillea glabra",
+      "germanName": "Kahle Drillingsblume",
+      "taxonKey": 5384862,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Brachypodium retusum",
+      "germanName": "Ästige Zwenke",
+      "taxonKey": 5676053,
+      "plantnetCount": 181
+    },
+    {
+      "canonicalName": "Brighamia insignis",
+      "germanName": "Vulkanpalme",
+      "taxonKey": 3164381,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Brimeura amethystina",
+      "germanName": "Hellblaue Wiesenhyazinthe",
+      "taxonKey": 2767920,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Bupleurum gibraltaricum",
+      "germanName": "Bupleurum gibraltarium",
+      "taxonKey": 3638706,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Bupleurum petraeum",
+      "germanName": "Felsen-Hasenohr",
+      "taxonKey": 8045299,
+      "plantnetCount": 20
+    },
+    {
+      "canonicalName": "Butea monosperma",
+      "germanName": "Malabar-Lackbaum",
+      "taxonKey": 8234570,
+      "plantnetCount": 34
+    },
+    {
+      "canonicalName": "Buxus balearica",
+      "germanName": "Balearen-Buchsbaum",
+      "taxonKey": 3988113,
+      "plantnetCount": 35
+    },
+    {
+      "canonicalName": "Caiophora lateritia",
+      "germanName": "Ziegelrote Brennwinde",
+      "taxonKey": 7964585,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Calceolaria integrifolia",
+      "germanName": "Garten-Pantoffelblume",
+      "taxonKey": 3726586,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Calicotome spinosa",
+      "germanName": "Stacheliger Dornginster",
+      "taxonKey": 2956359,
+      "plantnetCount": 452
+    },
+    {
+      "canonicalName": "Callianthemum kernerianum",
+      "germanName": "Kerners Schmuckblume",
+      "taxonKey": 3927271,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Callisia repens",
+      "germanName": "Kriechendes Schönpolster",
+      "taxonKey": 5303420,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Callistemon citrinus",
+      "germanName": "Karminroter Zylinderputzer",
+      "taxonKey": 3173413,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Calocedrus decurrens",
+      "germanName": "Weihrauchzeder",
+      "taxonKey": 2683936,
+      "plantnetCount": 28
+    },
+    {
+      "canonicalName": "Calochortus amabilis",
+      "germanName": "Goldene Mormonentulpe",
+      "taxonKey": 2750697,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Calochortus macrocarpus",
+      "germanName": "Gestreifte Mormonentulpe",
+      "taxonKey": 2750714,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Calochortus venustus",
+      "germanName": "Schmetterlings-Mormonentulpe",
+      "taxonKey": 2750797,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Caltha leptosepala",
+      "germanName": "Westamerikanische Dotterblume",
+      "taxonKey": 5371684,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Camassia quamash",
+      "germanName": "Essbare Prärielilie",
+      "taxonKey": 2769084,
+      "plantnetCount": 44
+    },
+    {
+      "canonicalName": "Campanula alpestris",
+      "germanName": "Allionis Glockenblume",
+      "taxonKey": 5410075,
+      "plantnetCount": 129
+    },
+    {
+      "canonicalName": "Campanula arvatica",
+      "germanName": "Oviedo-Glockenblume",
+      "taxonKey": 5409919,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Campanula cespitosa",
+      "germanName": "Rasen-Glockenblume",
+      "taxonKey": 5410691,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Campanula elatinoides",
+      "germanName": "Lombardische Glockenblume",
+      "taxonKey": 5410359,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Campanula morettiana",
+      "germanName": "Dolomiten-Glockenblume",
+      "taxonKey": 5410431,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Campanula pulla",
+      "germanName": "Dunkle Glockenblume",
+      "taxonKey": 5409815,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Campanula raineri",
+      "germanName": "Insubrische Glockenblume",
+      "taxonKey": 5411403,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Campanula sarmatica",
+      "germanName": "Sarmatische Glockenblume",
+      "taxonKey": 5410515,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Campanula waldsteiniana",
+      "germanName": "Waldstein-Glockenblume",
+      "taxonKey": 5410798,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Canarina canariensis",
+      "germanName": "Kanaren-Glockenblume",
+      "taxonKey": 3161926,
+      "plantnetCount": 115
+    },
+    {
+      "canonicalName": "Caragana jubata",
+      "germanName": "Mähnen-Erbsenstrauch",
+      "taxonKey": 2943329,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Cardamine douglassii",
+      "germanName": "Cardamine douglasii",
+      "taxonKey": 3045676,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Carpinus caroliniana",
+      "germanName": "Amerikanische Hainbuche",
+      "taxonKey": 2875842,
+      "plantnetCount": 83
+    },
+    {
+      "canonicalName": "Carrichtera annua",
+      "germanName": "Einjährige Carrichtera",
+      "taxonKey": 5375285,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Castanospermum australe",
+      "germanName": "Australische Kastanie",
+      "taxonKey": 7579806,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Castroviejoa frigida",
+      "germanName": "Korsische Strohblume",
+      "taxonKey": 3118106,
+      "plantnetCount": 26
+    },
+    {
+      "canonicalName": "Catalpa speciosa",
+      "germanName": "Prächtiger Trompetenbaum",
+      "taxonKey": 3172612,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Catha edulis",
+      "germanName": "Kathstrauch",
+      "taxonKey": 7979745,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Catharanthus roseus",
+      "germanName": "Rosafarbene Catharanthe",
+      "taxonKey": 3169830,
+      "plantnetCount": 70
+    },
+    {
+      "canonicalName": "Cedrus libani",
+      "germanName": "Libanon-Zeder",
+      "taxonKey": 5284682,
+      "plantnetCount": 14
+    },
+    {
+      "canonicalName": "Centaurea cheiranthifolia",
+      "germanName": "Goldlackblättrige Flockenblume",
+      "taxonKey": 3089540,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Centaurea ragusina",
+      "germanName": "Ragusa-Flockenblume",
+      "taxonKey": 7604700,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Centaurea salonitana",
+      "germanName": "Split-Flockenblume",
+      "taxonKey": 3128910,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Centaurea sphaerocephala",
+      "germanName": "Kugelkopf-Flockenblume",
+      "taxonKey": 3128081,
+      "plantnetCount": 180
+    },
+    {
+      "canonicalName": "Centaurea uniflora",
+      "germanName": "Einköpfige Flockenblume",
+      "taxonKey": 3128948,
+      "plantnetCount": 198
+    },
+    {
+      "canonicalName": "Centranthus calcitrapae",
+      "germanName": "Fußangel-Spornblume",
+      "taxonKey": 7298987,
+      "plantnetCount": 51
+    },
+    {
+      "canonicalName": "Centranthus macrosiphon",
+      "germanName": "Großröhrige Spornblume",
+      "taxonKey": 7298966,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Cephalanthus occidentalis",
+      "germanName": "Westlicher Knopfbusch",
+      "taxonKey": 2923947,
+      "plantnetCount": 292
+    },
+    {
+      "canonicalName": "Cephalaria leucantha",
+      "germanName": "Weißblütiger Schuppenkopf",
+      "taxonKey": 4104323,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Cerbera odollam",
+      "germanName": "Zerberusbaum",
+      "taxonKey": 7155753,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Cercis canadensis",
+      "germanName": "Kanadischer Judasbaum",
+      "taxonKey": 5353583,
+      "plantnetCount": 436
+    },
+    {
+      "canonicalName": "Ceropegia dichotoma",
+      "germanName": "Gabelige Leuchterblume",
+      "taxonKey": 7150773,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Ceropegia fusca",
+      "germanName": "Rotbraune Leuchterblume",
+      "taxonKey": 7150735,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Cestrum elegans",
+      "germanName": "Mexikanischer Hammerstrauch",
+      "taxonKey": 6403186,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Cestrum nocturnum",
+      "germanName": "Nachtjasmin",
+      "taxonKey": 2928791,
+      "plantnetCount": 114
+    },
+    {
+      "canonicalName": "Chaerophyllum azoricum",
+      "germanName": "Azoreanischer Kälberkropf",
+      "taxonKey": 3642488,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Chaiturus marrubiastrum",
+      "germanName": "Filziges Herzgespann",
+      "taxonKey": 2927071,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Chamaecyparis pisifera",
+      "germanName": "Sawara-Scheinzypresse",
+      "taxonKey": 2683880,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Chamaecyparis thyoides",
+      "germanName": "Weiße Scheinzypresse",
+      "taxonKey": 2683871,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Chamaedaphne calyculata",
+      "germanName": "Torfgränke",
+      "taxonKey": 5333436,
+      "plantnetCount": 43
+    },
+    {
+      "canonicalName": "Chamaenerion dodonaei",
+      "germanName": "Chamerion dodonaei",
+      "taxonKey": 3666422,
+      "plantnetCount": 427
+    },
+    {
+      "canonicalName": "Chamelaucium uncinatum",
+      "germanName": "Hakiges Chamelaucium",
+      "taxonKey": 3188340,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Chelone obliqua",
+      "germanName": "Schiefe Schildblume",
+      "taxonKey": 5414932,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Chrysanthemum morifolium",
+      "germanName": "Garten-Chrysantheme",
+      "taxonKey": 3150767,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Cissus auricoma",
+      "germanName": "Cissus auricomus",
+      "taxonKey": 4053127,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Cistanche phelypaea",
+      "germanName": "Gelbe Cistanche",
+      "taxonKey": 7332229,
+      "plantnetCount": 146
+    },
+    {
+      "canonicalName": "Cistus clusii",
+      "germanName": "Clusius-Zistrose",
+      "taxonKey": 7331346,
+      "plantnetCount": 190
+    },
+    {
+      "canonicalName": "Cistus creticus",
+      "germanName": "Kretische Zistrose",
+      "taxonKey": 6438085,
+      "plantnetCount": 962
+    },
+    {
+      "canonicalName": "Cistus horrens",
+      "germanName": "Haarige Zistrose",
+      "taxonKey": 3595246,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Cistus parviflorus",
+      "germanName": "Kleinblütige Zistrose",
+      "taxonKey": 8069132,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Cistus symphytifolius",
+      "germanName": "Beinwellblättrige Zistrose",
+      "taxonKey": 7331231,
+      "plantnetCount": 48
+    },
+    {
+      "canonicalName": "Citrus trifoliata",
+      "germanName": "Dreiblättrige Orange",
+      "taxonKey": 3190129,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Clematis cirrhosa",
+      "germanName": "Macchien-Waldrebe",
+      "taxonKey": 6374830,
+      "plantnetCount": 151
+    },
+    {
+      "canonicalName": "Clematis flammula",
+      "germanName": "Brennende Waldrebe",
+      "taxonKey": 3921611,
+      "plantnetCount": 1074
+    },
+    {
+      "canonicalName": "Cleyera japonica",
+      "germanName": "Sperrstrauch",
+      "taxonKey": 3189627,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Clianthus puniceus",
+      "germanName": "Papageienschnabel",
+      "taxonKey": 2941713,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Clinopodium menthifolium",
+      "germanName": "Wald-Bergminze",
+      "taxonKey": 11007246,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Clusia multiflora",
+      "germanName": "Cluisa Multiflora",
+      "taxonKey": 7330264,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Cneorum tricoccon",
+      "germanName": "Zwergölbaum",
+      "taxonKey": 7483998,
+      "plantnetCount": 148
+    },
+    {
+      "canonicalName": "Cochlospermum vitifolium",
+      "germanName": "Butterblumenbaum",
+      "taxonKey": 2874865,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Codiaeum variegatum",
+      "germanName": "Kroton",
+      "taxonKey": 3071476,
+      "plantnetCount": 185
+    },
+    {
+      "canonicalName": "Coffea liberica",
+      "germanName": "Liberica-Kaffee",
+      "taxonKey": 8524134,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Colchicum bulbocodium",
+      "germanName": "Frühlingslichtblume",
+      "taxonKey": 2739661,
+      "plantnetCount": 142
+    },
+    {
+      "canonicalName": "Colchicum cupanii",
+      "germanName": "Cupanis Zeitlose",
+      "taxonKey": 2739737,
+      "plantnetCount": 34
+    },
+    {
+      "canonicalName": "Colchicum montanum",
+      "germanName": "Berg-Zeitlose",
+      "taxonKey": 2739671,
+      "plantnetCount": 675
+    },
+    {
+      "canonicalName": "Colchicum soboliferum",
+      "germanName": "Sprossende Zeitlose",
+      "taxonKey": 2739852,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Colchicum triphyllum",
+      "germanName": "Dreiblättrige Zeitlose",
+      "taxonKey": 2739870,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Colchicum umbrosum",
+      "germanName": "Schatten-Herbstzeitlose",
+      "taxonKey": 2739655,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Colchicum variegatum",
+      "germanName": "Späte Schachbrett-Herbstzeitlose",
+      "taxonKey": 2739828,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Colobanthus quitensis",
+      "germanName": "Antarktische Perlwurz",
+      "taxonKey": 5588218,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Colophospermum mopane",
+      "germanName": "Mopane",
+      "taxonKey": 2974567,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Comastoma nanum",
+      "germanName": "Zwerg-Haarschlund",
+      "taxonKey": 3840644,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Combretum micranthum",
+      "germanName": "Kinkéliba",
+      "taxonKey": 3698309,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Comptonia peregrina",
+      "germanName": "Farnmyrte",
+      "taxonKey": 5414197,
+      "plantnetCount": 99
+    },
+    {
+      "canonicalName": "Conocarpus erectus",
+      "germanName": "Knopfmangrove",
+      "taxonKey": 5421045,
+      "plantnetCount": 110
+    },
+    {
+      "canonicalName": "Convolvulus althaeoides",
+      "germanName": "Eibischblättrige Winde",
+      "taxonKey": 2928400,
+      "plantnetCount": 1530
+    },
+    {
+      "canonicalName": "Convolvulus canariensis",
+      "germanName": "Kanarische Winde",
+      "taxonKey": 3681333,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Convolvulus cantabrica",
+      "germanName": "Kantabrische Winde",
+      "taxonKey": 3681277,
+      "plantnetCount": 733
+    },
+    {
+      "canonicalName": "Convolvulus floridus",
+      "germanName": "Blütenreiche Winde",
+      "taxonKey": 7943397,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Convolvulus lineatus",
+      "germanName": "Gestrichelte Winde",
+      "taxonKey": 3677112,
+      "plantnetCount": 41
+    },
+    {
+      "canonicalName": "Convolvulus oleifolius",
+      "germanName": "Ölbaumblättrige Winde",
+      "taxonKey": 7324411,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Convolvulus sabatius",
+      "germanName": "Kriechende Winde",
+      "taxonKey": 3678857,
+      "plantnetCount": 49
+    },
+    {
+      "canonicalName": "Convolvulus siculus",
+      "germanName": "Sizilianische Winde",
+      "taxonKey": 3678083,
+      "plantnetCount": 26
+    },
+    {
+      "canonicalName": "Coptis trifolia",
+      "germanName": "Dreiblättriger Goldfaden",
+      "taxonKey": 3033632,
+      "plantnetCount": 53
+    },
+    {
+      "canonicalName": "Coriaria myrtifolia",
+      "germanName": "Myrtenblättriger Gerberstrauch",
+      "taxonKey": 3701787,
+      "plantnetCount": 557
+    },
+    {
+      "canonicalName": "Cornus capitata",
+      "germanName": "Benthams Hartriegel",
+      "taxonKey": 7161042,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Cornus controversa",
+      "germanName": "Pagoden-Hartriegel",
+      "taxonKey": 7846556,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Corylopsis pauciflora",
+      "germanName": "Armblütige Scheinhasel",
+      "taxonKey": 3702808,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Corylopsis spicata",
+      "germanName": "Ährige Scheinhasel",
+      "taxonKey": 3702764,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Corylus americana",
+      "germanName": "Amerikanische Hasel",
+      "taxonKey": 2876060,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Corylus cornuta",
+      "germanName": "Schnabel-Hasel",
+      "taxonKey": 2876032,
+      "plantnetCount": 115
+    },
+    {
+      "canonicalName": "Corymbia citriodora",
+      "germanName": "Zitroneneukalyptus",
+      "taxonKey": 5418431,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Crambe strigosa",
+      "germanName": "Schmächtiger Meerkohl",
+      "taxonKey": 5373547,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Crataegus azarolus",
+      "germanName": "Azaroldorn",
+      "taxonKey": 3013739,
+      "plantnetCount": 1793
+    },
+    {
+      "canonicalName": "Crataegus douglasii",
+      "germanName": "Oregon-Weißdorn",
+      "taxonKey": 3013580,
+      "plantnetCount": 78
+    },
+    {
+      "canonicalName": "Crinum asiaticum",
+      "germanName": "Asiatische Hakenlilie",
+      "taxonKey": 2853796,
+      "plantnetCount": 110
+    },
+    {
+      "canonicalName": "Crinum bulbispermum",
+      "germanName": "Rosa Hakenlilie",
+      "taxonKey": 2853668,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Crinum moorei",
+      "germanName": "Busch-Hakenlilie",
+      "taxonKey": 4928395,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Crocus corsicus",
+      "germanName": "Korsischer Krokus",
+      "taxonKey": 2747880,
+      "plantnetCount": 36
+    },
+    {
+      "canonicalName": "Crocus imperati",
+      "germanName": "Imperato-Krokus",
+      "taxonKey": 2747799,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Crocus laevigatus",
+      "germanName": "Glatter Krokus",
+      "taxonKey": 2747862,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Crocus minimus",
+      "germanName": "Kleinster Krokus",
+      "taxonKey": 8420531,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Crocus nudiflorus",
+      "germanName": "Pyrenäen-Herbst-Krokus",
+      "taxonKey": 2747305,
+      "plantnetCount": 753
+    },
+    {
+      "canonicalName": "Crocus pulchellus",
+      "germanName": "Rosen-Herbst-Krokus",
+      "taxonKey": 2747815,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Crocus reticulatus",
+      "germanName": "Netz-Krokus",
+      "taxonKey": 8918042,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Crocus speciosus",
+      "germanName": "Pracht-Herbst-Krokus",
+      "taxonKey": 2747718,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Crocus versicolor",
+      "germanName": "Silberlack-Krokus",
+      "taxonKey": 2747502,
+      "plantnetCount": 298
+    },
+    {
+      "canonicalName": "Cruciata glabra",
+      "germanName": "Kahles Kreuzlabkraut",
+      "taxonKey": 5338929,
+      "plantnetCount": 144
+    },
+    {
+      "canonicalName": "Cryptomeria japonica",
+      "germanName": "Sicheltanne",
+      "taxonKey": 5284237,
+      "plantnetCount": 137
+    },
+    {
+      "canonicalName": "Cupressus cashmeriana",
+      "germanName": "Kaschmir-Zypresse",
+      "taxonKey": 2684036,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Cupressus lusitanica",
+      "germanName": "Mexikanische Zypresse",
+      "taxonKey": 2684046,
+      "plantnetCount": 142
+    },
+    {
+      "canonicalName": "Curcuma zedoaria",
+      "germanName": "Zitwerwurzel",
+      "taxonKey": 2757545,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Cynoglottis barrelieri",
+      "germanName": "Anchusa barrelieri",
+      "taxonKey": 7131800,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Cynomorium coccineum",
+      "germanName": "Malteserschwamm",
+      "taxonKey": 7445043,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Cyperus capitatus",
+      "germanName": "Dünen-Zypergras",
+      "taxonKey": 2714938,
+      "plantnetCount": 85
+    },
+    {
+      "canonicalName": "Cytisus supranubius",
+      "germanName": "Teideginster",
+      "taxonKey": 5354587,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Dacrycarpus dacrydioides",
+      "germanName": "Neuseeländische Warzeneibe",
+      "taxonKey": 2687859,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Dacrydium cupressinum",
+      "germanName": "Rimu-Harzeibe",
+      "taxonKey": 5286163,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Dactylorhiza elata",
+      "germanName": "Hohes Knabenkraut",
+      "taxonKey": 7861697,
+      "plantnetCount": 130
+    },
+    {
+      "canonicalName": "Dahlia coccinea",
+      "germanName": "Scharlach-Dahlie",
+      "taxonKey": 5387098,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Dahlia merckii",
+      "germanName": "Merck-Dahlie",
+      "taxonKey": 5387121,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Dalbergia melanoxylon",
+      "germanName": "Grenadill",
+      "taxonKey": 2968897,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Danae racemosa",
+      "germanName": "Traubendorn",
+      "taxonKey": 5303891,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Daphne gnidium",
+      "germanName": "Herbst-Seidelbast",
+      "taxonKey": 7311306,
+      "plantnetCount": 1772
+    },
+    {
+      "canonicalName": "Daphne oleoides",
+      "germanName": "Ölbaumähnlicher Seidelbast",
+      "taxonKey": 7311536,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Darlingtonia californica",
+      "germanName": "Kobralilie",
+      "taxonKey": 5939805,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Decodon verticillatus",
+      "germanName": "Quirlblättriger Wasserweiderich",
+      "taxonKey": 5420916,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Delonix regia",
+      "germanName": "Flammenbaum",
+      "taxonKey": 2956176,
+      "plantnetCount": 178
+    },
+    {
+      "canonicalName": "Dendrocnide moroides",
+      "germanName": "Australische Brennnessel",
+      "taxonKey": 4098695,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Deutzia gracilis",
+      "germanName": "Zierliche Deutzie",
+      "taxonKey": 2985964,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Dianthus alpinus",
+      "germanName": "Alpen-Nelke",
+      "taxonKey": 8212256,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Dianthus sternbergii",
+      "germanName": "Sternbergs Nelke",
+      "taxonKey": 6363548,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Digitalis laevigata",
+      "germanName": "Kahler Fingerhut",
+      "taxonKey": 5559156,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Digitalis minor",
+      "germanName": "Balearen-Fingerhut",
+      "taxonKey": 7618912,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Digitalis obscura",
+      "germanName": "Spanischer Fingerhut",
+      "taxonKey": 5559052,
+      "plantnetCount": 123
+    },
+    {
+      "canonicalName": "Digitalis parviflora",
+      "germanName": "Kleinblütiger Fingerhut",
+      "taxonKey": 5559046,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Dillenia indica",
+      "germanName": "Indischer Rosenapfel",
+      "taxonKey": 5383898,
+      "plantnetCount": 58
+    },
+    {
+      "canonicalName": "Dillenia suffruticosa",
+      "germanName": "Malaysischer Rosenapfel",
+      "taxonKey": 5383897,
+      "plantnetCount": 34
+    },
+    {
+      "canonicalName": "Dimerocostus strobilaceus",
+      "germanName": "Dimerostus strobilaceus",
+      "taxonKey": 2756979,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Dipcadi serotinum",
+      "germanName": "Schweifblatt",
+      "taxonKey": 2768176,
+      "plantnetCount": 125
+    },
+    {
+      "canonicalName": "Dipteryx odorata",
+      "germanName": "Tonkabohnenbaum",
+      "taxonKey": 10779983,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Dracocephalum grandiflorum",
+      "germanName": "Großblütiger Drachenkopf",
+      "taxonKey": 3902808,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Drosophyllum lusitanicum",
+      "germanName": "Taublatt",
+      "taxonKey": 3191259,
+      "plantnetCount": 21
+    },
+    {
+      "canonicalName": "Dryopteris erythrosora",
+      "germanName": "Rotschleierfarn",
+      "taxonKey": 7157952,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Dryopteris sieboldii",
+      "germanName": "Siebolds Wurmfarn",
+      "taxonKey": 7319438,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Dypsis lutescens",
+      "germanName": "Goldfruchtpalme",
+      "taxonKey": 2735935,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Ebenus cretica",
+      "germanName": "Kretischer Ebenholzstrauch",
+      "taxonKey": 5354894,
+      "plantnetCount": 21
+    },
+    {
+      "canonicalName": "Echinacea pallida",
+      "germanName": "Prärie-Igelkopf",
+      "taxonKey": 3150919,
+      "plantnetCount": 47
+    },
+    {
+      "canonicalName": "Echinophora spinosa",
+      "germanName": "Starre Stacheldolde",
+      "taxonKey": 5538709,
+      "plantnetCount": 241
+    },
+    {
+      "canonicalName": "Echium hierrense",
+      "germanName": "Hierro-Natternkopf",
+      "taxonKey": 4058905,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Elettaria cardamomum",
+      "germanName": "Grüner Kardamom",
+      "taxonKey": 2759871,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Eleusine coracana",
+      "germanName": "Fingerhirse",
+      "taxonKey": 2705957,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Emilia coccinea",
+      "germanName": "Orangerote Emilie",
+      "taxonKey": 5401509,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Empetrum rubrum",
+      "germanName": "Rote Krähenbeere",
+      "taxonKey": 6387986,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Erica multiflora",
+      "germanName": "Vielblütige Heide",
+      "taxonKey": 7373031,
+      "plantnetCount": 885
+    },
+    {
+      "canonicalName": "Erinacea anthyllis",
+      "germanName": "Igelginster",
+      "taxonKey": 2977757,
+      "plantnetCount": 69
+    },
+    {
+      "canonicalName": "Eriocapitella hupehensis",
+      "germanName": "Herbst-Anemone",
+      "taxonKey": 9677963,
+      "plantnetCount": 1043
+    },
+    {
+      "canonicalName": "Eriocephalus africanus",
+      "germanName": "Afrikanischer Rosmarin",
+      "taxonKey": 3130137,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Erodium botrys",
+      "germanName": "Trauben-Reiherschnabel",
+      "taxonKey": 2891628,
+      "plantnetCount": 71
+    },
+    {
+      "canonicalName": "Erodium corsicum",
+      "germanName": "Korsischer Reiherschnabel",
+      "taxonKey": 3828040,
+      "plantnetCount": 29
+    },
+    {
+      "canonicalName": "Erucastrum supinum",
+      "germanName": "Niedrige Rauke",
+      "taxonKey": 5375515,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Erysimum bicolor",
+      "germanName": "Zweifarbiger Schöterich",
+      "taxonKey": 3048397,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Erythrina sandwicensis",
+      "germanName": "Wiliwili",
+      "taxonKey": 5349515,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Erythrina variegata",
+      "germanName": "Indischer Korallenbaum",
+      "taxonKey": 5349581,
+      "plantnetCount": 24
+    },
+    {
+      "canonicalName": "Erythronium albidum",
+      "germanName": "Weißlicher Hundszahn",
+      "taxonKey": 2752906,
+      "plantnetCount": 28
+    },
+    {
+      "canonicalName": "Erythronium americanum",
+      "germanName": "Ostamerikanischer Hundszahn",
+      "taxonKey": 2752815,
+      "plantnetCount": 404
+    },
+    {
+      "canonicalName": "Erythronium hendersonii",
+      "germanName": "Henderson-Hundszahn",
+      "taxonKey": 2752803,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Erythronium japonicum",
+      "germanName": "Japanischer Hundszahn",
+      "taxonKey": 2752866,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Erythronium oregonum",
+      "germanName": "Oregon-Hundszahn",
+      "taxonKey": 2752808,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Erythronium revolutum",
+      "germanName": "Rosa Hundszahn",
+      "taxonKey": 2752833,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Erythronium sibiricum",
+      "germanName": "Sibirischer Hundszahn",
+      "taxonKey": 2752841,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Erythroxylum coca",
+      "germanName": "Cocastrauch",
+      "taxonKey": 2873939,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Eucalyptus gunnii",
+      "germanName": "Mostgummi-Eukalyptus",
+      "taxonKey": 3176283,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Eucalyptus leucoxylon",
+      "germanName": "Weißer Gummi-Eukalyptus",
+      "taxonKey": 3177019,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Eucalyptus pauciflora",
+      "germanName": "Schnee-Eukalyptus",
+      "taxonKey": 3176368,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Eucalyptus sideroxylon",
+      "germanName": "Mugga-Eukalyptus",
+      "taxonKey": 3177189,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Eucalyptus viminalis",
+      "germanName": "Rutenförmiger Eukalyptus",
+      "taxonKey": 3177112,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Eucomis autumnalis",
+      "germanName": "Gewellte Schopflilie",
+      "taxonKey": 2775117,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Eucryphia cordifolia",
+      "germanName": "Chilenische Scheinulme",
+      "taxonKey": 3920287,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Euphorbia acanthothamnos",
+      "germanName": "Dornbusch-Wolfsmilch",
+      "taxonKey": 3069316,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Euphorbia aphylla",
+      "germanName": "Blattlose Wolfsmilch",
+      "taxonKey": 3069165,
+      "plantnetCount": 40
+    },
+    {
+      "canonicalName": "Euphorbia atropurpurea",
+      "germanName": "Dunkelpurpurrote Wolfsmilch",
+      "taxonKey": 3065039,
+      "plantnetCount": 25
+    },
+    {
+      "canonicalName": "Euphorbia balsamifera",
+      "germanName": "Balsam-Wolfsmilch",
+      "taxonKey": 3069871,
+      "plantnetCount": 174
+    },
+    {
+      "canonicalName": "Euphorbia canariensis",
+      "germanName": "Kanaren-Wolfsmilch",
+      "taxonKey": 3066139,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Euphorbia dendroides",
+      "germanName": "Baum-Wolfsmilch",
+      "taxonKey": 3067398,
+      "plantnetCount": 630
+    },
+    {
+      "canonicalName": "Euphorbia mellifera",
+      "germanName": "Honiggebende Wolfsmilch",
+      "taxonKey": 3069311,
+      "plantnetCount": 46
+    },
+    {
+      "canonicalName": "Euphorbia pulcherrima",
+      "germanName": "Weihnachtsstern",
+      "taxonKey": 3066465,
+      "plantnetCount": 82
+    },
+    {
+      "canonicalName": "Fagus grandifolia",
+      "germanName": "Amerikanische Buche",
+      "taxonKey": 2882274,
+      "plantnetCount": 519
+    },
+    {
+      "canonicalName": "Festuca bosniaca",
+      "germanName": "Bunt-Schwingel",
+      "taxonKey": 4127628,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Ficus elastica",
+      "germanName": "Gummibaum",
+      "taxonKey": 7835333,
+      "plantnetCount": 166
+    },
+    {
+      "canonicalName": "Ficus lyrata",
+      "germanName": "Geigen-Feige",
+      "taxonKey": 5361899,
+      "plantnetCount": 44
+    },
+    {
+      "canonicalName": "Filago pygmaea",
+      "germanName": "Zwergedelweiß",
+      "taxonKey": 3115793,
+      "plantnetCount": 88
+    },
+    {
+      "canonicalName": "Fitzroya cupressoides",
+      "germanName": "Patagonische Zypresse",
+      "taxonKey": 2684353,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Frankenia pulverulenta",
+      "germanName": "Einjährige Seeheide",
+      "taxonKey": 2874692,
+      "plantnetCount": 16
+    },
+    {
+      "canonicalName": "Fritillaria involucrata",
+      "germanName": "Gegenblättrige Schachblume",
+      "taxonKey": 5300816,
+      "plantnetCount": 44
+    },
+    {
+      "canonicalName": "Fritillaria persica",
+      "germanName": "Persische Fritillarie",
+      "taxonKey": 5300527,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Fritillaria pudica",
+      "germanName": "Schamhafte Fritillarie",
+      "taxonKey": 5300582,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Fritillaria recurva",
+      "germanName": "Scharlachrote Fritillarie",
+      "taxonKey": 5300465,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Fumana thymifolia",
+      "germanName": "Thymianblättriges Nadelröschen",
+      "taxonKey": 7365597,
+      "plantnetCount": 54
+    },
+    {
+      "canonicalName": "Gaillardia suavis",
+      "germanName": "Strahllose Kokardenblume",
+      "taxonKey": 5387838,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Galax urceolata",
+      "germanName": "Bronzeblatt",
+      "taxonKey": 5333324,
+      "plantnetCount": 40
+    },
+    {
+      "canonicalName": "Gaultheria shallon",
+      "germanName": "Shallon-Scheinbeere",
+      "taxonKey": 2882758,
+      "plantnetCount": 312
+    },
+    {
+      "canonicalName": "Gelsemium sempervirens",
+      "germanName": "Carolina-Jasmin",
+      "taxonKey": 3169513,
+      "plantnetCount": 36
+    },
+    {
+      "canonicalName": "Genista aetnensis",
+      "germanName": "Ätna-Ginster",
+      "taxonKey": 5347587,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Genista salzmannii",
+      "germanName": "Salzmanns Ginster",
+      "taxonKey": 5347830,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Gentiana scabra",
+      "germanName": "Japanischer Herbstenzian",
+      "taxonKey": 7270205,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Geranium cinereum",
+      "germanName": "Grauer Storchschnabel",
+      "taxonKey": 2890574,
+      "plantnetCount": 69
+    },
+    {
+      "canonicalName": "Geranium maculatum",
+      "germanName": "Gefleckter Storchschnabel",
+      "taxonKey": 7808016,
+      "plantnetCount": 439
+    },
+    {
+      "canonicalName": "Geranium reuteri",
+      "germanName": "Kanaren-Storchschnabel",
+      "taxonKey": 2890959,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Geranium versicolor",
+      "germanName": "Verschiedenfarbiger Storchschnabel",
+      "taxonKey": 2890739,
+      "plantnetCount": 101
+    },
+    {
+      "canonicalName": "Gevuina avellana",
+      "germanName": "Chilenische Haselnuss",
+      "taxonKey": 3996031,
+      "plantnetCount": 43
+    },
+    {
+      "canonicalName": "Gillenia trifoliata",
+      "germanName": "Nördliche Dreiblattspiere",
+      "taxonKey": 2986435,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Gladiolus dalenii",
+      "germanName": "Primel-Gladiole",
+      "taxonKey": 2750406,
+      "plantnetCount": 22
+    },
+    {
+      "canonicalName": "Glebionis coronaria",
+      "germanName": "Kronenwucherblume",
+      "taxonKey": 7627205,
+      "plantnetCount": 1110
+    },
+    {
+      "canonicalName": "Globularia alypum",
+      "germanName": "Strauchige Kugelblume",
+      "taxonKey": 7703240,
+      "plantnetCount": 797
+    },
+    {
+      "canonicalName": "Gomphrena pulchella",
+      "germanName": "Niedlicher Kugelamarant",
+      "taxonKey": 7323423,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Grammatophyllum speciosum",
+      "germanName": "Tiger-Orchidee",
+      "taxonKey": 2821296,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Guadua angustifolia",
+      "germanName": "Guadua-Bambus",
+      "taxonKey": 4155017,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Gymnoschoenus sphaerocephalus",
+      "germanName": "Buttongras",
+      "taxonKey": 2710856,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Haematoxylum campechianum",
+      "germanName": "Blutholzbaum",
+      "taxonKey": 2950903,
+      "plantnetCount": 29
+    },
+    {
+      "canonicalName": "Hagenia abyssinica",
+      "germanName": "Kosobaum",
+      "taxonKey": 5370415,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Hamamelis virginiana",
+      "germanName": "Virginische Zaubernuss",
+      "taxonKey": 3152827,
+      "plantnetCount": 235
+    },
+    {
+      "canonicalName": "Handroanthus serratifolius",
+      "germanName": "Diamantnuss",
+      "taxonKey": 4092017,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Harpagophytum procumbens",
+      "germanName": "Afrikanische Teufelskralle",
+      "taxonKey": 3585335,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Hedera hibernica",
+      "germanName": "Großblättriger Irischer Efeu",
+      "taxonKey": 8168344,
+      "plantnetCount": 280
+    },
+    {
+      "canonicalName": "Heimia salicifolia",
+      "germanName": "Sinicuichi",
+      "taxonKey": 5420914,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Helianthemum caput-felis",
+      "germanName": "Katzenkopf-Sonnenröschen",
+      "taxonKey": 7331423,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Helianthemum croceum",
+      "germanName": "Safrangelbes Sonnenröschen",
+      "taxonKey": 7331336,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Helichrysum orientale",
+      "germanName": "Orient-Strohblume",
+      "taxonKey": 7874546,
+      "plantnetCount": 20
+    },
+    {
+      "canonicalName": "Helichrysum stoechas",
+      "germanName": "Mittelmeer-Strohblume",
+      "taxonKey": 3131494,
+      "plantnetCount": 1101
+    },
+    {
+      "canonicalName": "Hesperis tristis",
+      "germanName": "Trauer-Nachtviole",
+      "taxonKey": 3042221,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Hippocrepis balearica",
+      "germanName": "Balearen-Hufeisenklee",
+      "taxonKey": 5353700,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Hunnemannia fumariifolia",
+      "germanName": "Mexikanischer Tulpenmohn",
+      "taxonKey": 2888505,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Hydrocotyle verticillata",
+      "germanName": "Amerikanischer Wassernabel",
+      "taxonKey": 3034602,
+      "plantnetCount": 71
+    },
+    {
+      "canonicalName": "Hyophorbe lagenicaulis",
+      "germanName": "Flaschenpalme",
+      "taxonKey": 2735592,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Hypecoum procumbens",
+      "germanName": "Niederliegende Lappenblume",
+      "taxonKey": 8281444,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Hypericum balearicum",
+      "germanName": "Balearen-Johanniskraut",
+      "taxonKey": 3715063,
+      "plantnetCount": 60
+    },
+    {
+      "canonicalName": "Hypericum empetrifolium",
+      "germanName": "Krähenbeerenblättriges Johanniskraut",
+      "taxonKey": 8411092,
+      "plantnetCount": 20
+    },
+    {
+      "canonicalName": "Hypericum nummularium",
+      "germanName": "Pfennigblättriges Johanniskraut",
+      "taxonKey": 3713919,
+      "plantnetCount": 20
+    },
+    {
+      "canonicalName": "Iochroma fuchsioides",
+      "germanName": "Roter Veilchenstrauch",
+      "taxonKey": 3802334,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Ipomoea leptophylla",
+      "germanName": "Buschige Prunkwinde",
+      "taxonKey": 2928569,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Iris orientalis",
+      "germanName": "Orientalische Schwertlilie",
+      "taxonKey": 2748312,
+      "plantnetCount": 45
+    },
+    {
+      "canonicalName": "Iris pseudopumila",
+      "germanName": "Sizilische Zwergiris",
+      "taxonKey": 5299111,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Iris unguicularis",
+      "germanName": "Kretische Schwertlilie",
+      "taxonKey": 5298051,
+      "plantnetCount": 106
+    },
+    {
+      "canonicalName": "Itea virginica",
+      "germanName": "Amerikanische Rosmarinweide",
+      "taxonKey": 5362113,
+      "plantnetCount": 38
+    },
+    {
+      "canonicalName": "Ixanthus viscosus",
+      "germanName": "Kanarenenzian",
+      "taxonKey": 3839773,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Jacaranda mimosifolia",
+      "germanName": "Palisanderholzbaum",
+      "taxonKey": 3172499,
+      "plantnetCount": 451
+    },
+    {
+      "canonicalName": "Jasminum beesianum",
+      "germanName": "Rosa Jasmin",
+      "taxonKey": 3682568,
+      "plantnetCount": 20
+    },
+    {
+      "canonicalName": "Juglans californica",
+      "germanName": "Kalifornische Walnuss",
+      "taxonKey": 3054354,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Juncus acutus",
+      "germanName": "Stechende Binse",
+      "taxonKey": 2701632,
+      "plantnetCount": 421
+    },
+    {
+      "canonicalName": "Juniperus brevifolia",
+      "germanName": "Kurzblättriger Wacholder",
+      "taxonKey": 2684507,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Juniperus cedrus",
+      "germanName": "Zedern-Wacholder",
+      "taxonKey": 2684616,
+      "plantnetCount": 27
+    },
+    {
+      "canonicalName": "Juniperus chinensis",
+      "germanName": "Chinesischer Wacholder",
+      "taxonKey": 2684363,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Juniperus deppeana",
+      "germanName": "Alligator-Wacholder",
+      "taxonKey": 2684674,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Juniperus drupacea",
+      "germanName": "Syrischer Wacholder",
+      "taxonKey": 2684584,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Juniperus monticola",
+      "germanName": "Berg-Wacholder",
+      "taxonKey": 2684641,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Juniperus occidentalis",
+      "germanName": "Westamerikanischer Wacholder",
+      "taxonKey": 2684615,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Juniperus osteosperma",
+      "germanName": "Utah-Wacholder",
+      "taxonKey": 2684818,
+      "plantnetCount": 46
+    },
+    {
+      "canonicalName": "Juniperus phoenicea",
+      "germanName": "Phönizischer Wacholder",
+      "taxonKey": 2684640,
+      "plantnetCount": 586
+    },
+    {
+      "canonicalName": "Juniperus procera",
+      "germanName": "Ostafrikanischer Wacholder",
+      "taxonKey": 2684500,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Juniperus saltuaria",
+      "germanName": "Sichuan-Wacholder",
+      "taxonKey": 2684768,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Juniperus scopulorum",
+      "germanName": "Rocky-Mountain-Wacholder",
+      "taxonKey": 2684773,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Juniperus squamata",
+      "germanName": "Beschuppter Wacholder",
+      "taxonKey": 2684690,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Juniperus thurifera",
+      "germanName": "Spanischer Wacholder",
+      "taxonKey": 2684528,
+      "plantnetCount": 122
+    },
+    {
+      "canonicalName": "Jurinea mollis",
+      "germanName": "Weiche Silberscharte",
+      "taxonKey": 6444162,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Justicia carthaginensis",
+      "germanName": "Justicia carthagenensis",
+      "taxonKey": 3173107,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Kennedia rubicunda",
+      "germanName": "Korallenbohne",
+      "taxonKey": 2959161,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Kleinia neriifolia",
+      "germanName": "Oleanderblättrige Kleinie",
+      "taxonKey": 5405673,
+      "plantnetCount": 276
+    },
+    {
+      "canonicalName": "Laguncularia racemosa",
+      "germanName": "Weiße Mangrove",
+      "taxonKey": 3189382,
+      "plantnetCount": 46
+    },
+    {
+      "canonicalName": "Lamarckia aurea",
+      "germanName": "Goldgras",
+      "taxonKey": 5289762,
+      "plantnetCount": 132
+    },
+    {
+      "canonicalName": "Lantana camara",
+      "germanName": "Wandelröschen",
+      "taxonKey": 2925303,
+      "plantnetCount": 876
+    },
+    {
+      "canonicalName": "Lapageria rosea",
+      "germanName": "Chilenische Wachsglocke",
+      "taxonKey": 2781165,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Larix laricina",
+      "germanName": "Ostamerikanische Lärche",
+      "taxonKey": 2686231,
+      "plantnetCount": 31
+    },
+    {
+      "canonicalName": "Larix lyallii",
+      "germanName": "Felsengebirgs-Lärche",
+      "taxonKey": 2686273,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Larix sibirica",
+      "germanName": "Sibirische Lärche",
+      "taxonKey": 2686276,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Larrea tridentata",
+      "germanName": "Kreosotbusch",
+      "taxonKey": 7568403,
+      "plantnetCount": 49
+    },
+    {
+      "canonicalName": "Laurus azorica",
+      "germanName": "Azoren-Lorbeer",
+      "taxonKey": 7304543,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Leonurus sibiricus",
+      "germanName": "Sibirisches Herzgespann",
+      "taxonKey": 5341392,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Leptospermum petersonii",
+      "germanName": "Zitronenmyrte",
+      "taxonKey": 3181958,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Leptospermum scoparium",
+      "germanName": "Südseemyrte",
+      "taxonKey": 3181762,
+      "plantnetCount": 69
+    },
+    {
+      "canonicalName": "Lessertia frutescens",
+      "germanName": "Ballonerbse",
+      "taxonKey": 5633333,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Leucaena leucocephala",
+      "germanName": "Weißkopfmimose",
+      "taxonKey": 2970418,
+      "plantnetCount": 812
+    },
+    {
+      "canonicalName": "Lewisia cotyledon",
+      "germanName": "Gewöhnliche Bitterwurz",
+      "taxonKey": 5384256,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Licuala grandis",
+      "germanName": "Großblättrige Strahlenpalme",
+      "taxonKey": 8008690,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Ligularia sibirica",
+      "germanName": "Sibirischer Goldkolben",
+      "taxonKey": 6445722,
+      "plantnetCount": 76
+    },
+    {
+      "canonicalName": "Ligustrum japonicum",
+      "germanName": "Japanischer Liguster",
+      "taxonKey": 3172301,
+      "plantnetCount": 19
+    },
+    {
+      "canonicalName": "Ligustrum obtusifolium",
+      "germanName": "Stumpfblättriger Liguster",
+      "taxonKey": 3172296,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Lilium canadense",
+      "germanName": "Kanada-Lilie",
+      "taxonKey": 2753239,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Lilium carniolicum",
+      "germanName": "Krainer Lilie",
+      "taxonKey": 2753039,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Lilium pomponium",
+      "germanName": "Seealpen-Lilie",
+      "taxonKey": 7976992,
+      "plantnetCount": 23
+    },
+    {
+      "canonicalName": "Lilium pyrenaicum",
+      "germanName": "Pyrenäen-Lilie",
+      "taxonKey": 2753026,
+      "plantnetCount": 128
+    },
+    {
+      "canonicalName": "Limbarda crithmoides",
+      "germanName": "Salz-Alant",
+      "taxonKey": 3088761,
+      "plantnetCount": 505
+    },
+    {
+      "canonicalName": "Limoniastrum monopetalum",
+      "germanName": "Strauch-Strandflieder",
+      "taxonKey": 4088889,
+      "plantnetCount": 409
+    },
+    {
+      "canonicalName": "Limonium bellidifolium",
+      "germanName": "Gänseblümchenblättriger Strandflieder",
+      "taxonKey": 4090205,
+      "plantnetCount": 19
+    },
+    {
+      "canonicalName": "Limonium lobatum",
+      "germanName": "Gelappter Strandflieder",
+      "taxonKey": 8419208,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Limonium narbonense",
+      "germanName": "Schmalblättriger Strandflieder",
+      "taxonKey": 4089594,
+      "plantnetCount": 80
+    },
+    {
+      "canonicalName": "Limonium pectinatum",
+      "germanName": "Kammförmiger Strandflieder",
+      "taxonKey": 4088881,
+      "plantnetCount": 48
+    },
+    {
+      "canonicalName": "Limonium puberulum",
+      "germanName": "Flaumhaariger Strandflieder",
+      "taxonKey": 4090703,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Lindheimera texana",
+      "germanName": "Texas-Lindheimerie",
+      "taxonKey": 3096990,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Lippia micromera",
+      "germanName": "Karibischer Oregano",
+      "taxonKey": 2925388,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Lithodora fruticosa",
+      "germanName": "Strauchiger Steinsame",
+      "taxonKey": 5661164,
+      "plantnetCount": 678
+    },
+    {
+      "canonicalName": "Lithodora hispidula",
+      "germanName": "Borstiger Steinsame",
+      "taxonKey": 7295026,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Lobularia canariensis",
+      "germanName": "Kanaren-Silberkraut",
+      "taxonKey": 5373341,
+      "plantnetCount": 29
+    },
+    {
+      "canonicalName": "Lotus berthelotii",
+      "germanName": "Kanarischer Hornklee",
+      "taxonKey": 5356822,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Lotus creticus",
+      "germanName": "Kreta-Hornklee",
+      "taxonKey": 5356939,
+      "plantnetCount": 249
+    },
+    {
+      "canonicalName": "Lotus cytisoides",
+      "germanName": "Geißkleeartiger Hornklee",
+      "taxonKey": 5356937,
+      "plantnetCount": 181
+    },
+    {
+      "canonicalName": "Lotus edulis",
+      "germanName": "Essbarer Hornklee",
+      "taxonKey": 5356908,
+      "plantnetCount": 24
+    },
+    {
+      "canonicalName": "Lotus maculatus",
+      "germanName": "Gefleckter Hornklee",
+      "taxonKey": 5356893,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Luetkea pectinata",
+      "germanName": "Westamerikanische Lütkea",
+      "taxonKey": 3002138,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Luma apiculata",
+      "germanName": "Arrayán",
+      "taxonKey": 5420309,
+      "plantnetCount": 121
+    },
+    {
+      "canonicalName": "Lupinus nootkatensis",
+      "germanName": "Alaska-Lupine",
+      "taxonKey": 2964525,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Lygeum spartum",
+      "germanName": "Espartogras",
+      "taxonKey": 2704651,
+      "plantnetCount": 89
+    },
+    {
+      "canonicalName": "Lysimachia arvensis",
+      "germanName": "Acker-Gauchheil",
+      "taxonKey": 8184903,
+      "plantnetCount": 2010
+    },
+    {
+      "canonicalName": "Lysimachia atropurpurea",
+      "germanName": "Purpurblütiger Felberich",
+      "taxonKey": 4006064,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Lysimachia clethroides",
+      "germanName": "Schnee-Felberich",
+      "taxonKey": 3169331,
+      "plantnetCount": 154
+    },
+    {
+      "canonicalName": "Lysimachia ephemerum",
+      "germanName": "Iberischer Felberich",
+      "taxonKey": 7716904,
+      "plantnetCount": 49
+    },
+    {
+      "canonicalName": "Lysimachia europaea",
+      "germanName": "Siebenstern",
+      "taxonKey": 8272844,
+      "plantnetCount": 537
+    },
+    {
+      "canonicalName": "Lythrum alatum",
+      "germanName": "Geflügelter Blutweiderich",
+      "taxonKey": 3188732,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Maclura tricuspidata",
+      "germanName": "Seidenraupenbaum",
+      "taxonKey": 9130387,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Macrochloa tenacissima",
+      "germanName": "Halfagras",
+      "taxonKey": 4127897,
+      "plantnetCount": 136
+    },
+    {
+      "canonicalName": "Magnolia fraseri",
+      "germanName": "Berg-Magnolie",
+      "taxonKey": 3153619,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Magnolia grandiflora",
+      "germanName": "Immergrüne Magnolie",
+      "taxonKey": 9605163,
+      "plantnetCount": 75
+    },
+    {
+      "canonicalName": "Magnolia kobus",
+      "germanName": "Kobushi-Magnolie",
+      "taxonKey": 3153260,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Magnolia macrophylla",
+      "germanName": "Großblättrige Magnolie",
+      "taxonKey": 3153783,
+      "plantnetCount": 47
+    },
+    {
+      "canonicalName": "Magnolia obovata",
+      "germanName": "Honoki-Magnolie",
+      "taxonKey": 3153160,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Magnolia sieboldii",
+      "germanName": "Sommer-Magnolie",
+      "taxonKey": 3152959,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Magnolia tripetala",
+      "germanName": "Schirm-Magnolie",
+      "taxonKey": 3153215,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Magnolia virginiana",
+      "germanName": "Sumpf-Magnolie",
+      "taxonKey": 3153639,
+      "plantnetCount": 169
+    },
+    {
+      "canonicalName": "Mahonia bealei",
+      "germanName": "Beals Mahonie",
+      "taxonKey": 3033888,
+      "plantnetCount": 56
+    },
+    {
+      "canonicalName": "Mahonia nervosa",
+      "germanName": "Nervige Mahonie",
+      "taxonKey": 3033875,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Mahonia repens",
+      "germanName": "Kriechende Mahonie",
+      "taxonKey": 3033850,
+      "plantnetCount": 53
+    },
+    {
+      "canonicalName": "Maianthemum racemosum",
+      "germanName": "Duftsiegel",
+      "taxonKey": 2769457,
+      "plantnetCount": 287
+    },
+    {
+      "canonicalName": "Malpighia glabra",
+      "germanName": "Acerola",
+      "taxonKey": 5421429,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Malus baccata",
+      "germanName": "Kirschapfel",
+      "taxonKey": 3001362,
+      "plantnetCount": 182
+    },
+    {
+      "canonicalName": "Malvaviscus arboreus",
+      "germanName": "Beerenmalve",
+      "taxonKey": 3152775,
+      "plantnetCount": 43
+    },
+    {
+      "canonicalName": "Manihot esculenta",
+      "germanName": "Maniok",
+      "taxonKey": 3060998,
+      "plantnetCount": 103
+    },
+    {
+      "canonicalName": "Margyricarpus pinnatus",
+      "germanName": "Perlbeere",
+      "taxonKey": 3030248,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Martynia annua",
+      "germanName": "Einjährige Martynie",
+      "taxonKey": 3172618,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Matthiola fruticulosa",
+      "germanName": "Trübe Levkoje",
+      "taxonKey": 5377429,
+      "plantnetCount": 78
+    },
+    {
+      "canonicalName": "Matthiola sinuata",
+      "germanName": "Strand-Levkoje",
+      "taxonKey": 5377368,
+      "plantnetCount": 722
+    },
+    {
+      "canonicalName": "Matthiola tricuspidata",
+      "germanName": "Dreihörnige Levkoje",
+      "taxonKey": 5377330,
+      "plantnetCount": 154
+    },
+    {
+      "canonicalName": "Medeola virginiana",
+      "germanName": "Indianer-Schlangenwurzel",
+      "taxonKey": 2750658,
+      "plantnetCount": 81
+    },
+    {
+      "canonicalName": "Melaleuca alternifolia",
+      "germanName": "Australischer Teebaum",
+      "taxonKey": 5416091,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Melaleuca quinquenervia",
+      "germanName": "Myrtenheide",
+      "taxonKey": 5415832,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Melianthus major",
+      "germanName": "Honigstrauch",
+      "taxonKey": 3845298,
+      "plantnetCount": 59
+    },
+    {
+      "canonicalName": "Melica minuta",
+      "germanName": "Mittelmeer-Perlgras",
+      "taxonKey": 4119222,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Mentha cervina",
+      "germanName": "Hirsch-Minze",
+      "taxonKey": 3902360,
+      "plantnetCount": 31
+    },
+    {
+      "canonicalName": "Mentzelia decapetala",
+      "germanName": "Zehnblättrige Mentzelie",
+      "taxonKey": 5331485,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Mentzelia laevicaulis",
+      "germanName": "Glattstängelige Mentzelie",
+      "taxonKey": 5331450,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Mercurialis tomentosa",
+      "germanName": "Filziges Bingelkraut",
+      "taxonKey": 3062973,
+      "plantnetCount": 140
+    },
+    {
+      "canonicalName": "Mikania scandens",
+      "germanName": "Kletter-Mikanie",
+      "taxonKey": 5398828,
+      "plantnetCount": 25
+    },
+    {
+      "canonicalName": "Millettia laurentii",
+      "germanName": "Wenge",
+      "taxonKey": 5355672,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Millingtonia hortensis",
+      "germanName": "Jasminbaum",
+      "taxonKey": 7629955,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Moehringia macrophylla",
+      "germanName": "Großblättrige Nabelmiere",
+      "taxonKey": 3085376,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Morinda citrifolia",
+      "germanName": "Noni",
+      "taxonKey": 5339879,
+      "plantnetCount": 464
+    },
+    {
+      "canonicalName": "Mucuna pruriens",
+      "germanName": "Juckbohne",
+      "taxonKey": 2951499,
+      "plantnetCount": 46
+    },
+    {
+      "canonicalName": "Murraya koenigii",
+      "germanName": "Currybaum",
+      "taxonKey": 5421333,
+      "plantnetCount": 22
+    },
+    {
+      "canonicalName": "Murraya paniculata",
+      "germanName": "Orangenraute",
+      "taxonKey": 8190743,
+      "plantnetCount": 192
+    },
+    {
+      "canonicalName": "Muscari commutatum",
+      "germanName": "Verwechselte Traubenhyazinthe",
+      "taxonKey": 2772145,
+      "plantnetCount": 62
+    },
+    {
+      "canonicalName": "Nama undulata",
+      "germanName": "Nama undulatum",
+      "taxonKey": 5535120,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Nandina domestica",
+      "germanName": "Himmelsbambus",
+      "taxonKey": 5371712,
+      "plantnetCount": 724
+    },
+    {
+      "canonicalName": "Narcissus bulbocodium",
+      "germanName": "Reifrock-Narzisse",
+      "taxonKey": 2858846,
+      "plantnetCount": 329
+    },
+    {
+      "canonicalName": "Narcissus cyclamineus",
+      "germanName": "Alpenveilchen-Narzisse",
+      "taxonKey": 2858654,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Narcissus papyraceus",
+      "germanName": "Weihnachts-Narzisse",
+      "taxonKey": 2858739,
+      "plantnetCount": 314
+    },
+    {
+      "canonicalName": "Narcissus tazetta",
+      "germanName": "Strauß-Narzisse",
+      "taxonKey": 2858963,
+      "plantnetCount": 666
+    },
+    {
+      "canonicalName": "Narcissus triandrus",
+      "germanName": "Engelstränen-Narzisse",
+      "taxonKey": 2858501,
+      "plantnetCount": 265
+    },
+    {
+      "canonicalName": "Neatostema apulum",
+      "germanName": "Gelber Steinsame",
+      "taxonKey": 4061000,
+      "plantnetCount": 41
+    },
+    {
+      "canonicalName": "Nelumbo lutea",
+      "germanName": "Amerikanische Lotosblume",
+      "taxonKey": 7503234,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Neurada procumbens",
+      "germanName": "Kameltritt",
+      "taxonKey": 3701813,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Nicotiana forgetiana",
+      "germanName": "Forget-Tabak",
+      "taxonKey": 9546382,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Nicotiana longiflora",
+      "germanName": "Langblütiger Tabak",
+      "taxonKey": 2928766,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Nierembergia linariifolia",
+      "germanName": "Schmalblättriger Weißbecher",
+      "taxonKey": 7299427,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Nolana humifusa",
+      "germanName": "Niederliegende Glockenwinde",
+      "taxonKey": 7299310,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Nothofagus antarctica",
+      "germanName": "Antarktische Scheinbuche",
+      "taxonKey": 2874930,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Nothofagus menziesii",
+      "germanName": "Silberne Scheinbuche",
+      "taxonKey": 2874917,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Nothofagus obliqua",
+      "germanName": "Pellin-Scheinbuche",
+      "taxonKey": 2874984,
+      "plantnetCount": 36
+    },
+    {
+      "canonicalName": "Nothofagus pumilio",
+      "germanName": "Lenga-Südbuche",
+      "taxonKey": 2874907,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Nuphar advena",
+      "germanName": "Amerikanische Teichrose",
+      "taxonKey": 6434985,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Nuphar polysepala",
+      "germanName": "Indianer-Teichrose",
+      "taxonKey": 6434926,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Nymphaea mexicana",
+      "germanName": "Mexikanische Seerose",
+      "taxonKey": 2882420,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Nymphaea odorata",
+      "germanName": "Wohlriechende Seerose",
+      "taxonKey": 2882412,
+      "plantnetCount": 36
+    },
+    {
+      "canonicalName": "Nyssa sylvatica",
+      "germanName": "Schwarzer Tupelobaum",
+      "taxonKey": 5383717,
+      "plantnetCount": 155
+    },
+    {
+      "canonicalName": "Ocimum tenuiflorum",
+      "germanName": "indisches Basilikum",
+      "taxonKey": 2927100,
+      "plantnetCount": 90
+    },
+    {
+      "canonicalName": "Odontarrhena alpestris",
+      "germanName": "Alpen-Steinkraut",
+      "taxonKey": 3044956,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Olneya tesota",
+      "germanName": "Wüsteneisenholz",
+      "taxonKey": 2974564,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Ononis reclinata",
+      "germanName": "Nickende Hauhechel",
+      "taxonKey": 2977133,
+      "plantnetCount": 285
+    },
+    {
+      "canonicalName": "Onosma visianii",
+      "germanName": "Dalmatien-Lotwurz",
+      "taxonKey": 4067104,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Ophrys bertolonii",
+      "germanName": "Bertolonis Ragwurz",
+      "taxonKey": 2792833,
+      "plantnetCount": 174
+    },
+    {
+      "canonicalName": "Ophrys cretica",
+      "germanName": "Kretische Ragwurz",
+      "taxonKey": 2793071,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Ophrys omegaifera",
+      "germanName": "Omega-Ragwurz",
+      "taxonKey": 2793593,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Origanum rotundifolium",
+      "germanName": "Rundblättriger Dost",
+      "taxonKey": 3894031,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Ornithogalum thyrsoides",
+      "germanName": "Kap-Milchstern",
+      "taxonKey": 2773545,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Osmanthus heterophyllus",
+      "germanName": "Stachelblättrige Duftblüte",
+      "taxonKey": 3172276,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Ostrya virginiana",
+      "germanName": "Virginische Hopfenbuche",
+      "taxonKey": 5332289,
+      "plantnetCount": 99
+    },
+    {
+      "canonicalName": "Osyris alba",
+      "germanName": "Honigduftender Rutenstrauch",
+      "taxonKey": 3789029,
+      "plantnetCount": 1393
+    },
+    {
+      "canonicalName": "Oxalis violacea",
+      "germanName": "Westindischer Sauerklee",
+      "taxonKey": 2891708,
+      "plantnetCount": 95
+    },
+    {
+      "canonicalName": "Oxydendrum arboreum",
+      "germanName": "Sauerbaum",
+      "taxonKey": 2882708,
+      "plantnetCount": 105
+    },
+    {
+      "canonicalName": "Pachypodium lamerei",
+      "germanName": "Madagaskarpalme",
+      "taxonKey": 5535474,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Paederia foetida",
+      "germanName": "Stinkwein",
+      "taxonKey": 2909527,
+      "plantnetCount": 16
+    },
+    {
+      "canonicalName": "Paliurus spina-christi",
+      "germanName": "Christusdorn",
+      "taxonKey": 5372457,
+      "plantnetCount": 770
+    },
+    {
+      "canonicalName": "Pallenis maritima",
+      "germanName": "Küstenstrandstern",
+      "taxonKey": 5385225,
+      "plantnetCount": 701
+    },
+    {
+      "canonicalName": "Pallenis spinosa",
+      "germanName": "Stechendes Sternauge",
+      "taxonKey": 5385215,
+      "plantnetCount": 1048
+    },
+    {
+      "canonicalName": "Pancratium canariense",
+      "germanName": "Kanaren-Trichternarzisse",
+      "taxonKey": 2853237,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Pancratium illyricum",
+      "germanName": "Illyrische Trichternarzisse",
+      "taxonKey": 2853249,
+      "plantnetCount": 99
+    },
+    {
+      "canonicalName": "Pandorea jasminoides",
+      "germanName": "Rosa Pandorea",
+      "taxonKey": 7298716,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Papaver armeniacum",
+      "germanName": "Armenischer Mohn",
+      "taxonKey": 7655704,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Papaver radicatum",
+      "germanName": "Arktischer Mohn",
+      "taxonKey": 8348125,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Parapholis incurva",
+      "germanName": "Sichel-Dünnschwanz",
+      "taxonKey": 5290069,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Parentucellia latifolia",
+      "germanName": "Breitblättriges Teerkraut",
+      "taxonKey": 8049400,
+      "plantnetCount": 131
+    },
+    {
+      "canonicalName": "Parmentiera aculeata",
+      "germanName": "Parmentiera edulis",
+      "taxonKey": 7533857,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Pastinaca lucida",
+      "germanName": "Glänzender Pastinak",
+      "taxonKey": 5538788,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Pelargonium zonale",
+      "germanName": "Zonal-Pelargonie",
+      "taxonKey": 9609002,
+      "plantnetCount": 59
+    },
+    {
+      "canonicalName": "Pelecyphora emskoetteriana",
+      "germanName": "Escobaria emskoetteriana",
+      "taxonKey": 11505158,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Peltaria alliacea",
+      "germanName": "Lauch-Scheibenschötchen",
+      "taxonKey": 3052632,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Peltophorum pterocarpum",
+      "germanName": "Gelber Flammenbaum",
+      "taxonKey": 2952775,
+      "plantnetCount": 49
+    },
+    {
+      "canonicalName": "Periploca laevigata",
+      "germanName": "Glatte Baumschlinge",
+      "taxonKey": 6022574,
+      "plantnetCount": 86
+    },
+    {
+      "canonicalName": "Persea indica",
+      "germanName": "Indische Persea",
+      "taxonKey": 4181596,
+      "plantnetCount": 21
+    },
+    {
+      "canonicalName": "Petromarula pinnata",
+      "germanName": "Kretische Rutenglockenblume",
+      "taxonKey": 3167989,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Petrophytum caespitosum",
+      "germanName": "Mattenbildende Felsspiere",
+      "taxonKey": 3030194,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Petteria ramentacea",
+      "germanName": "Petterie",
+      "taxonKey": 2982368,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Phacelia sericea",
+      "germanName": "Seidenhaarige Phazelie",
+      "taxonKey": 2928120,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Phagnalon rupestre",
+      "germanName": "Gewöhnliche Steinimmortelle",
+      "taxonKey": 3150037,
+      "plantnetCount": 43
+    },
+    {
+      "canonicalName": "Phagnalon saxatile",
+      "germanName": "Felsen-Steinimmortelle",
+      "taxonKey": 3150065,
+      "plantnetCount": 319
+    },
+    {
+      "canonicalName": "Phellodendron amurense",
+      "germanName": "Amur-Korkbaum",
+      "taxonKey": 3190154,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Philadelphus microphyllus",
+      "germanName": "Kleinblättriger Pfeifenstrauch",
+      "taxonKey": 2986010,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Phillyrea angustifolia",
+      "germanName": "Schmalblättrige Steinlinde",
+      "taxonKey": 7325947,
+      "plantnetCount": 1938
+    },
+    {
+      "canonicalName": "Phlebodium aureum",
+      "germanName": "Goldtüpfelfarn",
+      "taxonKey": 2650479,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Phormium tenax",
+      "germanName": "Neuseeländer Flachs",
+      "taxonKey": 2778511,
+      "plantnetCount": 101
+    },
+    {
+      "canonicalName": "Phuopsis stylosa",
+      "germanName": "Langgriffliger Rosenwaldmeister",
+      "taxonKey": 7671397,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Phyllocladus aspleniifolius",
+      "germanName": "Tasmanische Blatteibe",
+      "taxonKey": 5284464,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Phyllostachys edulis",
+      "germanName": "Moso-Bambus",
+      "taxonKey": 5290168,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Picea engelmannii",
+      "germanName": "Engelmann-Fichte",
+      "taxonKey": 5284917,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Picea orientalis",
+      "germanName": "Kaukasus-Fichte",
+      "taxonKey": 5284794,
+      "plantnetCount": 49
+    },
+    {
+      "canonicalName": "Pimenta racemosa",
+      "germanName": "Westindischer Lorbeer",
+      "taxonKey": 3186096,
+      "plantnetCount": 14
+    },
+    {
+      "canonicalName": "Pinguicula moranensis",
+      "germanName": "Geschwänztes Fettkraut",
+      "taxonKey": 7297919,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Pinus jeffreyi",
+      "germanName": "Jeffreys Kiefer",
+      "taxonKey": 8892957,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Pinus taeda",
+      "germanName": "Weihrauch-Kiefer",
+      "taxonKey": 5285241,
+      "plantnetCount": 77
+    },
+    {
+      "canonicalName": "Piper auritum",
+      "germanName": "Mexikanischer Blattpfeffer",
+      "taxonKey": 3086352,
+      "plantnetCount": 41
+    },
+    {
+      "canonicalName": "Pistacia atlantica",
+      "germanName": "Atlantische Pistazie",
+      "taxonKey": 3190581,
+      "plantnetCount": 89
+    },
+    {
+      "canonicalName": "Plantago albicans",
+      "germanName": "Weißlicher Wegerich",
+      "taxonKey": 8424834,
+      "plantnetCount": 60
+    },
+    {
+      "canonicalName": "Plantago subulata",
+      "germanName": "Pfriemenblättriger Wegerich",
+      "taxonKey": 8067043,
+      "plantnetCount": 389
+    },
+    {
+      "canonicalName": "Platanus racemosa",
+      "germanName": "Kalifornische Platane",
+      "taxonKey": 8268789,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Pleiogynium timoriense",
+      "germanName": "Pleiogynium timorense",
+      "taxonKey": 3661589,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Plumbago auriculata",
+      "germanName": "Kap-Bleiwurz",
+      "taxonKey": 3082283,
+      "plantnetCount": 581
+    },
+    {
+      "canonicalName": "Plumbago europaea",
+      "germanName": "Europäische Bleiwurz",
+      "taxonKey": 4090052,
+      "plantnetCount": 156
+    },
+    {
+      "canonicalName": "Plumeria obtusa",
+      "germanName": "Duftende Frangipani",
+      "taxonKey": 3169677,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Podocarpus latifolius",
+      "germanName": "Breitblättrige Steineibe",
+      "taxonKey": 5285951,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Podocarpus macrophyllus",
+      "germanName": "Großblättrige Steineibe",
+      "taxonKey": 5285930,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Podocarpus nubigenus",
+      "germanName": "Chilenische Steineibe",
+      "taxonKey": 5285976,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Podocarpus totara",
+      "germanName": "Totara",
+      "taxonKey": 5286079,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Pogonatherum paniceum",
+      "germanName": "Zimmerbambus",
+      "taxonKey": 4105523,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Pogostemon heyneanus",
+      "germanName": "Javanisches Patschuli",
+      "taxonKey": 3900033,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Polygaloides chamaebuxus",
+      "germanName": "Buchs-Kreuzblume",
+      "taxonKey": 4051746,
+      "plantnetCount": 226
+    },
+    {
+      "canonicalName": "Populus grandidentata",
+      "germanName": "Großzähnige Pappel",
+      "taxonKey": 3040210,
+      "plantnetCount": 52
+    },
+    {
+      "canonicalName": "Porophyllum ruderale",
+      "germanName": "Bolivianischer Koriander",
+      "taxonKey": 3103948,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Potentilla valderia",
+      "germanName": "Seealpen-Fingerkraut",
+      "taxonKey": 5367882,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Primula glutinosa",
+      "germanName": "Klebrige Primel",
+      "taxonKey": 5640317,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Primula pedemontana",
+      "germanName": "Piemonteser Primel",
+      "taxonKey": 8095416,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Primula spectabilis",
+      "germanName": "Pracht-Primel",
+      "taxonKey": 7842450,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Primula tyrolensis",
+      "germanName": "Südtiroler Primel",
+      "taxonKey": 5641442,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Primula wulfeniana",
+      "germanName": "Wulfens Primel",
+      "taxonKey": 7290695,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Prunus gondouinii",
+      "germanName": "Bastardkirsche",
+      "taxonKey": 3023096,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Prunus persica",
+      "germanName": "Pfirsich",
+      "taxonKey": 8149923,
+      "plantnetCount": 1494
+    },
+    {
+      "canonicalName": "Psydrax lividus",
+      "germanName": "Psydrax livida",
+      "taxonKey": 2893112,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Pterocarpus indicus",
+      "germanName": "Narrabaum",
+      "taxonKey": 5349242,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Pterygota alata",
+      "germanName": "Buddhanuss",
+      "taxonKey": 7161901,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Ptilostemon afer",
+      "germanName": "Elfenbeindistel",
+      "taxonKey": 3096857,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Pyrus pyrifolia",
+      "germanName": "Nashi",
+      "taxonKey": 5362786,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Quercus alba",
+      "germanName": "Amerikanische Weiß-Eiche",
+      "taxonKey": 2879737,
+      "plantnetCount": 193
+    },
+    {
+      "canonicalName": "Quercus alnifolia",
+      "germanName": "Erlenblättrige Eiche",
+      "taxonKey": 2880756,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Quercus castaneifolia",
+      "germanName": "Kastanienblättrige Eiche",
+      "taxonKey": 7930013,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Quercus coccifera",
+      "germanName": "Kermes-Eiche",
+      "taxonKey": 2879175,
+      "plantnetCount": 2899
+    },
+    {
+      "canonicalName": "Quercus douglasii",
+      "germanName": "Blau-Eiche",
+      "taxonKey": 2878266,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Quercus falcata",
+      "germanName": "Sichelblättrige Eiche",
+      "taxonKey": 2880967,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Quercus garryana",
+      "germanName": "Oregon-Eiche",
+      "taxonKey": 2879260,
+      "plantnetCount": 20
+    },
+    {
+      "canonicalName": "Quercus ilicifolia",
+      "germanName": "Busch-Eiche",
+      "taxonKey": 2878190,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Quercus imbricaria",
+      "germanName": "Schindel-Eiche",
+      "taxonKey": 2881106,
+      "plantnetCount": 22
+    },
+    {
+      "canonicalName": "Quercus kelloggii",
+      "germanName": "Kalifornische Schwarzeiche",
+      "taxonKey": 2878586,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Quercus lobata",
+      "germanName": "Kalifornische Weiß-Eiche",
+      "taxonKey": 2878373,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Quercus marilandica",
+      "germanName": "Schwarz-Eiche",
+      "taxonKey": 2881630,
+      "plantnetCount": 23
+    },
+    {
+      "canonicalName": "Quercus michauxii",
+      "germanName": "Korb-Eiche",
+      "taxonKey": 2880340,
+      "plantnetCount": 48
+    },
+    {
+      "canonicalName": "Quercus mongolica",
+      "germanName": "Mongolische Eiche",
+      "taxonKey": 2879685,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Quercus montana",
+      "germanName": "Kastanien-Eiche",
+      "taxonKey": 2881118,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Quercus muehlenbergii",
+      "germanName": "Gelbe Eiche",
+      "taxonKey": 2879947,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Quercus phellos",
+      "germanName": "Weiden-Eiche",
+      "taxonKey": 2880652,
+      "plantnetCount": 95
+    },
+    {
+      "canonicalName": "Quercus pyrenaica",
+      "germanName": "Pyrenäen-Eiche",
+      "taxonKey": 2878826,
+      "plantnetCount": 536
+    },
+    {
+      "canonicalName": "Quercus trojana",
+      "germanName": "Mazedonische Eiche",
+      "taxonKey": 2879774,
+      "plantnetCount": 43
+    },
+    {
+      "canonicalName": "Quercus virginiana",
+      "germanName": "Virginia-Eiche",
+      "taxonKey": 2878092,
+      "plantnetCount": 63
+    },
+    {
+      "canonicalName": "Radermachera sinica",
+      "germanName": "Zimmeresche",
+      "taxonKey": 4092178,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Ramonda serbica",
+      "germanName": "Serbischer Felsenteller",
+      "taxonKey": 6365085,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Ranunculus amplexicaulis",
+      "germanName": "Weißer Hahnenfuß",
+      "taxonKey": 3926895,
+      "plantnetCount": 16
+    },
+    {
+      "canonicalName": "Ranunculus bilobus",
+      "germanName": "Zweilappiger Hahnenfuß",
+      "taxonKey": 3923514,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Ranunculus bullatus",
+      "germanName": "Blasiger Hahnenfuß",
+      "taxonKey": 3922635,
+      "plantnetCount": 124
+    },
+    {
+      "canonicalName": "Ranunculus pyrenaeus",
+      "germanName": "Pyrenäen-Hahnenfuß",
+      "taxonKey": 7774794,
+      "plantnetCount": 94
+    },
+    {
+      "canonicalName": "Reichardia tingitana",
+      "germanName": "Tanger-Reichardie",
+      "taxonKey": 5385648,
+      "plantnetCount": 242
+    },
+    {
+      "canonicalName": "Rhamnus alaternus",
+      "germanName": "Stechpalmen-Kreuzdorn",
+      "taxonKey": 6371424,
+      "plantnetCount": 4883
+    },
+    {
+      "canonicalName": "Rhamnus ludovici-salvatoris",
+      "germanName": "Balearen-Kreuzdorn",
+      "taxonKey": 3877295,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Rhamnus prinoides",
+      "germanName": "Afrikanischer Faulbaum",
+      "taxonKey": 3875856,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Rhizophora mangle",
+      "germanName": "Rote Mangrove",
+      "taxonKey": 3086528,
+      "plantnetCount": 85
+    },
+    {
+      "canonicalName": "Rhododendron occidentale",
+      "germanName": "Westliche Azalee",
+      "taxonKey": 2883077,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Ribes speciosum",
+      "germanName": "Fuchsienblütige Johannisbeere",
+      "taxonKey": 2986206,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Rivina humilis",
+      "germanName": "Blutbeere",
+      "taxonKey": 3084027,
+      "plantnetCount": 201
+    },
+    {
+      "canonicalName": "Robinia hispida",
+      "germanName": "Borstige Robinie",
+      "taxonKey": 5352221,
+      "plantnetCount": 107
+    },
+    {
+      "canonicalName": "Robinia neomexicana",
+      "germanName": "Neumexiko-Robinie",
+      "taxonKey": 5352212,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Rosa laevigata",
+      "germanName": "Cherokee-Rose",
+      "taxonKey": 3002751,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Rottboellia cochinchinensis",
+      "germanName": "Rottbellia cochinchinensis",
+      "taxonKey": 2704075,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Rubus arcticus",
+      "germanName": "Allackerbeere",
+      "taxonKey": 2992051,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Rubus illecebrosus",
+      "germanName": "Erdbeer-Himbeere",
+      "taxonKey": 2995508,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Ruellia humilis",
+      "germanName": "Behaarte Ruellie",
+      "taxonKey": 5415395,
+      "plantnetCount": 87
+    },
+    {
+      "canonicalName": "Ruellia strepens",
+      "germanName": "Kahle Ruellie",
+      "taxonKey": 5415414,
+      "plantnetCount": 10
+    },
+    {
+      "canonicalName": "Rumex lunaria",
+      "germanName": "Kanaren-Ampfer",
+      "taxonKey": 4032398,
+      "plantnetCount": 182
+    },
+    {
+      "canonicalName": "Ruta chalepensis",
+      "germanName": "Gefranste Raute",
+      "taxonKey": 3190381,
+      "plantnetCount": 241
+    },
+    {
+      "canonicalName": "Sabal minor",
+      "germanName": "Zwergpalmettopalme",
+      "taxonKey": 2732511,
+      "plantnetCount": 52
+    },
+    {
+      "canonicalName": "Salix arctica",
+      "germanName": "Arktische Weide",
+      "taxonKey": 5372665,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Salix glauca",
+      "germanName": "Seidenhaarige Weide",
+      "taxonKey": 5372963,
+      "plantnetCount": 32
+    },
+    {
+      "canonicalName": "Salix lanata",
+      "germanName": "Woll-Weide",
+      "taxonKey": 5372706,
+      "plantnetCount": 89
+    },
+    {
+      "canonicalName": "Salix lapponum",
+      "germanName": "Lappland-Weide",
+      "taxonKey": 7104074,
+      "plantnetCount": 105
+    },
+    {
+      "canonicalName": "Salix lucida",
+      "germanName": "Glanz-Weide",
+      "taxonKey": 5372604,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Salix nigra",
+      "germanName": "Amerikanische Schwarz-Weide",
+      "taxonKey": 5372854,
+      "plantnetCount": 17
+    },
+    {
+      "canonicalName": "Salix polaris",
+      "germanName": "Polar-Weide",
+      "taxonKey": 5372778,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Salvadora persica",
+      "germanName": "Zahnbürstenbaum",
+      "taxonKey": 5580727,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Salvia apiana",
+      "germanName": "Weißer Salbei",
+      "taxonKey": 2927016,
+      "plantnetCount": 42
+    },
+    {
+      "canonicalName": "Salvia azurea",
+      "germanName": "Prärie-Salbei",
+      "taxonKey": 8283204,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Salvia canariensis",
+      "germanName": "Kanaren-Salbei",
+      "taxonKey": 7306552,
+      "plantnetCount": 36
+    },
+    {
+      "canonicalName": "Salvia canescens",
+      "germanName": "Grauer Salbei",
+      "taxonKey": 8004998,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Salvia coccinea",
+      "germanName": "Scharlachroter Salbei",
+      "taxonKey": 9278365,
+      "plantnetCount": 25
+    },
+    {
+      "canonicalName": "Salvia dorisiana",
+      "germanName": "Frucht-Salbei",
+      "taxonKey": 3903741,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Salvia hians",
+      "germanName": "Kaschmir-Salbei",
+      "taxonKey": 3900330,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Salvia leucantha",
+      "germanName": "Strauchiger Salbei",
+      "taxonKey": 6411750,
+      "plantnetCount": 53
+    },
+    {
+      "canonicalName": "Salvia microphylla",
+      "germanName": "Johannisbeer-Salbei",
+      "taxonKey": 2927045,
+      "plantnetCount": 164
+    },
+    {
+      "canonicalName": "Salvia nutans",
+      "germanName": "Nickender Salbei",
+      "taxonKey": 2926984,
+      "plantnetCount": 3
+    },
+    {
+      "canonicalName": "Salvia pomifera",
+      "germanName": "Apfeltragender Salbei",
+      "taxonKey": 3891602,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Salvia uliginosa",
+      "germanName": "Sumpf-Salbei",
+      "taxonKey": 3882686,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Sanguinaria canadensis",
+      "germanName": "Kanadische Blutwurz",
+      "taxonKey": 5334192,
+      "plantnetCount": 487
+    },
+    {
+      "canonicalName": "Sapindus mukorossi",
+      "germanName": "Waschnussbaum",
+      "taxonKey": 5421133,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Saponaria pumila",
+      "germanName": "Zwerg-Seifenkraut",
+      "taxonKey": 3812192,
+      "plantnetCount": 62
+    },
+    {
+      "canonicalName": "Sarracenia alata",
+      "germanName": "Blasse Schlauchpflanze",
+      "taxonKey": 5421377,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Saxifraga arachnoidea",
+      "germanName": "Spinnweben-Steinbrech",
+      "taxonKey": 7884440,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Saxifraga callosa",
+      "germanName": "Zungen-Steinbrech",
+      "taxonKey": 7478310,
+      "plantnetCount": 50
+    },
+    {
+      "canonicalName": "Saxifraga cespitosa",
+      "germanName": "Polstersteinbrech",
+      "taxonKey": 3032796,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Saxifraga cochlearis",
+      "germanName": "Löffelblättriger Steinbrech",
+      "taxonKey": 3753958,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Saxifraga crustata",
+      "germanName": "Krusten-Steinbrech",
+      "taxonKey": 3753225,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Saxifraga petraea",
+      "germanName": "Felsen-Steinbrech",
+      "taxonKey": 7562610,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Saxifraga squarrosa",
+      "germanName": "Sparriger Steinbrech",
+      "taxonKey": 3752706,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Schinus terebinthifolia",
+      "germanName": "Brasilianischer Pfefferbaum",
+      "taxonKey": 3660419,
+      "plantnetCount": 612
+    },
+    {
+      "canonicalName": "Schizogyne sericea",
+      "germanName": "Seidenhaarige Schizogyne",
+      "taxonKey": 3089818,
+      "plantnetCount": 64
+    },
+    {
+      "canonicalName": "Schoenoplectus californicus",
+      "germanName": "Totora-Schilf",
+      "taxonKey": 2711108,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Scilla hyacinthoides",
+      "germanName": "Hyazinthen-Blaustern",
+      "taxonKey": 2767320,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Scilla peruviana",
+      "germanName": "Peruanischer Blaustern",
+      "taxonKey": 2767432,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Scindapsus pictus",
+      "germanName": "Krötenzwergmaus",
+      "taxonKey": 2873745,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Sclerocarya birrea",
+      "germanName": "Marula-Baum",
+      "taxonKey": 7160810,
+      "plantnetCount": 35
+    },
+    {
+      "canonicalName": "Scorpiurus muricatus",
+      "germanName": "Stacheliger Skorpionsschwanz",
+      "taxonKey": 5358302,
+      "plantnetCount": 227
+    },
+    {
+      "canonicalName": "Scutellaria incana",
+      "germanName": "Herbst-Helmkraut",
+      "taxonKey": 5341378,
+      "plantnetCount": 26
+    },
+    {
+      "canonicalName": "Sedum anglicum",
+      "germanName": "Englische Fetthenne",
+      "taxonKey": 5687974,
+      "plantnetCount": 280
+    },
+    {
+      "canonicalName": "Sempervivum calcareum",
+      "germanName": "Kalk-Hauswurz",
+      "taxonKey": 4201278,
+      "plantnetCount": 21
+    },
+    {
+      "canonicalName": "Senna siamea",
+      "germanName": "Kassodbaum",
+      "taxonKey": 2956905,
+      "plantnetCount": 125
+    },
+    {
+      "canonicalName": "Sequoia sempervirens",
+      "germanName": "Küstenmammutbaum",
+      "taxonKey": 2683909,
+      "plantnetCount": 386
+    },
+    {
+      "canonicalName": "Sesamum indicum",
+      "germanName": "Sesam",
+      "taxonKey": 3172622,
+      "plantnetCount": 36
+    },
+    {
+      "canonicalName": "Sesbania grandiflora",
+      "germanName": "Turibaum",
+      "taxonKey": 8281950,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Shepherdia canadensis",
+      "germanName": "Kanadische Büffelbeere",
+      "taxonKey": 5372427,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Shortia galacifolia",
+      "germanName": "Galaxblättriges Winterblatt",
+      "taxonKey": 5333326,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Sida cordifolia",
+      "germanName": "Sandmalve",
+      "taxonKey": 5406755,
+      "plantnetCount": 24
+    },
+    {
+      "canonicalName": "Sideritis syriaca",
+      "germanName": "Syrisches Gliedkraut",
+      "taxonKey": 7961270,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Sideroxylon spinosum",
+      "germanName": "Arganbaum",
+      "taxonKey": 2886244,
+      "plantnetCount": 12
+    },
+    {
+      "canonicalName": "Silene elisabethae",
+      "germanName": "Großblütiges Leimkraut",
+      "taxonKey": 5588329,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Simmondsia chinensis",
+      "germanName": "Jojoba",
+      "taxonKey": 5361949,
+      "plantnetCount": 21
+    },
+    {
+      "canonicalName": "Smallanthus sonchifolius",
+      "germanName": "Yacón",
+      "taxonKey": 3145311,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Smilax excelsa",
+      "germanName": "Hohe Stechwinde",
+      "taxonKey": 5295073,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Solanum aethiopicum",
+      "germanName": "Äthiopische Eierfrucht",
+      "taxonKey": 2929847,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Solanum linnaeanum",
+      "germanName": "Sodomsapfel",
+      "taxonKey": 2929062,
+      "plantnetCount": 236
+    },
+    {
+      "canonicalName": "Solanum mauritianum",
+      "germanName": "Wollblütiger Nachtschatten",
+      "taxonKey": 2931469,
+      "plantnetCount": 548
+    },
+    {
+      "canonicalName": "Solanum virginianum",
+      "germanName": "Thai-Aubergine",
+      "taxonKey": 2929920,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Sorbus americana",
+      "germanName": "Amerikanische Eberesche",
+      "taxonKey": 7779378,
+      "plantnetCount": 35
+    },
+    {
+      "canonicalName": "Spinulum annotinum",
+      "germanName": "Sprossender Bärlapp",
+      "taxonKey": 3992189,
+      "plantnetCount": 356
+    },
+    {
+      "canonicalName": "Stachys corsica",
+      "germanName": "Korsischer Ziest",
+      "taxonKey": 3884022,
+      "plantnetCount": 16
+    },
+    {
+      "canonicalName": "Stachys glutinosa",
+      "germanName": "Klebriger Ziest",
+      "taxonKey": 3882844,
+      "plantnetCount": 39
+    },
+    {
+      "canonicalName": "Stachys ocymastrum",
+      "germanName": "Basilikum-Ziest",
+      "taxonKey": 2927266,
+      "plantnetCount": 195
+    },
+    {
+      "canonicalName": "Staehelina dubia",
+      "germanName": "Zweifelhafte Strauchscharte",
+      "taxonKey": 3112552,
+      "plantnetCount": 510
+    },
+    {
+      "canonicalName": "Sternbergia lutea",
+      "germanName": "Herbst-Goldbecher",
+      "taxonKey": 5326791,
+      "plantnetCount": 871
+    },
+    {
+      "canonicalName": "Strelitzia reginae",
+      "germanName": "Paradiesvogelblume",
+      "taxonKey": 2763116,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Struthiopteris spicant",
+      "germanName": "Gewöhnlicher Rippenfarn",
+      "taxonKey": 5275365,
+      "plantnetCount": 987
+    },
+    {
+      "canonicalName": "Strychnos nux-vomica",
+      "germanName": "Gewöhnliche Brechnuss",
+      "taxonKey": 5414399,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Styrax japonicus",
+      "germanName": "Japanischer Storaxbaum",
+      "taxonKey": 5371678,
+      "plantnetCount": 31
+    },
+    {
+      "canonicalName": "Suaeda vera",
+      "germanName": "Strauchige Sode",
+      "taxonKey": 6035538,
+      "plantnetCount": 641
+    },
+    {
+      "canonicalName": "Symphytum creticum",
+      "germanName": "Kreta-Beinwell",
+      "taxonKey": 7624421,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Synsepalum dulcificum",
+      "germanName": "Wunderbeere",
+      "taxonKey": 2886039,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Syringa pubescens",
+      "germanName": "Wolliger Flieder",
+      "taxonKey": 6433135,
+      "plantnetCount": 32
+    },
+    {
+      "canonicalName": "Syringa reticulata",
+      "germanName": "Japanischer Flieder",
+      "taxonKey": 5415038,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Talipariti tiliaceum",
+      "germanName": "Lindenblättriger Eibisch",
+      "taxonKey": 7115794,
+      "plantnetCount": 85
+    },
+    {
+      "canonicalName": "Tamarix africana",
+      "germanName": "Sommer-Tamariske",
+      "taxonKey": 2874702,
+      "plantnetCount": 105
+    },
+    {
+      "canonicalName": "Tara spinosa",
+      "germanName": "Caesalpinia spinosa",
+      "taxonKey": 5354727,
+      "plantnetCount": 7
+    },
+    {
+      "canonicalName": "Taraxacum clemens",
+      "germanName": "Clemens’ Löwenzahn",
+      "taxonKey": 7923693,
+      "plantnetCount": 65
+    },
+    {
+      "canonicalName": "Taxus brevifolia",
+      "germanName": "Pazifische Eibe",
+      "taxonKey": 5284555,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Taxus canadensis",
+      "germanName": "Kanadische Eibe",
+      "taxonKey": 5284570,
+      "plantnetCount": 68
+    },
+    {
+      "canonicalName": "Tephroseris longifolia",
+      "germanName": "Voralpen-Aschenkraut",
+      "taxonKey": 3131004,
+      "plantnetCount": 30
+    },
+    {
+      "canonicalName": "Terminalia superba",
+      "germanName": "Limba",
+      "taxonKey": 3189393,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Teucrium hircanicum",
+      "germanName": "Kaukasus-Gamander",
+      "taxonKey": 3896282,
+      "plantnetCount": 26
+    },
+    {
+      "canonicalName": "Thapsia garganica",
+      "germanName": "Gargano-Purgierdolde",
+      "taxonKey": 6026849,
+      "plantnetCount": 51
+    },
+    {
+      "canonicalName": "Thaumatococcus daniellii",
+      "germanName": "Katamfe",
+      "taxonKey": 11066824,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Thesium humile",
+      "germanName": "Bergflachs",
+      "taxonKey": 6037999,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Thuja standishii",
+      "germanName": "Japanischer Lebensbaum",
+      "taxonKey": 2684174,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Thujopsis dolabrata",
+      "germanName": "Hiba-Lebensbaum",
+      "taxonKey": 2684102,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Thymbra capitata",
+      "germanName": "Kopfiger Thymian",
+      "taxonKey": 5607804,
+      "plantnetCount": 349
+    },
+    {
+      "canonicalName": "Thymelaea hirsuta",
+      "germanName": "Behaarte Spatzenzunge",
+      "taxonKey": 5523602,
+      "plantnetCount": 684
+    },
+    {
+      "canonicalName": "Thymelaea tartonraira",
+      "germanName": "Silberweiße Spatzenzunge",
+      "taxonKey": 7311323,
+      "plantnetCount": 51
+    },
+    {
+      "canonicalName": "Thymus caespititius",
+      "germanName": "Schillernder Thymian",
+      "taxonKey": 7307689,
+      "plantnetCount": 15
+    },
+    {
+      "canonicalName": "Thymus herba-barona",
+      "germanName": "Korsischer Thymian",
+      "taxonKey": 7307315,
+      "plantnetCount": 13
+    },
+    {
+      "canonicalName": "Thymus zygis",
+      "germanName": "Joch-Thymian",
+      "taxonKey": 7793938,
+      "plantnetCount": 79
+    },
+    {
+      "canonicalName": "Tilia mongolica",
+      "germanName": "Mongolische Linde",
+      "taxonKey": 4260674,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Torenia fournieri",
+      "germanName": "Fournier-Torenie",
+      "taxonKey": 3172203,
+      "plantnetCount": 18
+    },
+    {
+      "canonicalName": "Trachelium caeruleum",
+      "germanName": "Blaues Halskraut",
+      "taxonKey": 5407810,
+      "plantnetCount": 160
+    },
+    {
+      "canonicalName": "Trichosanthes cucumerina",
+      "germanName": "Schlangenhaargurke",
+      "taxonKey": 2874605,
+      "plantnetCount": 14
+    },
+    {
+      "canonicalName": "Trifolium clypeatum",
+      "germanName": "Schild-Klee",
+      "taxonKey": 5359174,
+      "plantnetCount": 14
+    },
+    {
+      "canonicalName": "Trifolium suffocatum",
+      "germanName": "Schmächtiger Klee",
+      "taxonKey": 5359099,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Trifolium usambarense",
+      "germanName": "Usambara-Klee",
+      "taxonKey": 5359022,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Trillium ovatum",
+      "germanName": "Westliche Dreizipfellilie",
+      "taxonKey": 2742413,
+      "plantnetCount": 70
+    },
+    {
+      "canonicalName": "Tripodion tetraphyllum",
+      "germanName": "Blasen-Wundklee",
+      "taxonKey": 2947289,
+      "plantnetCount": 145
+    },
+    {
+      "canonicalName": "Triteleia ixioides",
+      "germanName": "Gelbe Triteleie",
+      "taxonKey": 5304156,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Tsuga caroliniana",
+      "germanName": "Carolina-Hemlocktanne",
+      "taxonKey": 2687245,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Tsuga heterophylla",
+      "germanName": "Westamerikanische Hemlocktanne",
+      "taxonKey": 2687210,
+      "plantnetCount": 115
+    },
+    {
+      "canonicalName": "Tsuga mertensiana",
+      "germanName": "Berg-Hemlocktanne",
+      "taxonKey": 2687201,
+      "plantnetCount": 11
+    },
+    {
+      "canonicalName": "Tulipa biflora",
+      "germanName": "Zweiblütige Tulpe",
+      "taxonKey": 5299549,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Tulipa orphanidea",
+      "germanName": "Orphanides-Tulpe",
+      "taxonKey": 5299398,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Ullucus tuberosus",
+      "germanName": "Olluco",
+      "taxonKey": 3083518,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Umbilicus horizontalis",
+      "germanName": "Waagrechter Venusnabel",
+      "taxonKey": 7334434,
+      "plantnetCount": 169
+    },
+    {
+      "canonicalName": "Uncaria gambir",
+      "germanName": "Gambir",
+      "taxonKey": 5338190,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Urospermum dalechampii",
+      "germanName": "Weichhaariges Schwefelkörbchen",
+      "taxonKey": 3096622,
+      "plantnetCount": 1975
+    },
+    {
+      "canonicalName": "Urtica membranacea",
+      "germanName": "Geschwänzte Brennnessel",
+      "taxonKey": 7685819,
+      "plantnetCount": 257
+    },
+    {
+      "canonicalName": "Urtica morifolia",
+      "germanName": "Maulbeerblättrige Brennnessel",
+      "taxonKey": 7379923,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Utricularia gibba",
+      "germanName": "Zwerg-Wasserschlauch",
+      "taxonKey": 3172407,
+      "plantnetCount": 4
+    },
+    {
+      "canonicalName": "Valantia muralis",
+      "germanName": "Mauer-Schuttkraut",
+      "taxonKey": 2894036,
+      "plantnetCount": 28
+    },
+    {
+      "canonicalName": "Valeriana asarifolia",
+      "germanName": "Haselwurzblättriger Baldrian",
+      "taxonKey": 4095113,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Valeriana tuberosa",
+      "germanName": "Knolliger Baldrian",
+      "taxonKey": 4096119,
+      "plantnetCount": 356
+    },
+    {
+      "canonicalName": "Vernonia fasciculata",
+      "germanName": "Büschelige Scheinaster",
+      "taxonKey": 5397564,
+      "plantnetCount": 19
+    },
+    {
+      "canonicalName": "Vernonia noveboracensis",
+      "germanName": "New York-Scheinaster",
+      "taxonKey": 8271565,
+      "plantnetCount": 148
+    },
+    {
+      "canonicalName": "Vigna radiata",
+      "germanName": "Mungbohne",
+      "taxonKey": 2982380,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Vigna unguiculata",
+      "germanName": "Augenbohne",
+      "taxonKey": 2982583,
+      "plantnetCount": 45
+    },
+    {
+      "canonicalName": "Vinca difformis",
+      "germanName": "Mittleres Immergrün",
+      "taxonKey": 6421637,
+      "plantnetCount": 1123
+    },
+    {
+      "canonicalName": "Viola cheiranthifolia",
+      "germanName": "Teide-Veilchen",
+      "taxonKey": 5663616,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Viola dubyana",
+      "germanName": "Dubys Veilchen",
+      "taxonKey": 5664092,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Virola sebifera",
+      "germanName": "Talgmuskatnussbaum",
+      "taxonKey": 3152846,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Volutaria muricata",
+      "germanName": "Scheinkornblume",
+      "taxonKey": 5385959,
+      "plantnetCount": 20
+    },
+    {
+      "canonicalName": "Washingtonia filifera",
+      "germanName": "Kalifornische Washingtonpalme",
+      "taxonKey": 5294589,
+      "plantnetCount": 5
+    },
+    {
+      "canonicalName": "Wisteria sinensis",
+      "germanName": "Chinesische Wisteria",
+      "taxonKey": 8149049,
+      "plantnetCount": 239
+    },
+    {
+      "canonicalName": "Withania somnifera",
+      "germanName": "Schlafbeere",
+      "taxonKey": 2928840,
+      "plantnetCount": 189
+    },
+    {
+      "canonicalName": "Wulfenia carinthiaca",
+      "germanName": "Kärntner Wulfenie",
+      "taxonKey": 3742214,
+      "plantnetCount": 2
+    },
+    {
+      "canonicalName": "Xanthorhiza simplicissima",
+      "germanName": "Gelbwurz",
+      "taxonKey": 3033662,
+      "plantnetCount": 8
+    },
+    {
+      "canonicalName": "Zelkova carpinifolia",
+      "germanName": "Kaukasische Zelkove",
+      "taxonKey": 7467231,
+      "plantnetCount": 1
+    },
+    {
+      "canonicalName": "Zinnia haageana",
+      "germanName": "Haage-Zinnie",
+      "taxonKey": 3111813,
+      "plantnetCount": 9
+    },
+    {
+      "canonicalName": "Ziziphus oenopolia",
+      "germanName": "Ziziphus oenoplia",
+      "taxonKey": 3875331,
+      "plantnetCount": 29
+    },
+    {
+      "canonicalName": "Zornia latifolia",
+      "germanName": "Maconha Brava",
+      "taxonKey": 5355241,
+      "plantnetCount": 6
+    },
+    {
+      "canonicalName": "Zygophyllum fabago",
+      "germanName": "Bohnenähnliches Jochblatt",
+      "taxonKey": 3189902,
+      "plantnetCount": 203
+    }
+  ],
+  "notInPlantNet": []
+}
