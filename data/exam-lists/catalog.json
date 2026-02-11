@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-02-11",
+  "states": [
+    { "id": "bavaria", "name": { "de": "Bayern", "en": "Bavaria" } },
+    { "id": "baden-wuerttemberg", "name": { "de": "Baden-Württemberg", "en": "Baden-Wuerttemberg" } },
+    { "id": "berlin", "name": { "de": "Berlin", "en": "Berlin" } },
+    { "id": "brandenburg", "name": { "de": "Brandenburg", "en": "Brandenburg" } },
+    { "id": "bremen", "name": { "de": "Bremen", "en": "Bremen" } },
+    { "id": "hamburg", "name": { "de": "Hamburg", "en": "Hamburg" } },
+    { "id": "hesse", "name": { "de": "Hessen", "en": "Hesse" } },
+    { "id": "lower-saxony", "name": { "de": "Niedersachsen", "en": "Lower Saxony" } },
+    { "id": "mecklenburg-vorpommern", "name": { "de": "Mecklenburg-Vorpommern", "en": "Mecklenburg-Vorpommern" } },
+    { "id": "north-rhine-westphalia", "name": { "de": "Nordrhein-Westfalen", "en": "North Rhine-Westphalia" } },
+    { "id": "rhineland-palatinate", "name": { "de": "Rheinland-Pfalz", "en": "Rhineland-Palatinate" } },
+    { "id": "saarland", "name": { "de": "Saarland", "en": "Saarland" } },
+    { "id": "saxony", "name": { "de": "Sachsen", "en": "Saxony" } },
+    { "id": "saxony-anhalt", "name": { "de": "Sachsen-Anhalt", "en": "Saxony-Anhalt" } },
+    { "id": "schleswig-holstein", "name": { "de": "Schleswig-Holstein", "en": "Schleswig-Holstein" } },
+    { "id": "thuringia", "name": { "de": "Thüringen", "en": "Thuringia" } }
+  ],
+  "domains": [
+    {
+      "id": "gartenbau",
+      "displayName": { "de": "Gartenbau", "en": "Horticulture" },
+      "professions": [
+        {
+          "id": "garten-und-landschaftsbau",
+          "displayName": { "de": "Garten- und Landschaftsbau", "en": "Landscape Gardening" },
+          "frontendCategoryId": "garten-landschaftsbau",
+          "lists": [
+            {
+              "id": "galabau-full",
+              "displayName": { "de": "Gesamtliste", "en": "Full List" },
+              "file": "gartenbau/garten-und-landschaftsbau/national/full.ndjson",
+              "type": "full",
+              "scope": { "type": "national" }
+            },
+            {
+              "id": "galabau-course-01",
+              "displayName": { "de": "AuGaLa-Kurs 01", "en": "AuGaLa Course 01" },
+              "file": "gartenbau/garten-und-landschaftsbau/national/course-01.ndjson",
+              "type": "course",
+              "scope": { "type": "national" }
+            },
+            {
+              "id": "galabau-course-07",
+              "displayName": { "de": "AuGaLa-Kurs 07", "en": "AuGaLa Course 07" },
+              "file": "gartenbau/garten-und-landschaftsbau/national/course-07.ndjson",
+              "type": "course",
+              "scope": { "type": "national" }
+            },
+            {
+              "id": "galabau-course-12",
+              "displayName": { "de": "AuGaLa-Kurs 12", "en": "AuGaLa Course 12" },
+              "file": "gartenbau/garten-und-landschaftsbau/national/course-12.ndjson",
+              "type": "course",
+              "scope": { "type": "national" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
