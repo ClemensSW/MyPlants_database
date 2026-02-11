@@ -11,12 +11,12 @@
 
 const fs = require('fs');
 const path = require('path');
-const { getAllTaxonKeysFromDataset } = require('../scripts/utils/gbif-helpers');
+const { getAllTaxonKeysFromDataset } = require('../utils/gbif-helpers');
 
 // Konfiguration
 const CONFIG = {
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
-  OUTPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_taxonKeys_test.json'),
+  OUTPUT_FILE: path.join(__dirname, '../../data/intermediate/plantnet_taxonKeys_test.json'),
   LIMIT: 500, // 500 Keys holen (davon sind ~50-100 Species)
 };
 

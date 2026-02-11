@@ -19,13 +19,13 @@ const {
   pickPreferredGerman,
   pickPreferredFamilyName,
   uniqBy,
-} = require('../scripts/utils/gbif-helpers');
+} = require('../utils/gbif-helpers');
 
 // Konfiguration
 const CONFIG = {
-  INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_taxonKeys_test.json'),
-  OUTPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_raw_test.ndjson'),
-  FAILED_LOG: path.join(__dirname, '../data/intermediate/failed_keys_test.txt'),
+  INPUT_FILE: path.join(__dirname, '../../data/intermediate/plantnet_taxonKeys_test.json'),
+  OUTPUT_FILE: path.join(__dirname, '../../data/intermediate/plantnet_species_raw_test.ndjson'),
+  FAILED_LOG: path.join(__dirname, '../../data/intermediate/failed_keys_test.txt'),
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
   CONCURRENCY: 5, // Niedriger für Test
 };

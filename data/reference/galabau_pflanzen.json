@@ -1,0 +1,322 @@
+{
+  "pflanzen": [
+    {
+      "kurs": 1,
+      "kategorie": "Laubgehölze",
+      "eintraege": [
+        { "botanisch": "Acer campestre", "deutsch": "Feld-Ahorn" },
+        { "botanisch": "Acer platanoides", "deutsch": "Kugel-Ahorn" },
+        { "botanisch": "Aesculus hippocastanum", "deutsch": "Rosskastanie" },
+        { "botanisch": "Alnus glutinosa", "deutsch": "Schwarz-Erle, Rot-Erle" },
+        { "botanisch": "Betula pendula", "deutsch": "Sand-Birke, Weiß-Birke, Hänge-Birke" },
+        { "botanisch": "Buxus sempervirens var. arborescens", "deutsch": "Gewöhnlicher Buchsbaum, Hoher Buchsbaum" },
+        { "botanisch": "Carpinus betulus", "deutsch": "Hainbuche, Weißbuche" },
+        { "botanisch": "Cotoneaster x suecicus", "deutsch": "Immergrüne Böschungsmispel" },
+        { "botanisch": "Crataegus monogyna", "deutsch": "Eingriffeliger Weißdorn" },
+        { "botanisch": "Deutzia scabra", "deutsch": "Gefüllter Sternchenstrauch, Gefüllte Deutzie" },
+        { "botanisch": "Euonymus fortunei", "deutsch": "Kriechspindel" },
+        { "botanisch": "Fagus sylvatica", "deutsch": "Rot-Buche" },
+        { "botanisch": "Fallopia baldschuanica", "deutsch": "Schling-Knöterich" },
+        { "botanisch": "Fargesia", "deutsch": "Winterharter Schirmbambus" },
+        { "botanisch": "Forsythia x intermedia", "deutsch": "Goldglöckchen, Forsythie" },
+        { "botanisch": "Hedera helix", "deutsch": "Gewöhnlicher Efeu" },
+        { "botanisch": "Hydrangea macrophylla", "deutsch": "Bauern-Hortensie, Garten-Hortensie" },
+        { "botanisch": "Ilex crenata", "deutsch": "Japanische Stechpalme, Japan-Ilex" },
+        { "botanisch": "Ligustrum vulgare", "deutsch": "Gewöhnlicher Liguster, Rainweide" },
+        { "botanisch": "Liquidambar styraciflua", "deutsch": "Amberbaum, Amerikanischer Amberbaum" },
+        { "botanisch": "Lonicera nitida", "deutsch": "Immergrüne Flache Heckenmyrte" },
+        { "botanisch": "Philadelphus coronarius", "deutsch": "Europäischer Pfeifenstrauch, Bauernjasmin" },
+        { "botanisch": "Populus tremula", "deutsch": "Zitter-Pappel, Espe" },
+        { "botanisch": "Potentilla fruticosa", "deutsch": "Fingerstrauch" },
+        { "botanisch": "Prunus cerasifera", "deutsch": "Blut-Pflaume" },
+        { "botanisch": "Prunus laurocerasus", "deutsch": "Kirschlorbeer" },
+        { "botanisch": "Prunus serrulata", "deutsch": "Zier-Kirsche, Japanische Blüten-Kirsche" },
+        { "botanisch": "Ribes sanguineum", "deutsch": "Blut-Johannisbeere" },
+        { "botanisch": "Salix caprea", "deutsch": "Sal-Weide" },
+        { "botanisch": "Sorbus aucuparia", "deutsch": "Eberesche, Vogelbeere" },
+        { "botanisch": "Spiraea japonica", "deutsch": "Zwerg-Spiere, Japanischer Spierstrauch" },
+        { "botanisch": "Syringa vulgaris", "deutsch": "Edel-Flieder" },
+        { "botanisch": "Viburnum opulus", "deutsch": "Gewöhnlicher Schneeball, Wasser-Schneeball" },
+        { "botanisch": "Weigela", "deutsch": "Weigelie, Glockenstrauch" }
+      ]
+    },
+    {
+      "kurs": 1,
+      "kategorie": "Nadelgehölze",
+      "eintraege": [
+        { "botanisch": "Abies nordmanniana", "deutsch": "Nordmanns-Tanne, Kaukasus-Tanne" },
+        { "botanisch": "Chamaecyparis lawsoniana", "deutsch": "Blaue Säulen-Scheinzypresse" },
+        { "botanisch": "Ginkgo biloba", "deutsch": "Fächerblattbaum, Ginkgo" },
+        { "botanisch": "Picea omorika", "deutsch": "Serbische Fichte, Omorika-Fichte" },
+        { "botanisch": "Taxus baccata", "deutsch": "Gewöhnliche Eibe" },
+        { "botanisch": "Thuja occidentalis", "deutsch": "Abendländischer Lebensbaum" }
+      ]
+    },
+    {
+      "kurs": 1,
+      "kategorie": "Stauden",
+      "eintraege": [
+        { "botanisch": "Achillea", "deutsch": "Garten-Gold-Garbe, Garten-Schafgarbe" },
+        { "botanisch": "Aconitum napellus", "deutsch": "Blauer Eisenhut, Berg-Eisenhut" },
+        { "botanisch": "Ajuga reptans", "deutsch": "Rotlaubiger Kriechender Günsel" },
+        { "botanisch": "Alchemilla mollis", "deutsch": "Weicher Frauenmantel" },
+        { "botanisch": "Anemone x hybrida", "deutsch": "Herbst-Anemone" },
+        { "botanisch": "Aubrieta", "deutsch": "Blaukissen" },
+        { "botanisch": "Aurinia saxatilis", "deutsch": "Felsen-Steinkraut, Felsen-Steinkresse" },
+        { "botanisch": "Brunnera macrophylla", "deutsch": "Großblättriges Kaukasusvergissmeinnicht" },
+        { "botanisch": "Delphinium elatum", "deutsch": "Garten-Rittersporn" },
+        { "botanisch": "Galium odoratum", "deutsch": "Waldmeister" },
+        { "botanisch": "Geranium macrorrhizum", "deutsch": "Felsen-Storchschnabel" },
+        { "botanisch": "Geranium sanguineum", "deutsch": "Blutroter Storchschnabel" },
+        { "botanisch": "Helenium", "deutsch": "Sonnenbraut" },
+        { "botanisch": "Helianthemum", "deutsch": "Sonnenröschen" },
+        { "botanisch": "Hemerocallis", "deutsch": "Taglilie, Garten-Taglilie" },
+        { "botanisch": "Hosta", "deutsch": "Garten-Funkie" },
+        { "botanisch": "Iris barbata-elatior", "deutsch": "Hohe Garten-Schwertlilie, Hohe Bart-Iris" },
+        { "botanisch": "Iris sibirica", "deutsch": "Sibirische Schwertlilie, Wiesen-Iris" },
+        { "botanisch": "Leucanthemum x superbum", "deutsch": "Sommer-Margerite, Garten-Margerite" },
+        { "botanisch": "Lupinus", "deutsch": "Stauden-Lupine, Garten-Lupine" },
+        { "botanisch": "Nepeta x faassenii", "deutsch": "Katzenminze, Blaue Katzenminze" },
+        { "botanisch": "Paeonia lactiflora", "deutsch": "Garten-Pfingstrose, Edel-Pfingstrose" },
+        { "botanisch": "Phlox paniculata", "deutsch": "Garten-Phlox, Großer Stauden-Phlox" },
+        { "botanisch": "Phlox subulata", "deutsch": "Polster-Phlox, Moos-Phlox" },
+        { "botanisch": "Primula veris", "deutsch": "Echte Schlüsselblume, Wiesen-Schlüsselblume" },
+        { "botanisch": "Pulmonaria saccharata", "deutsch": "Geflecktes Lungenkraut, Spanisches Lungenkraut" },
+        { "botanisch": "Rudbeckia fulgida", "deutsch": "Sonnenhut" },
+        { "botanisch": "Salvia nemorosa", "deutsch": "Steppen-Salbei" },
+        { "botanisch": "Sedum telephium", "deutsch": "Hohe Garten-Fetthenne" },
+        { "botanisch": "Waldsteinia ternata", "deutsch": "Dreiblättrige Waldsteinie, Teppich-Golderdbeere" }
+      ]
+    },
+    {
+      "kurs": 1,
+      "kategorie": "Ziergräser",
+      "eintraege": [
+        { "botanisch": "Miscanthus sinensis", "deutsch": "Garten-Chinaschilf, Silber-Chinaschilf" }
+      ]
+    },
+    {
+      "kurs": 7,
+      "kategorie": "Laubgehölze",
+      "eintraege": [
+        { "botanisch": "Acer negundo", "deutsch": "Goldbunter Eschen-Ahorn" },
+        { "botanisch": "Acer platanoides", "deutsch": "Spitz-Ahorn" },
+        { "botanisch": "Acer pseudoplatanus", "deutsch": "Berg-Ahorn" },
+        { "botanisch": "Amelanchier lamarckii", "deutsch": "Kupfer-Felsenbirne" },
+        { "botanisch": "Betula pendula", "deutsch": "Trauer-Birke" },
+        { "botanisch": "Buddleja davidii", "deutsch": "Schmetterlingsstrauch, Sommerflieder" },
+        { "botanisch": "Calluna vulgaris", "deutsch": "Besenheide, Heidekraut, Sommerheide" },
+        { "botanisch": "Cercidiphyllum japonicum", "deutsch": "Katsurabaum, Kuchenbaum" },
+        { "botanisch": "Cercis siliquastrum", "deutsch": "Gewöhnlicher Judasbaum" },
+        { "botanisch": "Cornus kousa", "deutsch": "Japanischer Blumen-Hartriegel" },
+        { "botanisch": "Corylus avellana", "deutsch": "Korkenzieher-Haselnuss" },
+        { "botanisch": "Cotinus coggygria", "deutsch": "Roter Perückenstrauch" },
+        { "botanisch": "Deutzia gracilis", "deutsch": "Zierliche Deutzie, Maiblumenstrauch" },
+        { "botanisch": "Erica carnea", "deutsch": "Schnee-Heide, Winter-Heide" },
+        { "botanisch": "Fagus sylvatica", "deutsch": "Hänge-Buche" },
+        { "botanisch": "Hibiscus syriacus", "deutsch": "Garten-Eibisch, Strauch-Eibisch" },
+        { "botanisch": "Hippophae rhamnoides", "deutsch": "Sanddorn" },
+        { "botanisch": "Ilex aquifolium", "deutsch": "Stechpalme" },
+        { "botanisch": "Juglans regia", "deutsch": "Walnuss" },
+        { "botanisch": "Pachysandra terminalis", "deutsch": "Dickmännchen, Schattengrün" },
+        { "botanisch": "Platanus x hispanica", "deutsch": "Platane, Ahornblättrige Platane" },
+        { "botanisch": "Prunus avium", "deutsch": "Süß-Kirsche, Knorpel-Kirsche, Herz-Kirsche" },
+        { "botanisch": "Pyracantha", "deutsch": "Feuerdorn" },
+        { "botanisch": "Pyrus calleryana", "deutsch": "Chinesische Wild-Birne" },
+        { "botanisch": "Quercus robur", "deutsch": "Stiel-Eiche" },
+        { "botanisch": "Quercus rubra", "deutsch": "Amerikanische Rot-Eiche" },
+        { "botanisch": "Rosa canina", "deutsch": "Hunds-Rose" },
+        { "botanisch": "Rosa rugosa", "deutsch": "Kartoffel-Rose, Apfel-Rose" },
+        { "botanisch": "Rosa", "deutsch": "Beet-Rose" },
+        { "botanisch": "Rosa", "deutsch": "Edel-Rose" },
+        { "botanisch": "Rosa", "deutsch": "Kletter-Rose" },
+        { "botanisch": "Spiraea x arguta", "deutsch": "Braut-Spiere, Schnee-Spiere" }
+      ]
+    },
+    {
+      "kurs": 7,
+      "kategorie": "Nadelgehölze",
+      "eintraege": [
+        { "botanisch": "Abies koreana", "deutsch": "Korea-Tanne, Zapfen-Tanne" },
+        { "botanisch": "Cedrus libani", "deutsch": "Blaue Atlas-Zeder, Blau-Zeder" },
+        { "botanisch": "Ginkgo biloba", "deutsch": "Kugel-Ginkgo" },
+        { "botanisch": "Juniperus horizontalis", "deutsch": "Blauer Teppich-Wacholder" },
+        { "botanisch": "Larix decidua", "deutsch": "Europäische Lärche" },
+        { "botanisch": "Metasequoia glyptostroboides", "deutsch": "Urweltmammutbaum, Chinesisches Rotholz" },
+        { "botanisch": "Picea abies", "deutsch": "Gewöhnliche Fichte, Rot-Fichte" },
+        { "botanisch": "Pinus mugo subsp. mugo", "deutsch": "Krummholz-Kiefer" },
+        { "botanisch": "Pinus nigra subsp. nigra", "deutsch": "Schwarz-Kiefer, Österreichische Schwarz-Kiefer" },
+        { "botanisch": "Pinus sylvestris", "deutsch": "Wald-Kiefer, Föhre, Gewöhnliche Kiefer" },
+        { "botanisch": "Pinus wallichiana", "deutsch": "Tränen-Kiefer" },
+        { "botanisch": "Taxus x media", "deutsch": "Hybrid-Eibe" },
+        { "botanisch": "Taxus baccata", "deutsch": "Säulen-Eibe" }
+      ]
+    },
+    {
+      "kurs": 7,
+      "kategorie": "Obstgehölze",
+      "eintraege": [
+        { "botanisch": "Cydonia oblonga", "deutsch": "Quitte, Echte Quitte" },
+        { "botanisch": "Malus domestica", "deutsch": "Apfel, Kultur-Apfel" },
+        { "botanisch": "Prunus domestica", "deutsch": "Pflaume, Zwetsche, Zwetschge" },
+        { "botanisch": "Prunus persica", "deutsch": "Pfirsich" },
+        { "botanisch": "Pyrus communis", "deutsch": "Birne, Kultur-Birne" },
+        { "botanisch": "Ribes rubrum", "deutsch": "Rote Johannisbeere, Weiße Johannisbeere" },
+        { "botanisch": "Ribes uva-crispa", "deutsch": "Stachelbeere, Kultur-Stachelbeere" },
+        { "botanisch": "Rubus fruticosus", "deutsch": "Brombeere, Kultur-Brombeere" }
+      ]
+    },
+    {
+      "kurs": 7,
+      "kategorie": "Stauden",
+      "eintraege": [
+        { "botanisch": "Actaea racemosa", "deutsch": "Juli-Silberkerze" },
+        { "botanisch": "Campanula poscharskyana", "deutsch": "Hängepolster-Glockenblume" },
+        { "botanisch": "Coreopsis verticillata", "deutsch": "Netzblattstern, Quirlblättriges Mädchenauge" },
+        { "botanisch": "Dianthus gratianopolitanus", "deutsch": "Garten-Pfingst-Nelke" },
+        { "botanisch": "Geum chiloense", "deutsch": "Chile-Nelkenwurz" },
+        { "botanisch": "Iberis sempervirens", "deutsch": "Immergrüne Schleifenblume, Immergrünes Schneekissen" },
+        { "botanisch": "Sedum floriferum", "deutsch": "Teppich-Sedum" },
+        { "botanisch": "Sempervivum", "deutsch": "Dachwurz, Hauswurz" }
+      ]
+    },
+    {
+      "kurs": 7,
+      "kategorie": "Ziergräser",
+      "eintraege": [
+        { "botanisch": "Carex morrowii", "deutsch": "Bunte Japan-Segge" },
+        { "botanisch": "Luzula sylvatica", "deutsch": "Wald-Hainsimse, Wald-Marbel" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Laubgehölze",
+      "eintraege": [
+        { "botanisch": "Acer palmatum", "deutsch": "Fächer-Ahorn" },
+        { "botanisch": "Berberis julianae", "deutsch": "Großblättrige Berberitze" },
+        { "botanisch": "Berberis thunbergii", "deutsch": "Grüne Hecken-Berberitze" },
+        { "botanisch": "Berberis verruculosa", "deutsch": "Warzen-Berberitze, Blaublatt-Berberitze" },
+        { "botanisch": "Castanea sativa", "deutsch": "Ess-Kastanie, Edelkastanie, Marone" },
+        { "botanisch": "Catalpa bignonioides", "deutsch": "Kugel-Trompetenbaum" },
+        { "botanisch": "Cornus alba", "deutsch": "Weißer Hartriegel, Tatarischer Hartriegel" },
+        { "botanisch": "Cornus mas", "deutsch": "Kornelkirsche" },
+        { "botanisch": "Corylus avellana", "deutsch": "Haselnuss, Gewöhnliche Hasel, Wald-Hasel" },
+        { "botanisch": "Corylus colurna", "deutsch": "Baum-Hasel, Türkische Hasel" },
+        { "botanisch": "Cytisus scoparius", "deutsch": "Edel-Ginster, Schmuck-Ginster" },
+        { "botanisch": "Daphne mezereum", "deutsch": "Seidelbast, Kellerhals" },
+        { "botanisch": "Euonymus alatus", "deutsch": "Korkflügelstrauch, Flügel-Spindelstrauch, Geflügeltes Pfaffenhütchen" },
+        { "botanisch": "Genista lydia", "deutsch": "Goldland-Ginster, Stein-Ginster, Lydischer Ginster" },
+        { "botanisch": "Hamamelis x intermedia", "deutsch": "Hybrid-Zaubernuss, Großblütige Zaubernuss" },
+        { "botanisch": "Hydrangea anomala subsp. petiolaris", "deutsch": "Kletter-Hortensie" },
+        { "botanisch": "Hypericum calycinum", "deutsch": "Immergrünes Johanniskraut, Niedriges Johanniskraut" },
+        { "botanisch": "Jasminum nudiflorum", "deutsch": "Winter-Jasmin" },
+        { "botanisch": "Kolkwitzia amabilis", "deutsch": "Kolkwitzie, Perlmuttstrauch" },
+        { "botanisch": "Laburnum x watereri", "deutsch": "Edel-Goldregen" },
+        { "botanisch": "Lavandula angustifolia", "deutsch": "Echter Lavendel" },
+        { "botanisch": "Liriodendron tulipifera", "deutsch": "Tulpenbaum, Amerikanischer Tulpenbaum" },
+        { "botanisch": "Lonicera henryi", "deutsch": "Immergrünes Geißblatt, Immergrüne Geißschlinge" },
+        { "botanisch": "Magnolia x soulangeana", "deutsch": "Tulpen-Magnolie" },
+        { "botanisch": "Mahonia aquifolium", "deutsch": "Gewöhnliche Mahonie" },
+        { "botanisch": "Nothofagus antarctica", "deutsch": "Pfennigbuche, Scheinbuche, Südbuche" },
+        { "botanisch": "Parrotia persica", "deutsch": "Eisenholzbaum, Parrotie" },
+        { "botanisch": "Parthenocissus tricuspidata", "deutsch": "Selbstklimmender Wilder Wein, Dreispitz-Jungfernrebe" },
+        { "botanisch": "Phyllostachys nigra", "deutsch": "Schwarzer Bambus, Schwarzrohrbambus" },
+        { "botanisch": "Pieris japonica", "deutsch": "Japanische Lavendelheide, Hängendes Schattenglöckchen" },
+        { "botanisch": "Prunus laurocerasus", "deutsch": "Kirschlorbeer, Lorbeerkirsche" },
+        { "botanisch": "Prunus lusitanica", "deutsch": "Portugiesische Lorbeerkirsche" },
+        { "botanisch": "Rhododendron luteum", "deutsch": "Pontische Azalee" },
+        { "botanisch": "Rhododendron forrestii", "deutsch": "Flacher Rhododendron" },
+        { "botanisch": "Rhododendron dauricum", "deutsch": "Rhododendron, Alpenrose" },
+        { "botanisch": "Robinia pseudoacacia", "deutsch": "Kugel-Robinie" },
+        { "botanisch": "Sambucus nigra", "deutsch": "Schwarzer Holunder, Fliederbeere" },
+        { "botanisch": "Skimmia japonica", "deutsch": "Frucht-Skimmie, Japanische Skimmie" },
+        { "botanisch": "Tilia cordata", "deutsch": "Winter-Linde" },
+        { "botanisch": "Viburnum lantana", "deutsch": "Wolliger Schneeball" },
+        { "botanisch": "Viburnum x bodnantense", "deutsch": "Winter-Schneeball, Bodnant-Schneeball" },
+        { "botanisch": "Vinca minor", "deutsch": "Kleines Immergrün, Kleinblättriges Singrün" },
+        { "botanisch": "Wisteria sinensis", "deutsch": "Chinesischer Blauregen, Glyzine" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Nadelgehölze",
+      "eintraege": [
+        { "botanisch": "Chamaecyparis obtusa", "deutsch": "Kleine Muschel-Scheinzypresse" },
+        { "botanisch": "Tsuga canadensis", "deutsch": "Kanadische Hemlocktanne" },
+        { "botanisch": "Sequoiadendron giganteum", "deutsch": "Kalifornischer Bergmammutbaum" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Pflanzen für die Innenraum-Begrünung",
+      "eintraege": [
+        { "botanisch": "Ficus carica", "deutsch": "Echte Feige, Feigenbaum" },
+        { "botanisch": "Laurus nobilis", "deutsch": "Lorbeerbaum, Lorbeer" },
+        { "botanisch": "Nerium oleander", "deutsch": "Oleander" },
+        { "botanisch": "Olea europaea", "deutsch": "Olivenbaum, Olive, Ölbaum" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Stauden",
+      "eintraege": [
+        { "botanisch": "Armeria maritima", "deutsch": "Grasnelke, Strand-Grasnelke" },
+        { "botanisch": "Astilbe chinensis", "deutsch": "Zwerg-Prachtspiere, Zwerg-Astilbe" },
+        { "botanisch": "Bergenia", "deutsch": "Bergenie, Riesensteinbrech" },
+        { "botanisch": "Epimedium x versicolor", "deutsch": "Verschiedenfarbige Elfenblume, Verschiedenfarbige Sockenblume" },
+        { "botanisch": "Euphorbia myrsinites", "deutsch": "Walzen-Wolfsmilch" },
+        { "botanisch": "Helleborus niger", "deutsch": "Christrose, Schwarzer Nieswurz" },
+        { "botanisch": "Heuchera micrantha", "deutsch": "Kleinblütiges Purpurglöckchen, Garten-Silberglöckchen" },
+        { "botanisch": "Lysimachia nummularia", "deutsch": "Pfennigkraut, Pfennig-Gilbweiderich" },
+        { "botanisch": "Pulsatilla vulgaris", "deutsch": "Küchenschelle, Kuhschelle" },
+        { "botanisch": "Thymus serpyllum", "deutsch": "Sand-Thymian, Feld-Thymian" },
+        { "botanisch": "Tiarella cordifolia", "deutsch": "Herzblättrige Schaumblüte, Wald-Schaumblüte" },
+        { "botanisch": "Yucca filamentosa", "deutsch": "Fädige Palmlilie, Palmlilie" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Zwiebel- und Knollenbildende Arten",
+      "eintraege": [
+        { "botanisch": "Hyacinthus orientalis", "deutsch": "Hyazinthe" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Ziergräser",
+      "eintraege": [
+        { "botanisch": "Cortaderia selloana", "deutsch": "Pampasgras, Silber-Pampasgras" },
+        { "botanisch": "Festuca glauca", "deutsch": "Blau-Schwingel" },
+        { "botanisch": "Pennisetum alopecuroides", "deutsch": "Federborstengras, Lampenputzergras" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Farne",
+      "eintraege": [
+        { "botanisch": "Asplenium scolopendrium", "deutsch": "Hirschzunge, Hirschzungenfarn" },
+        { "botanisch": "Dryopteris filix-mas", "deutsch": "Gewöhnlicher Wurmfarn" },
+        { "botanisch": "Polystichum setiferum", "deutsch": "Borstiger Schildfarn, Weicher Schildfarn" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Beet- und Balkonpflanzen, Wechselflor",
+      "eintraege": [
+        { "botanisch": "Viola x wittrockiana", "deutsch": "Garten-Stiefmütterchen" }
+      ]
+    },
+    {
+      "kurs": 12,
+      "kategorie": "Unkräuter, Wildkräuter",
+      "eintraege": [
+        { "botanisch": "Aegopodium podagraria", "deutsch": "Gewöhnlicher Giersch, Geißfuß" },
+        { "botanisch": "Elymus repens", "deutsch": "Kriech-Quecke, Gewöhnliche Quecke" },
+        { "botanisch": "Equisetum arvense", "deutsch": "Ackerschachtelhalm" },
+        { "botanisch": "Stellaria media", "deutsch": "Vogel-Sternmiere, Vogelmiere" },
+        { "botanisch": "Taraxacum sect. Ruderalia", "deutsch": "Wiesen-Löwenzahn, Wiesen-Kuhblume" },
+        { "botanisch": "Urtica dioica", "deutsch": "Große Brennnessel" }
+      ]
+    }
+  ]
+}

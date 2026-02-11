@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GBIF Image Cache — Dynamic Sizing Browser</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080a0f;
+    --surface: #111318;
+    --surface-hover: #181b23;
+    --border: #1e222c;
+    --border-active: #3b7d5e;
+    --text: #d4d8e0;
+    --text-muted: #6b7280;
+    --text-dim: #4a5060;
+    --accent: #4ade80;
+    --accent-dim: #22543d;
+    --accent-soft: rgba(74, 222, 128, 0.08);
+    --purple: #a78bfa;
+    --amber: #fbbf24;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Header ── */
+  header {
+    padding: 2.5rem 2rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.8rem; font-weight: 500; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .logo::before {
+    content: ''; display: block;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  h1 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 600; color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    max-width: 700px;
+    line-height: 1.5;
+  }
+
+  /* ── Toolbar ── */
+  .toolbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(8, 10, 15, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    margin-top: 1.5rem;
+  }
+  .toolbar-inner {
+    max-width: 1400px; margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex; align-items: center; gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .toolbar-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .size-pills {
+    display: flex; gap: 0.35rem;
+  }
+  .pill {
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+  .pill.active {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .toolbar-divider {
+    width: 1px; height: 24px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    flex: 1; min-width: 180px;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-box::placeholder { color: var(--text-dim); }
+  .search-box:focus { border-color: var(--accent); }
+
+  .stat-badge {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .stat-badge strong { color: var(--accent); font-weight: 500; }
+
+  /* ── URL Preview ── */
+  .url-bar {
+    max-width: 1400px; margin: 0 auto;
+    padding: 0.8rem 2rem;
+  }
+  .url-display {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .url-display .tag {
+    flex-shrink: 0;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tag-pattern { background: var(--accent-dim); color: var(--accent); }
+  .url-path { color: var(--text-muted); }
+  .url-highlight { color: var(--amber); font-weight: 500; }
+
+  /* ── Grid ── */
+  .grid-wrap {
+    max-width: 1400px; margin: 0 auto;
+    padding: 0 2rem 2rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--surface);
+    cursor: pointer;
+    transition: background 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { background: var(--surface-hover); }
+
+  .card-img-wrap {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: #0c0e14;
+    overflow: hidden;
+  }
+  .card-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+  }
+  .card-img-wrap img.loaded { opacity: 1; }
+
+  .card-img-wrap .loader {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .loader-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--text-dim);
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 0.7; transform: scale(1); }
+  }
+
+  .dim-badge {
+    position: absolute; bottom: 6px; right: 6px;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--purple);
+    pointer-events: none;
+  }
+
+  .organ-tag {
+    position: absolute; top: 6px; left: 6px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: capitalize;
+  }
+
+  .card-body {
+    padding: 0.7rem 0.85rem;
+  }
+  .card-species {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+  }
+  .card-meta {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.25rem;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Pagination ── */
+  .pagination {
+    max-width: 1400px; margin: 0 auto;
+    padding: 0 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .page-btn {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .page-btn:hover:not(:disabled) {
+    border-color: var(--accent); color: var(--accent);
+  }
+  .page-btn.active {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .page-btn:disabled {
+    opacity: 0.3; cursor: default;
+  }
+  .page-btn.nav {
+    width: auto; padding: 0 0.75rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+  }
+  .page-ellipsis {
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    padding: 0 0.25rem;
+  }
+  .per-page-select {
+    margin-left: 1.5rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* ── Fullscreen Overlay ── */
+  .overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0, 0, 0, 0.94);
+    z-index: 200;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s ease;
+  }
+  .overlay.visible { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .overlay img {
+    max-width: 92vw;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  .overlay-info {
+    margin-top: 1rem;
+    text-align: center;
+    pointer-events: none;
+  }
+  .overlay-species {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  .overlay-url {
+    margin-top: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    max-width: 90vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .overlay-hint {
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Empty state ── */
+  .empty-state {
+    grid-column: 1 / -1;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+  .empty-state .big { font-size: 2rem; margin-bottom: 0.5rem; }
+
+  /* ── Loading ── */
+  .loading-state {
+    max-width: 1400px; margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-dim);
+  }
+  .loading-bar {
+    width: 200px; height: 3px;
+    margin: 1rem auto 0;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .loading-bar::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    animation: loadSlide 1s ease-in-out infinite;
+  }
+  @keyframes loadSlide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
+  }
+
+  /* ── Error ── */
+  .error-state {
+    max-width: 1400px; margin: 0 auto;
+    padding: 2rem;
+  }
+  .error-box {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 10px;
+    padding: 1.5rem;
+    color: #fca5a5;
+    font-size: 0.9rem;
+  }
+  .error-box code {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: #ef4444;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">GBIF Image Cache</div>
+  <h1>Dynamic Sizing Browser</h1>
+  <p class="subtitle">
+    Thumbor-basiertes Resizing via <code style="color:var(--amber)">fit-in/{w}x0/</code> Prefix.
+    Bilder werden aus <code style="color:var(--purple)">multimedia.ndjson</code> geladen.
+  </p>
+</header>
+
+<!-- Sticky Toolbar -->
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <span class="toolbar-label">Größe</span>
+    <div class="size-pills">
+      <button class="pill" data-width="350">Tile 350</button>
+      <button class="pill active" data-width="525">Tile 525</button>
+      <button class="pill" data-width="750">Memory 750</button>
+      <button class="pill" data-width="900">Quiz 900</button>
+      <button class="pill" data-width="1200">Max 1200</button>
+      <button class="pill" data-width="0">Original</button>
+    </div>
+    <div class="toolbar-divider"></div>
+    <input type="text" class="search-box" id="searchInput" placeholder="Art, Organ oder Fotograf suchen…">
+    <div class="stat-badge" id="statBadge">—</div>
+  </div>
+</div>
+
+<!-- URL Pattern Preview -->
+<div class="url-bar">
+  <div class="url-display" id="urlPreview">
+    <span class="tag tag-pattern">Pattern</span>
+    <span class="url-path">.../image/cache/<span class="url-highlight">fit-in/525x0/</span>occurrence/{id}/media/{hash}</span>
+  </div>
+</div>
+
+<!-- Content -->
+<div id="loadingState" class="loading-state">
+  <div>multimedia.ndjson wird geladen…</div>
+  <div class="loading-bar"></div>
+</div>
+
+<div id="errorState" class="error-state" style="display:none;"></div>
+
+<div class="grid-wrap" id="gridWrap" style="display:none;">
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="pagination" id="pagination" style="display:none;"></div>
+
+<!-- Fullscreen -->
+<div class="overlay" id="overlay">
+  <img id="overlayImg" src="" alt="">
+  <div class="overlay-info">
+    <div class="overlay-species" id="overlaySpecies"></div>
+    <div class="overlay-url" id="overlayUrl"></div>
+    <div class="overlay-hint">Klick oder ESC zum Schließen · Original-URL (max. Auflösung)</div>
+  </div>
+</div>
+
+<script>
+// ── State ──
+let allImages = [];
+let filteredImages = [];
+let currentWidth = 525;
+let currentPage = 1;
+let perPage = 24;
+
+// ── URL Builder ──
+function buildUrl(base, width) {
+  if (width === 0) return base;
+  return base.replace(
+    '/image/cache/occurrence/',
+    `/image/cache/fit-in/${width}x0/occurrence/`
+  );
+}
+
+function updateUrlPreview() {
+  const el = document.getElementById('urlPreview');
+  if (currentWidth === 0) {
+    el.innerHTML = `
+      <span class="tag tag-pattern">Pattern</span>
+      <span class="url-path">.../image/cache/occurrence/{id}/media/{hash}</span>
+      <span style="color:var(--amber); margin-left:0.5rem;">← Original, kein Resize</span>`;
+  } else {
+    el.innerHTML = `
+      <span class="tag tag-pattern">Pattern</span>
+      <span class="url-path">.../image/cache/<span class="url-highlight">fit-in/${currentWidth}x0/</span>occurrence/{id}/media/{hash}</span>`;
+  }
+}
+
+// ── NDJSON Loader ──
+async function loadNDJSON() {
+  try {
+    const resp = await fetch('multimedia.ndjson');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} — ${resp.statusText}`);
+    const text = await resp.text();
+    const lines = text.trim().split('\n').filter(l => l.trim());
+    allImages = lines.map((line, i) => {
+      try { return JSON.parse(line); }
+      catch (e) { console.warn(`Zeile ${i+1} übersprungen:`, e); return null; }
+    }).filter(Boolean);
+
+    if (allImages.length === 0) throw new Error('Keine gültigen Einträge in multimedia.ndjson gefunden.');
+
+    filteredImages = [...allImages];
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('gridWrap').style.display = '';
+    document.getElementById('pagination').style.display = '';
+    renderAll();
+  } catch (err) {
+    document.getElementById('loadingState').style.display = 'none';
+    const errorEl = document.getElementById('errorState');
+    errorEl.style.display = '';
+    errorEl.innerHTML = `<div class="error-box">
+      <strong>Fehler beim Laden der multimedia.ndjson</strong><br>
+      Die Datei muss im selben Verzeichnis wie diese HTML-Datei liegen.<br>
+      Bei lokalem Öffnen einen HTTP-Server verwenden (z.B. <code>npx serve .</code> oder <code>python -m http.server</code>).
+      <code>${err.message}</code>
+    </div>`;
+  }
+}
+
+// ── Search / Filter ──
+function applyFilter() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) {
+    filteredImages = [...allImages];
+  } else {
+    filteredImages = allImages.filter(img =>
+      (img.species || '').toLowerCase().includes(q) ||
+      (img.organ || '').toLowerCase().includes(q) ||
+      (img.creator || '').toLowerCase().includes(q) ||
+      String(img.taxonKey).includes(q)
+    );
+  }
+  currentPage = 1;
+  renderAll();
+}
+
+// ── Render Grid ──
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  const start = (currentPage - 1) * perPage;
+  const pageItems = filteredImages.slice(start, start + perPage);
+
+  if (pageItems.length === 0) {
+    grid.innerHTML = `<div class="empty-state"><div class="big">∅</div>Keine Bilder gefunden.</div>`;
+    return;
+  }
+
+  grid.innerHTML = pageItems.map((img, i) => {
+    const url = buildUrl(img.url, currentWidth);
+    const idx = start + i;
+    return `
+      <div class="card" onclick="openOverlay(${idx})">
+        <div class="card-img-wrap">
+          <div class="loader"><div class="loader-dot"></div></div>
+          <img data-src="${url}" alt="${img.species}" id="cimg-${idx}">
+          <span class="organ-tag">${img.organ || '?'}</span>
+          <span class="dim-badge" id="dim-${idx}">…</span>
+        </div>
+        <div class="card-body">
+          <div class="card-species" title="${img.species}">${img.species}</div>
+          <div class="card-meta">
+            <span>${img.creator || '—'}</span>
+            <span>${(img.license || '').toUpperCase().replace('CC-', 'CC ')}</span>
+            ${img.wilsonScore != null ? `<span>W ${img.wilsonScore.toFixed(2)}</span>` : ''}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Lazy load images
+  grid.querySelectorAll('img[data-src]').forEach(imgEl => {
+    const src = imgEl.dataset.src;
+    const id = imgEl.id;
+    const dimId = id.replace('cimg-', 'dim-');
+    imgEl.onload = () => {
+      imgEl.classList.add('loaded');
+      document.getElementById(dimId).textContent = `${imgEl.naturalWidth}×${imgEl.naturalHeight}`;
+    };
+    imgEl.onerror = () => {
+      document.getElementById(dimId).textContent = '⚠ Fehler';
+      imgEl.style.opacity = '0.2';
+    };
+    imgEl.src = src;
+  });
+}
+
+// ── Pagination ──
+function renderPagination() {
+  const totalPages = Math.ceil(filteredImages.length / perPage);
+  const pag = document.getElementById('pagination');
+  if (totalPages <= 1) { pag.innerHTML = ''; updateStats(); return; }
+
+  let html = `<button class="page-btn nav" onclick="goPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>‹ Zurück</button>`;
+
+  const pages = buildPageNumbers(currentPage, totalPages);
+  pages.forEach(p => {
+    if (p === '...') {
+      html += `<span class="page-ellipsis">…</span>`;
+    } else {
+      html += `<button class="page-btn ${p === currentPage ? 'active' : ''}" onclick="goPage(${p})">${p}</button>`;
+    }
+  });
+
+  html += `<button class="page-btn nav" onclick="goPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Weiter ›</button>`;
+  html += `<select class="per-page-select" onchange="changePerPage(this.value)">
+    ${[12,24,48,96].map(n => `<option value="${n}" ${n === perPage ? 'selected' : ''}>${n} / Seite</option>`).join('')}
+  </select>`;
+
+  pag.innerHTML = html;
+  updateStats();
+}
+
+function buildPageNumbers(current, total) {
+  if (total <= 7) return Array.from({length: total}, (_, i) => i + 1);
+  const pages = [];
+  pages.push(1);
+  if (current > 3) pages.push('...');
+  for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) {
+    pages.push(i);
+  }
+  if (current < total - 2) pages.push('...');
+  pages.push(total);
+  return pages;
+}
+
+function goPage(p) {
+  const totalPages = Math.ceil(filteredImages.length / perPage);
+  if (p < 1 || p > totalPages) return;
+  currentPage = p;
+  renderGrid();
+  renderPagination();
+  document.getElementById('gridWrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function changePerPage(val) {
+  perPage = parseInt(val);
+  currentPage = 1;
+  renderAll();
+}
+
+function updateStats() {
+  const total = filteredImages.length;
+  const totalPages = Math.ceil(total / perPage);
+  const start = (currentPage - 1) * perPage + 1;
+  const end = Math.min(currentPage * perPage, total);
+  document.getElementById('statBadge').innerHTML =
+    `<strong>${start}–${end}</strong> von <strong>${total}</strong> Bildern` +
+    (total !== allImages.length ? ` (${allImages.length} gesamt)` : '') +
+    ` · Seite ${currentPage}/${totalPages}`;
+}
+
+// ── Fullscreen ──
+function openOverlay(idx) {
+  const img = filteredImages[idx];
+  if (!img) return;
+  document.getElementById('overlayImg').src = img.url; // Original, no resize
+  document.getElementById('overlaySpecies').textContent = img.species;
+  document.getElementById('overlayUrl').textContent = img.url;
+  document.getElementById('overlay').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOverlay() {
+  document.getElementById('overlay').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('overlay').addEventListener('click', closeOverlay);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
+
+// ── Render All ──
+function renderAll() {
+  renderGrid();
+  renderPagination();
+  updateUrlPreview();
+}
+
+// ── Size Pills ──
+document.querySelectorAll('.pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentWidth = parseInt(btn.dataset.width);
+    renderAll();
+  });
+});
+
+// ── Search ──
+let searchTimeout;
+document.getElementById('searchInput').addEventListener('input', () => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(applyFilter, 250);
+});
+
+// ── Init ──
+loadNDJSON();
+</script>
+</body>
+</html>

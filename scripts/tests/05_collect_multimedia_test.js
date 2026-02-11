@@ -14,11 +14,11 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 const crypto = require('crypto');
-const { searchOccurrences, sleep } = require('../scripts/utils/gbif-helpers');
+const { searchOccurrences, sleep } = require('../utils/gbif-helpers');
 
 const CONFIG = {
-  INPUT_FILE: path.join(__dirname, '../data/output/species_test.ndjson'),
-  OUTPUT_FILE: path.join(__dirname, '../data/output/multimedia_test.ndjson'),
+  INPUT_FILE: path.join(__dirname, '../../data/output/species_test.ndjson'),
+  OUTPUT_FILE: path.join(__dirname, '../../data/output/multimedia_test.ndjson'),
   DATASET_KEY: '7a3679ef-5582-4aaa-81f0-8c2545cafc81',
   CONCURRENCY: 3, // Niedriger für Test
   PAGE_SIZE: 50,

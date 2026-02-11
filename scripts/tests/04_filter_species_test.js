@@ -20,11 +20,11 @@ const {
   combineFilters,
   removeFields,
   countLines,
-} = require('../scripts/utils/filter-helpers');
+} = require('../utils/filter-helpers');
 
 const CONFIG = {
-  INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_enriched_test.ndjson'),
-  OUTPUT_FILE: path.join(__dirname, '../data/output/species_test.ndjson'),
+  INPUT_FILE: path.join(__dirname, '../../data/intermediate/plantnet_species_enriched_test.ndjson'),
+  OUTPUT_FILE: path.join(__dirname, '../../data/output/species_test.ndjson'),
 };
 
 async function main() {

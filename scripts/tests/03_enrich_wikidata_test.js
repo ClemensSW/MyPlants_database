@@ -13,14 +13,14 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
-const { queryWikidataGermanNamesBatch } = require('../scripts/utils/wikidata-helpers');
-const { pickPreferredGerman } = require('../scripts/utils/gbif-helpers');
+const { queryWikidataGermanNamesBatch } = require('../utils/wikidata-helpers');
+const { pickPreferredGerman } = require('../utils/gbif-helpers');
 
 // Konfiguration
 const CONFIG = {
-  INPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_raw_test.ndjson'),
-  OUTPUT_FILE: path.join(__dirname, '../data/intermediate/plantnet_species_enriched_test.ndjson'),
-  FAILED_LOG: path.join(__dirname, '../data/intermediate/wikidata_failed_test.txt'),
+  INPUT_FILE: path.join(__dirname, '../../data/intermediate/plantnet_species_raw_test.ndjson'),
+  OUTPUT_FILE: path.join(__dirname, '../../data/intermediate/plantnet_species_enriched_test.ndjson'),
+  FAILED_LOG: path.join(__dirname, '../../data/intermediate/wikidata_failed_test.txt'),
   BATCH_SIZE: 50, // Anzahl Species pro Batch-Query
   BATCH_DELAY_MS: 500, // Delay zwischen Batches (kürzer für Tests)
 };

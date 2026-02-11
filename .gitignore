@@ -13,6 +13,8 @@ data/intermediate/*
 # Large data files (zu groß für Git)
 data/output/*.ndjson
 data/output/*.json
+archive/*.ndjson
+tools/*.ndjson
 
 # Test data files
 data/intermediate/*_test.*
