@@ -182,11 +182,15 @@
 {"taxonKey":null,"canonicalName":"Pinus mugo subsp. mugo","germanName":"Krummholz-Kiefer"}
 {"taxonKey":null,"canonicalName":"Pinus nigra subsp. nigra","germanName":"Schwarz-Kiefer, Österreichische Schwarz-Kiefer"}
 {"taxonKey":null,"canonicalName":"Potentilla fruticosa","germanName":"Fingerstrauch"}
+{"taxonKey":null,"canonicalName":"Prunus laurocerasus","germanName":"Lorbeerkirsche Rotundifolia"}
+{"taxonKey":null,"canonicalName":"Prunus lusitanica","germanName":"Portugiesische Lorbeer-Kirsche"}
 {"taxonKey":null,"canonicalName":"Pyracantha","germanName":"Feuerdorn"}
 {"taxonKey":null,"canonicalName":"Pyrus calleryana","germanName":"Chinesische Wild-Birne"}
 {"taxonKey":null,"canonicalName":"Rhododendron dauricum","germanName":"Rhododendron, Alpenrose"}
 {"taxonKey":null,"canonicalName":"Rhododendron forrestii","germanName":"Flacher Rhododendron"}
 {"taxonKey":null,"canonicalName":"Rosa","germanName":"Beet-Rose"}
+{"taxonKey":null,"canonicalName":"Rosa","germanName":"Edel-Rose"}
+{"taxonKey":null,"canonicalName":"Rosa","germanName":"Kletter-Rose"}
 {"taxonKey":null,"canonicalName":"Sedum floriferum","germanName":"Teppich-Sedum"}
 {"taxonKey":null,"canonicalName":"Sedum telephium","germanName":"Hohe Garten-Fetthenne"}
 {"taxonKey":null,"canonicalName":"Sempervivum","germanName":"Dachwurz, Hauswurz"}
